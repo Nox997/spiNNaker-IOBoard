@@ -1,0 +1,25 @@
+# ----- REMOVE LINES ABOVE HERE --------------------------
+#
+# This license is valid from Mon Jul 02 12:14:51 GMT+00:00 2012.
+#
+# This is license NODELOCKED to HOSTID=ANY;
+# there is no need to run lmgrd for this license.
+#
+#
+# This is a permanent license generated on Mon Jul 02 12:14:51 GMT+00:00 2012
+INCREMENT Web_Package xilinxd 2013.07 permanent uncounted \
+75937FC1F47E \
+VENDOR_STRING=llobetblandino@mytum.de,Web_Package,software,permanent,_210644861_0_0_550 \
+HOSTID=ANY ISSUER="Xilinx Inc" START=02-Jul-2012 TS_OK
+#
+#
+# ----------------------------------------------------------------------
+#  The following PACKAGE definition is a REQUIRED part of this license:
+#
+PACKAGE Web_Package xilinxd 2013.07 3E5D394EEFF8 \
+COMPONENTS="PlanAhead WebPACK XC7Z010 XC7Z020 XC7Z030 \
+V_WebPACK xps_tdp" OPTIONS=SUITE
+#
+# ------------------------------------------------------------------------------
+#
+# ----- REMOVE LINES BELOW HERE --------------------------
