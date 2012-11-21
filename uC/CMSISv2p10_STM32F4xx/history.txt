@@ -1,0 +1,13 @@
+History of updates to CMSISv2p10_STM32F4xx
+==========================================
+
+11 October 2011
+---------------
+STM32F2xx CMSIS 2.1 library project using ARM 
+Cortex-M4 CMSIS files as supplied in ARM's CMSIS 2.1
+July 2011 release, together with device/board 
+specific files from STMicroelectronics's STM32F4xx 
+Standard Peripherals Firmware Library 
+(V1.0.0 / 30-September-2011)
+
+Note files are built -Os for both Debug and Release

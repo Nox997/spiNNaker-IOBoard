@@ -1,0 +1,296 @@
+/*
+===============================================================================
+ Project	 : SpiNNaker Interfacing 2
+ File        : main.c
+ Authors     : Francisco Llobet (Student) and Indar Sugiarto (Supervisor)
+ 	 	 	 : Christian Denk
+ Target 	 : STM32F4.05.RGT6
+ Version     : Mk. 2
+ Copyright   : (C) 2012 NST-LSR at Technische Universitaet Muenchen (TUM)
+ Description : ...
+===============================================================================
+*/
+
+#ifdef  __USE_CMSIS
+#endif
+
+#include "main.h"
+
+//endif
+
+// TODO: insert other definitions and declarations here
+// Global Stuff
+	uint8_t	PACKET_AV = 0;	//Packet available global!
+
+//eDVS data buffers:
+volatile uint32_t bufferEDVS1[100];
+volatile uint32_t eDVS1_currentPacket;
+volatile uint32_t eDVS1_topPacket;
+volatile uint32_t bufferEDVS2[100];
+volatile uint32_t eDVS2_currentPacket;
+volatile uint32_t eDVS2_topPacket;
+
+
+
+void shortDelay() {
+	int i, j;
+	for (i=0; i < 2000; i++) {
+		for (j=0; j < 10000; j++){
+			asm("nop");
+		}
+	}
+}
+
+int main(void) {
+	//eDVS packet:
+	spin_link_pkg_t eDVSpacket;
+	eDVSpacket.header = 0x2;
+	eDVSpacket.payload = 0x0;
+
+	eDVS1_currentPacket = 0;
+	eDVS1_topPacket 	= 0;
+	eDVS2_currentPacket = 0;
+	eDVS2_topPacket 	= 0;
+
+
+
+	//Debug Packet:
+	spin_link_pkg_t debugPacket;
+	debugPacket.header = 0x2;
+	debugPacket.key = 0x00000123;
+	debugPacket.payload = 0x0;
+
+
+	//CD: Local variables to hold most recent MC packet:
+	uint32_t header, key, payload;
+
+	uint32_t missed_request_counter = 0;
+
+	char str_buffer[80] = "\nSpinLink Interface4\n";
+	char reset_str[] = "\nR\n";
+
+	spin_link_pkg_t spinOutputBuffer[NUM_SENSORS_VALUE_CODING];
+	spin_link_pkg_t *currentPacket = &spinOutputBuffer[0];
+
+	RCC_ClocksTypeDef sys_clocks;
+
+	// Initialization functions
+//	SystemInit();
+	led_init();				// Initializes led init
+
+	led0_on(); shortDelay();
+	led0_off(); shortDelay();
+	led0_on(); shortDelay();
+	led0_off(); shortDelay();
+
+	usart_init_ports();		// Initializes USART ports
+	usart_init_nvic();
+	usart_dma_init();
+
+	spin_link_init();		// Initializing SpinLink ports
+	spin_link_buffer_init();
+	spin_link_init_nvic();  // Initializing SpinLink interrupt mode
+
+	//Initialize Robot Data handler function:
+	omnibot_init();
+	//Initialize Rate Coding for Robot Data to spiNNaker:
+	initialize_rate_coding();
+	//Initialize eDVS cams:
+	edvs_dma_transmission("!E+\r",4);
+
+
+	RCC_GetClocksFreq(&sys_clocks);
+
+	usart_dma_transmission(str_buffer, strlen(str_buffer));
+//	while(DMA_GetCmdStatus(DMA1_Stream3) == ENABLE );
+
+//	while (1) {
+//		usart_dma_transmission(str_buffer2, strlen(str_buffer2));
+//		while(DMA_GetCmdStatus(DMA1_Stream3) == ENABLE );
+//	}
+
+
+	// Resetting Robot and eDVS
+	robot_dma_transmission(reset_str, strlen(reset_str));
+	//while(DMA_GetCmdStatus(DMA1_Stream3) == ENABLE );
+
+	edvs_dma_transmission(reset_str, strlen(reset_str));
+	//while(DMA_GetCmdStatus(DMA1_Stream7) == ENABLE );
+
+	// Reset eDVS system
+	//Initialize Timer:
+	ms_tick_init();
+	ms_tick_start();
+	ms_tick_set(0);
+
+
+	//CD: REMOVE THIS LATER!
+//	spin_link_packet_send(&spin_link_packet2,0);
+//	spin_link_packet_send(&spin_link_packet2,0);
+//	while(ms_tick < 64000) {};
+//	spin_link_packet2.key = 0;
+//	spin_link_packet2.payload = 0x0;
+//	spin_link_packet_send(&spin_link_packet2,0);
+
+	while(1) {
+		if(SPL_IAV)	{					// Emergency cycler
+			missed_request_counter++;
+			if (missed_request_counter == 20) {
+				led0_on();
+				strcpy(str_buffer, "CPLD req error\n");
+				usart_dma_transmission(str_buffer, strlen(str_buffer));
+				while(SPL_IAV){
+					SPIN_MCU_DATA_IN_ACK->ODR ^= SPLI_ACK;
+				}
+				SPIN_MCU_DATA_IN_ACK->ODR &= ~SPLI_ACK;
+				led0_off();
+			}
+		} else {
+			missed_request_counter = 0;
+		}
+
+		//CD: New MC Packet Available, handle it:
+		if (spinPacketAvailableFlag) {
+			// do something with the package
+			header = spinPacketHeader;						// copy data so that interrupt can "refill" variables
+			key = spinPacketAddress;
+			payload = spinPacketPayload;
+			spinPacketAvailableFlag = 0;					// as of here if a new interrupt signals data available we will find it
+
+			//Check if package is an MC packet:
+		    if ((header & SPL_PCKG_TYPE) == MC_PACKAGE) {
+				//CD: Check this (payload!)
+				if (!(header & SPL_PAYLOAD)) { //NO PAYLOAD! -- RATE ENCODING!
+					//Reset Timeout for Motor Commands:
+					timeout_var = TIMEOUT_MS;
+					//CD: Motor command rate encoding
+					if (key == MGMT_ARRAY[MOTION_FORWARD]) {
+						x_accumulator++;
+						//Reset Timeout for Motor Commands:
+						timeout_var = TIMEOUT_MS;
+					}
+					else if (key == MGMT_ARRAY[MOTION_BACK]) {
+						x_accumulator--;
+						//Reset Timeout for Motor Commands:
+						timeout_var = TIMEOUT_MS;
+					}
+					else if (key == MGMT_ARRAY[MOTION_LEFT]) {
+						y_accumulator++;
+						//Reset Timeout for Motor Commands:
+						timeout_var = TIMEOUT_MS;
+					}
+					else if (key == MGMT_ARRAY[MOTION_RIGHT]) {
+						y_accumulator--;
+						//Reset Timeout for Motor Commands:
+						timeout_var = TIMEOUT_MS;
+					}
+					else if (key == MGMT_ARRAY[MOTION_CLOCKWISE]) {
+						t_accumulator++;
+						//Reset Timeout for Motor Commands:
+						timeout_var = TIMEOUT_MS;
+					}
+					else if (key == MGMT_ARRAY[MOTION_C_CLKWISE]) {
+						t_accumulator--;
+						//Reset Timeout for Motor Commands:
+						timeout_var = TIMEOUT_MS;
+					}
+				}
+				else if(!(key & MGMT_BIT)) {	//PAYLOAD, BUT NO MGMT PACKET!
+					//Reset Timeout for Motor Commands:
+					//CD: THINK! THIS IS NON-OPTIMAL
+
+
+					//CD: Motor command value encoding...
+					if (key == MGMT_ARRAY[MOTION_FORWARD]) {
+						x_payload_speed = payload;
+						//Reset Timeout for Motor Commands:
+						timeout_var = TIMEOUT_MS;
+					}
+					else if (key == MGMT_ARRAY[MOTION_BACK]) {
+						x_payload_speed = -payload;
+						//Reset Timeout for Motor Commands:
+						timeout_var = TIMEOUT_MS;
+					}
+					else if (key == MGMT_ARRAY[MOTION_LEFT]) {
+						y_payload_speed = payload;
+						//Reset Timeout for Motor Commands:
+						timeout_var = TIMEOUT_MS;
+					}
+					else if (key == MGMT_ARRAY[MOTION_RIGHT]) {
+						y_payload_speed = -payload;
+						//Reset Timeout for Motor Commands:
+						timeout_var = TIMEOUT_MS;
+					}
+					else if (key == MGMT_ARRAY[MOTION_CLOCKWISE]) {
+						t_payload_speed = payload;
+						//Reset Timeout for Motor Commands:
+						timeout_var = TIMEOUT_MS;
+					}
+					else if (key == MGMT_ARRAY[MOTION_C_CLKWISE]) {
+						t_payload_speed = -payload;
+						//Reset Timeout for Motor Commands:
+						timeout_var = TIMEOUT_MS;
+					}
+				}
+				else { //PAYLOAD + MGMT_BIT ARE SET, MANAGE NEURON KEYS:
+					manage_neurons(key, payload);
+				}
+			}
+		}
+
+		//If eDVS Data is available, send a packet:
+//		if (eDVS1_currentPacket != eDVS1_topPacket) {
+//			//send an eDVS packet!
+//			eDVSpacket.key = (MGMT_ARRAY[EDVS1_XY] & DEL_LOWER_16) | (bufferEDVS1[eDVS1_currentPacket] & DEL_UPPER_16);
+//			spin_link_packet_send(&eDVSpacket,0);
+//			eDVS1_currentPacket = (eDVS1_currentPacket + 1) % 100;
+//		}
+
+		//If sensor output packets are available, send one of them...
+		if (currentPacket >= &spinOutputBuffer[0]) {
+			while(currentPacket > &spinOutputBuffer[NUM_SENSORS_VALUE_CODING]) {
+				currentPacket--;
+			}
+			if(!MGMT_ARRAY[RATE_CODING_SENSORS_ENABLE]) {
+				//Value Coding, i.e. with payload
+				currentPacket->key |= 0xE00;
+				spin_link_packet_send(currentPacket,1);
+				currentPacket--;
+			}
+		}
+		else {
+			currentPacket = NULL;
+		}
+		
+		//CD: Timer gets executed every 0.5ms (i.e. ms/2 timer, not ms timer!)
+		if (ms_tick > 0){
+			ms_tick_set(0);
+
+			//Motor Timeout
+			timeout_var--;
+			//Check for Timeout to set Motor commands to 0:
+			if (timeout_var <= 0) {
+				x_payload_speed = 0;
+				y_payload_speed = 0;
+				t_payload_speed = 0;
+				timeout_var = -1;
+			}
+			//Motor Timeout END
+
+			//Send commands to Robot, decay speeds etc.
+			omnibot_command_cycle();
+
+			if(MGMT_ARRAY[RATE_CODING_SENSORS_ENABLE]) {
+				//Rate Encode sensor data
+				rate_coding();
+			}
+			else{
+				currentPacket = value_coding(currentPacket,spinOutputBuffer);
+			}
+
+//
+		}//CD: END
+
+	}	// END of main() loop
+	return 0 ;
+}

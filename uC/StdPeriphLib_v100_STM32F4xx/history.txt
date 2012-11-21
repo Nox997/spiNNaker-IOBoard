@@ -1,0 +1,7 @@
+History of updates to StdPeriphLib_v100_STM32F4xx
+=================================================
+
+11 October 2011
+---------------
+Initial port of STM32F4xx Standard Peripherals Library 
+(v.1.0.0, 30-September-2011) into a Red Suite project.
