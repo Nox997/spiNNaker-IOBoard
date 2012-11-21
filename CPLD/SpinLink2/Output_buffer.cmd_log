@@ -1,0 +1,14 @@
+sch2sym -intstyle ise -family xbr -w -refsym Output_buffer F:/CPLD/SpinLink/Output_buffer.sch F:/CPLD/SpinLink/Output_buffer.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Output_buffer C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Output_buffer C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Output_buffer C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Output_buffer C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Output_buffer C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Output_buffer C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Output_buffer C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Output_buffer C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Output_buffer C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Output_buffer C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Output_buffer C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sym 
+sch2hdl -intstyle ise -family xbr -verilog Output_buffer_drc.vf -w C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sch 
+sch2sym -intstyle ise -family xbr -w -refsym Output_buffer C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sym 

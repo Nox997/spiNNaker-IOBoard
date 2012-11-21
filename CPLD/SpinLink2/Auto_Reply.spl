@@ -1,0 +1,10 @@
+[Inputs]
+DACK
+=NIBBLE_IN[6:0]=
+[Outputs]
+ACK
+DAV
+NIBBLE_CLEAR
+DACK_CLEAR
+=DATA_OUT[8:0]=
+[BiDir]

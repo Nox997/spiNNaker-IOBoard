@@ -1,0 +1,88 @@
+----------------------------------------------------------------------------------
+-- Company:  Neurowissenschaftliche Sytemtheorie
+-- Engineer: Francisco Llobet B.
+-- 
+-- Create Date:    17:48:58 08/08/2012 
+-- Design Name: 	Control Logic for the SpiNNaker SpinLink receiver module
+-- Module Name:    	Auto_Reply - Behavioral 
+-- Project Name: 	SpiNNaker SpinLink Interface
+-- Target Devices: 
+-- Tool versions: 
+-- Description: 
+--
+-- Dependencies: 
+--
+-- Revision: 
+-- Revision 1. Seems to be working
+-- Additional Comments: 
+--
+----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity SpinLink_Output is
+		    Port (ACK		: in STD_LOGIC;
+			  DAV		: in  STD_LOGIC;
+			  BSY		: out STD_LOGIC;
+			  NIBBLE_OUT	: out  STD_LOGIC_VECTOR  (6 downto 0);
+			  DATA_IN	: in  STD_LOGIC_VECTOR (8 downto 0));
+end SpinLink_Output;
+
+architecture Behavioral of SpinLink_Output is
+
+begin
+
+OUTPUT_MASCHINE : process(DATA_IN, DAV, ACK)
+	variable NIBBLE_OUT	: STD_LOGIC_VECTOR(6 downto 0);
+	variable NIBBLE_MASK	: STD_LOGIC_VECTOR(6 downto 0);
+
+	variable DATA_SMALL	: STD_LOGIC_VECTOR(4 downto 0);
+
+	variable ACK_BUFFER	: STD_LOGIC;
+	variable ACK_STATUS	: STD_LOGIC;
+	variable SEL_STATUS	: STD_LOGIC;
+
+	variable BSY_STAT	: STD_LOGIC;
+	variable DAV_STATUS	: STD_LOGIC;
+	
+
+
+
+		ENCODER : if OK_STAT = '1' then
+		case DATA_SMALL is
+			when "00000" => NIBBLE_MASK := "0010001";  --Symbol 0
+			when "00001" => NIBBLE_MASK := "0010010";  --Symbol 1
+			when "00010" => NIBBLE_MASK := "0010100";  --Symbol 2
+			when "00011" => NIBBLE_MASK := "0011000";  --Symbol 3
+			when "00100" => NIBBLE_MASK := "0100001";  --Symbol 4
+			when "00101" => NIBBLE_MASK := "0100010";  --Symbol 5
+			when "00110" => NIBBLE_MASK := "0100100";  --Symbol 6
+			when "00111" => NIBBLE_MASK := "0101000";  --Symbol 7
+			when "01000" => NIBBLE_MASK := "1000001";  --Symbol 8
+			when "01001" => NIBBLE_MASK := "1000010";  --Symbol 9
+			when "01010" => NIBBLE_MASK := "1000100";  --Symbol 10
+			when "01011" => NIBBLE_MASK := "1001000";  --Symbol 11
+			when "01100" => NIBBLE_MASK := "0000011";  --Symbol 12
+			when "01101" => NIBBLE_MASK := "0000110";  --Symbol 13
+			when "01110" => NIBBLE_MASK := "0001100";  --Symbol 14
+			when "01111" => NIBBLE_MASK := "0001001";  --Symbol 15
+			when "10000" => NIBBLE_MASK := "1100000";  --Symbol EOP
+			when others 	=> NIBBLE_MASK := "1100000";   --Actually error!    
+		end case;
+		end if ENCODER;
+
+
+	
+end process OUTPUT_MASCHINE;
+
+end Behavioral;
+

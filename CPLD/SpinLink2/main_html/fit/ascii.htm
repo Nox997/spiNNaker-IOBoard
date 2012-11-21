@@ -1,0 +1,1552 @@
+<html><body>
+<pre>
+ 
+cpldfit:  version P.15xf                            Xilinx Inc.
+                                  Fitter Report
+Design Name: main                                Date: 11- 6-2012, 10:41AM
+Device Used: XC2C128-7-VQ100
+Fitting Status: Successful
+
+*************************  Mapped Resource Summary  **************************
+
+Macrocells     Product Terms    Function Block   Registers      Pins           
+Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
+90 /128 ( 70%) 284 /448  ( 63%) 182 /320  ( 57%) 66 /128 ( 52%) 38 /80  ( 47%)
+
+** Function Block Resources **
+
+Function Mcells   FB Inps  Pterms   IO       CTC      CTR      CTS      CTE     
+Block    Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot
+FB1      16/16*    30/40    44/56     0/10    1/1*     1/1*     1/1*     0/1
+FB2      16/16*    35/40    46/56     2/10    1/1*     1/1*     1/1*     0/1
+FB3      16/16*    21/40    47/56     4/11    1/1*     0/1      1/1*     0/1
+FB4      16/16*    27/40    54/56     6/11    1/1*     1/1*     1/1*     0/1
+FB5      12/16     37/40    49/56     1/10    1/1*     1/1*     0/1      0/1
+FB6       3/16     23/40    34/56     0/ 9    1/1*     0/1      0/1      0/1
+FB7       8/16      8/40     9/56     6/10    1/1*     0/1      0/1      0/1
+FB8       3/16      1/40     1/56     0/ 9    1/1*     0/1      0/1      0/1
+         -----    -------  -------   -----    ---      ---      ---      ---
+Total    90/128   182/320  284/448   19/80    8/8      4/8      4/8      0/8 
+
+CTC - Control Term Clock
+CTR - Control Term Reset
+CTS - Control Term Set
+CTE - Control Term Output Enable
+
+* - Resource is exhausted
+
+** Global Control Resources **
+
+GCK         GSR         GTS         DGE         
+Used/Tot    Used/Tot    Used/Tot    Used/Tot    
+0/3         0/1         0/4         0/1
+
+
+** Pin Resources **
+
+Signal Type    Required     Mapped  |  Pin Type            Used    Total 
+------------------------------------|------------------------------------
+Input         :   19          19    |  I/O              :    29     70
+Output        :   19          19    |  GCK/IO           :     3      3
+Bidirectional :    0           0    |  GTS/IO           :     4      4
+GCK           :    0           0    |  GSR/IO           :     0      1
+GTS           :    0           0    |  CDR/IO           :     1      1
+GSR           :    0           0    |  DGE/IO           :     1      1
+                 ----        ----
+        Total     38          38
+
+End of Mapped Resource Summary
+**************************  Errors and Warnings  ***************************
+
+WARNING:Cpld - Unable to retrieve the path to the iSE Project Repository. Will
+   use the default filename of 'main.ise'.
+WARNING:Cpld - The signal(s) 'XLXI_21/CLEAR_BUFFER' are in combinational
+   feedback loops.
+   These signals may cause hazards/glitches. Apply the NOREDUCE parameter to the
+   hazard reduction circuitry.
+   Timing analysis of paths involving this node may be inaccurate or incomplete.
+INFO:Cpld:994 - Exhaustive fitting is trying pterm limit: 36 and input limit: 32
+*************************  Summary of Mapped Logic  ************************
+
+** 19 Outputs **
+
+Signal                               Total Total Bank Loc     Pin   Pin       Pin     I/O      I/O       Slew Reg     Reg Init
+Name                                 Pts   Inps               No.   Type      Use     STD      Style     Rate Use     State
+SPIN_LINK_OUT_ACK                    1     1     1    FB2_15  24    CDR/I/O   O       LVCMOS18           FAST TFF     RESET
+SPIN_LINK_IN<6>                      7     12    1    FB2_16  27    GCK/I/O   O       LVCMOS18           FAST TFF     RESET
+DATA_IN_BSY                          2     2     2    FB3_3   1     GTS/I/O   O       LVCMOS33           FAST LATCH   RESET
+DATA_OUT<0>                          2     2     2    FB3_14  92    I/O       O       LVCMOS33           FAST LATCH   RESET
+DATA_OUT<1>                          2     2     2    FB3_15  91    I/O       O       LVCMOS33           FAST LATCH   RESET
+DATA_OUT<2>                          2     2     2    FB3_16  90    I/O       O       LVCMOS33           FAST LATCH   RESET
+SPIN_LINK_IN<5>                      7     12    1    FB4_1   28    DGE/I/O   O       LVCMOS18           FAST TFF     RESET
+SPIN_LINK_IN<4>                      4     12    1    FB4_4   29    I/O       O       LVCMOS18           FAST TFF     RESET
+SPIN_LINK_IN<3>                      7     18    1    FB4_5   30    I/O       O       LVCMOS18           FAST TFF     RESET
+SPIN_LINK_IN<2>                      7     18    1    FB4_6   32    I/O       O       LVCMOS18           FAST TFF     RESET
+SPIN_LINK_IN<1>                      7     18    1    FB4_7   33    I/O       O       LVCMOS18           FAST TFF     RESET
+SPIN_LINK_IN<0>                      7     18    1    FB4_11  34    I/O       O       LVCMOS18           FAST TFF     RESET
+DATA_OUT_AV                          2     2     2    FB5_15  76    I/O       O       LVCMOS33           FAST LATCH   RESET
+DATA_OUT<8>                          2     2     2    FB7_2   78    I/O       O       LVCMOS33           FAST LATCH   RESET
+DATA_OUT<7>                          2     2     2    FB7_11  82    I/O       O       LVCMOS33           FAST LATCH   RESET
+DATA_OUT<6>                          2     2     2    FB7_13  85    I/O       O       LVCMOS33           FAST LATCH   RESET
+DATA_OUT<5>                          2     2     2    FB7_14  86    I/O       O       LVCMOS33           FAST LATCH   RESET
+DATA_OUT<4>                          2     2     2    FB7_15  87    I/O       O       LVCMOS33           FAST LATCH   RESET
+DATA_OUT<3>                          2     2     2    FB7_16  89    I/O       O       LVCMOS33           FAST LATCH   RESET
+
+** 71 Buried Nodes **
+
+Signal                               Total Total Loc     Reg     Reg Init
+Name                                 Pts   Inps          Use     State
+XLXI_21/DECODED_NIBBLE_cmp_eq0005    14    14    FB1_1           
+XLXI_20/DATA_NIBBLE<4>               5     5     FB1_2   LATCH   RESET
+XLXI_21/DECODED_NIBBLE_cmp_eq0006    14    14    FB1_3           
+N_PZ_215                             2     2     FB1_4           
+XLXI_20/SEND_CLEAR                   2     2     FB1_5   DFF     RESET
+XLXI_20/_mux0005                     1     2     FB1_6           
+XLXI_20/SEL                          4     3     FB1_7   LATCH   RESET
+XLXI_20/BSY_CLEAR                    3     3     FB1_8   DDFF    RESET
+XLXI_20/SEND2                        3     4     FB1_9   DDFF    RESET
+XLXI_20/SEND1                        3     3     FB1_10  DDFF    RESET
+XLXI_20/_mux0002                     1     2     FB1_11          
+XLXI_20/_mux0001                     1     2     FB1_12          
+XLXI_20/_mux0000                     1     2     FB1_13          
+XLXI_20/BSY_SET                      2     2     FB1_14  DDFF    RESET
+XLXI_20/DATA_BUFFER<6>               3     3     FB1_15  DDFF    RESET
+XLXI_20/DATA_BUFFER<7>               3     4     FB1_16  DDFF    RESET
+XLXI_21/ACK_OK                       3     5     FB2_1           
+XLXI_21/CLEAR_BUFFER                 7     11    FB2_2           
+XLXI_21/DECODED_NIBBLE<4>            9     11    FB2_3   LATCH   RESET
+XLXI_21/BUFFERED_SET                 2     3     FB2_4   DFF     RESET
+XLXI_21/DATA_BUFFER<8>               2     2     FB2_5   LATCH   RESET
+XLXI_21/DAV_SET                      3     4     FB2_6   LATCH   RESET
+XLXI_21/BUFFERED_SET_Clk_INV6        2     4     FB2_7           
+XLXI_21/SEL                          2     3     FB2_8   LATCH   RESET
+XLXI_21/ACK_STATUS2                  3     4     FB2_9   LATCH   RESET
+XLXI_20/DATA_NIBBLE<3>               5     4     FB2_10  LATCH   RESET
+XLXI_21/DAV_SET_mux0002              2     4     FB2_11          
+XLXI_20/DATA_NIBBLE<2>               5     4     FB2_12  LATCH   RESET
+XLXI_21/NIBBLE_BUFFER<1>             1     1     FB2_13  LATCH   RESET
+XLXI_21/NIBBLE_BUFFER<0>             1     1     FB2_14  LATCH   RESET
+XLXI_21/DECODED_STAT_or000034        20    14    FB3_1           
+XLXI_20/DATA_BUFFER<8>               1     1     FB3_2   DDFF    RESET
+N_PZ_232                             4     4     FB3_4           
+N_PZ_217                             4     4     FB3_5           
+XLXI_20/DATA_BUFFER<0>               3     3     FB3_6   DDFF    RESET
+XLXI_20/DATA_BUFFER<1>               15    15    FB3_7   DDFF    RESET
+XLXI_21/DECODED_NIBBLE_cmp_eq0015    14    14    FB3_8           
+XLXI_21/DECODED_NIBBLE_cmp_eq0014    14    14    FB3_9           
+XLXI_21/DECODED_NIBBLE_mux0001<1>14  14    14    FB3_10          
+XLXI_20/DATA_BUFFER<2>               15    15    FB3_11  DDFF    RESET
+
+Signal                               Total Total Loc     Reg     Reg Init
+Name                                 Pts   Inps          Use     State
+XLXI_21/DECODED_NIBBLE_cmp_eq0012    14    14    FB3_12          
+XLXI_20/DATA_BUFFER<3>               15    15    FB3_13  DDFF    RESET
+XLXI_21/DATA_BUFFER<2>               2     2     FB4_2   LATCH   RESET
+XLXI_21/DATA_BUFFER<1>               2     2     FB4_3   LATCH   RESET
+XLXI_21/DATA_BUFFER<0>               2     2     FB4_8   LATCH   RESET
+XLXI_20/DATA_NIBBLE<1>               5     4     FB4_9   LATCH   RESET
+XLXI_20/DATA_NIBBLE<0>               5     4     FB4_10  LATCH   RESET
+XLXI_21/DATA_BUFFER<5>               2     2     FB4_12  LATCH   RESET
+XLXI_21/DATA_BUFFER<4>               2     2     FB4_13  LATCH   RESET
+XLXI_21/DATA_BUFFER<3>               2     2     FB4_14  LATCH   RESET
+XLXI_21/NIBBLE_BUFFER<6>             1     1     FB4_15  LATCH   RESET
+XLXI_21/NIBBLE_BUFFER<5>             1     1     FB4_16  LATCH   RESET
+N_PZ_273                             2     2     FB5_4           
+N_PZ_272                             2     2     FB5_6           
+XLXI_21/DATA_BUFFER<7>               2     2     FB5_7   LATCH   RESET
+XLXI_21/DECODED_NIBBLE_mux0001<0>36  16    14    FB5_8           
+N_PZ_271                             2     2     FB5_9           
+XLXI_21/ACK_STATUS1                  2     2     FB5_10  DFF     RESET
+XLXI_21/DECODED_NIBBLE<2>            16    18    FB5_11  LATCH   RESET
+XLXI_21/DATA_BUFFER<6>               2     2     FB5_12  LATCH   RESET
+N_PZ_275                             2     2     FB5_13          
+N_PZ_274                             2     2     FB5_14          
+XLXI_21/DAV_CLEAR                    2     2     FB5_16  DFF     RESET
+XLXI_21/DECODED_NIBBLE<1>            13    16    FB6_11  LATCH   RESET
+XLXI_21/DECODED_NIBBLE<0>            13    16    FB6_13  LATCH   RESET
+XLXI_21/DECODED_NIBBLE<3>            11    18    FB6_15  LATCH   RESET
+XLXI_20/DATA_BUFFER<5>               1     1     FB7_5   DDFF    RESET
+XLXI_20/DATA_BUFFER<4>               1     1     FB7_6   DDFF    RESET
+XLXI_21/NIBBLE_BUFFER<2>             1     1     FB8_14  LATCH   RESET
+XLXI_21/NIBBLE_BUFFER<3>             1     1     FB8_15  LATCH   RESET
+XLXI_21/NIBBLE_BUFFER<4>             1     1     FB8_16  LATCH   RESET
+
+** 19 Inputs **
+
+Signal                               Bank Loc     Pin   Pin       Pin     I/O      I/O
+Name                                              No.   Type      Use     STD      Style
+DATA_IN<6>                           2    FB1_15  4     GTS/I/O   I       LVCMOS33 S/KPR
+DATA_IN<7>                           2    FB1_16  3     GTS/I/O   I       LVCMOS33 S/KPR
+SPIN_LINK_OUT<1>                     1    FB2_13  22    GCK/I/O   I       LVCMOS18 S/KPR
+SPIN_LINK_OUT<0>                     1    FB2_14  23    GCK/I/O   I       LVCMOS18 S/KPR
+DATA_IN<8>                           2    FB3_2   2     GTS/I/O   I       LVCMOS33 S/KPR
+DATA_IN_AV                           2    FB3_5   97    I/O       I       LVCMOS33 S/KPR
+DATA_IN<0>                           2    FB3_6   96    I/O       I       LVCMOS33 S/KPR
+DATA_IN<1>                           2    FB3_7   95    I/O       I       LVCMOS33 S/KPR
+DATA_IN<2>                           2    FB3_11  94    I/O       I       LVCMOS33 S/KPR
+DATA_IN<3>                           2    FB3_13  93    I/O       I       LVCMOS33 S/KPR
+SPIN_LINK_IN_ACK                     1    FB4_12  35    I/O       I       LVCMOS18 S/KPR
+SPIN_LINK_OUT<6>                     1    FB4_15  39    I/O       I       LVCMOS18 S/KPR
+SPIN_LINK_OUT<5>                     1    FB4_16  40    I/O       I       LVCMOS18 S/KPR
+DATA_O_ACK                           2    FB7_1   77    I/O       I       LVCMOS33 S/KPR
+DATA_IN<5>                           2    FB7_5   80    I/O       I       LVCMOS33 S/KPR
+DATA_IN<4>                           2    FB7_6   81    I/O       I       LVCMOS33 S/KPR
+SPIN_LINK_OUT<2>                     1    FB8_14  43    I/O       I       LVCMOS18 S/KPR
+SPIN_LINK_OUT<3>                     1    FB8_15  42    I/O       I       LVCMOS18 S/KPR
+SPIN_LINK_OUT<4>                     1    FB8_16  41    I/O       I       LVCMOS18 S/KPR
+
+Legend:
+Pin No.   - ~     - User Assigned
+I/O Style - OD    - OpenDrain
+          - PU    - Pullup
+          - KPR   - Keeper
+          - S     - SchmittTrigger
+          - DG    - DataGate
+Reg Use   - LATCH - Transparent latch
+          - DFF   - D-flip-flop
+          - DEFF  - D-flip-flop with clock enable
+          - TFF   - T-flip-flop
+          - TDFF  - Dual-edge-triggered T-flip-flop
+          - DDFF  - Dual-edge-triggered flip-flop
+          - DDEFF - Dual-edge-triggered flip-flop with clock enable
+          /S (after any above flop/latch type) indicates initial state is Set
+**************************  Function Block Details  ************************
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Loc          - Location where logic was mapped in device
+Pin Type/Use - I  - Input             GCK - Global clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+              VRF - Vref
+Pin No.      - ~  - User Assigned
+*********************************** FB1  ***********************************
+This function block is part of I/O Bank number:               2
+Number of function block inputs used/remaining:               30/10
+Number of function block control terms used/remaining:        3/1
+Number of PLA product terms used/remaining:                   44/12
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+XLXI_21/DECODED_NIBBLE_cmp_eq0005
+                              14    FB1_1   13   I/O     (b)               
+XLXI_20/DATA_NIBBLE<4>        5     FB1_2        (b)     (b)        +      
+XLXI_21/DECODED_NIBBLE_cmp_eq0006
+                              14    FB1_3   12   I/O     (b)               
+N_PZ_215                      2     FB1_4   11   I/O     (b)               
+XLXI_20/SEND_CLEAR            2     FB1_5   10   I/O     (b)               
+XLXI_20/_mux0005              1     FB1_6   9    I/O     (b)               
+XLXI_20/SEL                   4     FB1_7        (b)     (b)            +  
+XLXI_20/BSY_CLEAR             3     FB1_8        (b)     (b)               
+XLXI_20/SEND2                 3     FB1_9        (b)     (b)               
+XLXI_20/SEND1                 3     FB1_10       (b)     (b)    +          
+XLXI_20/_mux0002              1     FB1_11  8    I/O     (b)               
+XLXI_20/_mux0001              1     FB1_12  7    I/O     (b)               
+XLXI_20/_mux0000              1     FB1_13  6    I/O     (b)               
+XLXI_20/BSY_SET               2     FB1_14       (b)     (b)    +          
+XLXI_20/DATA_BUFFER<6>        3     FB1_15  4    GTS/I/O I      +          
+XLXI_20/DATA_BUFFER<7>        3     FB1_16  3    GTS/I/O I      +          
+
+Signals Used by Logic in Function Block
+  1: DATA_IN<8>        11: XLXI_20/BSY_CLEAR            21: XLXI_20/SEND1 
+  2: DATA_IN_AV        12: XLXI_20/BSY_SET              22: XLXI_20/SEND2 
+  3: SPIN_LINK_IN_ACK  13: XLXI_20/DATA_BUFFER<0>       23: XLXI_20/SEND_CLEAR 
+  4: SPIN_LINK_OUT<0>  14: XLXI_20/DATA_BUFFER<1>       24: XLXI_21/NIBBLE_BUFFER<0> 
+  5: SPIN_LINK_OUT<1>  15: XLXI_20/DATA_BUFFER<2>       25: XLXI_21/NIBBLE_BUFFER<1> 
+  6: SPIN_LINK_OUT<2>  16: XLXI_20/DATA_BUFFER<3>       26: XLXI_21/NIBBLE_BUFFER<2> 
+  7: SPIN_LINK_OUT<3>  17: XLXI_20/DATA_BUFFER<6>.COMB  27: XLXI_21/NIBBLE_BUFFER<3> 
+  8: SPIN_LINK_OUT<4>  18: XLXI_20/DATA_BUFFER<7>.COMB  28: XLXI_21/NIBBLE_BUFFER<4> 
+  9: SPIN_LINK_OUT<5>  19: XLXI_20/DATA_BUFFER<8>       29: XLXI_21/NIBBLE_BUFFER<5> 
+ 10: SPIN_LINK_OUT<6>  20: XLXI_20/SEL                  30: XLXI_21/NIBBLE_BUFFER<6> 
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+XLXI_21/DECODED_NIBBLE_cmp_eq0005 
+                  ...XXXXXXX.............XXXXXXX.......... 14      
+XLXI_20/DATA_NIBBLE<4> 
+                  X................XX.XX.................. 5       
+XLXI_21/DECODED_NIBBLE_cmp_eq0006 
+                  ...XXXXXXX.............XXXXXXX.......... 14      
+N_PZ_215          ....X...................X............... 2       
+XLXI_20/SEND_CLEAR 
+                  ................X.....X................. 2       
+XLXI_20/_mux0005  X...........X........................... 2       
+XLXI_20/SEL       X...................XX.................. 3       
+XLXI_20/BSY_CLEAR 
+                  ..X.......X........X.................... 3       
+XLXI_20/SEND2     ..X................X.XX................. 4       
+XLXI_20/SEND1     .X...................XX................. 3       
+XLXI_20/_mux0002  X..............X........................ 2       
+XLXI_20/_mux0001  X.............X......................... 2       
+XLXI_20/_mux0000  X............X.......................... 2       
+XLXI_20/BSY_SET   .X.........X............................ 2       
+XLXI_20/DATA_BUFFER<6> 
+                  .X..................XX.................. 3       
+XLXI_20/DATA_BUFFER<7> 
+                  XX................X.X................... 4       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB2  ***********************************
+This function block is part of I/O Bank number:               1
+Number of function block inputs used/remaining:               35/5
+Number of function block control terms used/remaining:        3/1
+Number of PLA product terms used/remaining:                   46/10
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+XLXI_21/ACK_OK                3     FB2_1        (b)     (b)               
+XLXI_21/CLEAR_BUFFER          7     FB2_2   14   I/O     (b)               
+XLXI_21/DECODED_NIBBLE<4>     9     FB2_3   15   I/O     (b)    +          
+XLXI_21/BUFFERED_SET          2     FB2_4   16   I/O     (b)               
+XLXI_21/DATA_BUFFER<8>        2     FB2_5   17   I/O     (b)    +          
+XLXI_21/DAV_SET               3     FB2_6   18   I/O     (b)    +          
+XLXI_21/BUFFERED_SET_Clk_INV6 2     FB2_7        (b)     (b)               
+XLXI_21/SEL                   2     FB2_8        (b)     (b)    +          
+XLXI_21/ACK_STATUS2           3     FB2_9        (b)     (b)    +          
+XLXI_20/DATA_NIBBLE<3>        5     FB2_10       (b)     (b)        +      
+XLXI_21/DAV_SET_mux0002       2     FB2_11  19   I/O     (b)               
+XLXI_20/DATA_NIBBLE<2>        5     FB2_12       (b)     (b)            +  
+XLXI_21/NIBBLE_BUFFER<1>      1     FB2_13  22   GCK/I/O I      +          
+XLXI_21/NIBBLE_BUFFER<0>      1     FB2_14  23   GCK/I/O I      +          
+SPIN_LINK_OUT_ACK             1     FB2_15  24   CDR/I/O O                 
+SPIN_LINK_IN<6>               7     FB2_16  27   GCK/I/O O                 
+
+Signals Used by Logic in Function Block
+  1: DATA_IN<8>                   13: XLXI_20/DATA_BUFFER<6>       25: XLXI_21/ACK_STATUS1 
+  2: N_PZ_215                     14: XLXI_20/DATA_BUFFER<6>.COMB  26: XLXI_21/ACK_STATUS2 
+  3: N_PZ_217                     15: XLXI_20/DATA_BUFFER<7>       27: XLXI_21/BUFFERED_SET 
+  4: N_PZ_232                     16: XLXI_20/DATA_BUFFER<8>       28: XLXI_21/BUFFERED_SET_Clk_INV6 
+  5: N_PZ_271                     17: XLXI_20/DATA_NIBBLE<2>       29: XLXI_21/CLEAR_BUFFER 
+  6: N_PZ_272                     18: XLXI_20/DATA_NIBBLE<3>       30: XLXI_21/DAV_SET 
+  7: N_PZ_273                     19: XLXI_20/DATA_NIBBLE<4>       31: XLXI_21/DAV_SET_mux0002 
+  8: N_PZ_274                     20: XLXI_20/SEND1                32: XLXI_21/DECODED_NIBBLE<4> 
+  9: N_PZ_275                     21: XLXI_20/SEND2                33: XLXI_21/DECODED_NIBBLE_mux0001<0>36 
+ 10: XLXI_20/DATA_BUFFER<0>.COMB  22: XLXI_20/_mux0001             34: XLXI_21/DECODED_STAT_or000034 
+ 11: XLXI_20/DATA_BUFFER<2>       23: XLXI_20/_mux0002             35: XLXI_21/SEL 
+ 12: XLXI_20/DATA_BUFFER<3>       24: XLXI_21/ACK_OK              
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+XLXI_21/ACK_OK    ........................XX..X..X..X..... 5       
+XLXI_21/CLEAR_BUFFER 
+                  .XXXXXXX.X................X.X....X...... 11      
+XLXI_21/DECODED_NIBBLE<4> 
+                  .XX.XXXXXX..................X..XX....... 11      
+XLXI_21/BUFFERED_SET 
+                  ........................X..XX........... 3       
+XLXI_21/DATA_BUFFER<8> 
+                  ............................X..X........ 2       
+XLXI_21/DAV_SET   ............................X.XX..X..... 4       
+XLXI_21/BUFFERED_SET_Clk_INV6 
+                  .........................X..X..X..X..... 4       
+XLXI_21/SEL       ............................X..X..X..... 3       
+XLXI_21/ACK_STATUS2 
+                  .......................X....X..X..X..... 4       
+XLXI_20/DATA_NIBBLE<3> 
+                  ..............X....XX.X................. 4       
+XLXI_21/DAV_SET_mux0002 
+                  ............................XX.X..X..... 4       
+XLXI_20/DATA_NIBBLE<2> 
+                  ............X......XXX.................. 4       
+SPIN_LINK_OUT_ACK 
+                  .......................X................ 1       
+SPIN_LINK_IN<6>   X.........XXXXXXXXXXX................... 12      
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB3  ***********************************
+This function block is part of I/O Bank number:               2
+Number of function block inputs used/remaining:               21/19
+Number of function block control terms used/remaining:        2/2
+Number of PLA product terms used/remaining:                   47/9
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+XLXI_21/DECODED_STAT_or000034 20    FB3_1        (b)     (b)               
+XLXI_20/DATA_BUFFER<8>        1     FB3_2   2    GTS/I/O I      +          
+DATA_IN_BSY                   2     FB3_3   1    GTS/I/O O              +  
+N_PZ_232                      4     FB3_4   99   GSR/I/O (b)               
+N_PZ_217                      4     FB3_5   97   I/O     I                 
+XLXI_20/DATA_BUFFER<0>        3     FB3_6   96   I/O     I      +          
+XLXI_20/DATA_BUFFER<1>        15    FB3_7   95   I/O     I      +          
+XLXI_21/DECODED_NIBBLE_cmp_eq0015
+                              14    FB3_8        (b)     (b)               
+XLXI_21/DECODED_NIBBLE_cmp_eq0014
+                              14    FB3_9        (b)     (b)               
+XLXI_21/DECODED_NIBBLE_mux0001<1>14
+                              14    FB3_10       (b)     (b)               
+XLXI_20/DATA_BUFFER<2>        15    FB3_11  94   I/O     I      +          
+XLXI_21/DECODED_NIBBLE_cmp_eq0012
+                              14    FB3_12       (b)     (b)               
+XLXI_20/DATA_BUFFER<3>        15    FB3_13  93   I/O     I      +          
+DATA_OUT<0>                   2     FB3_14  92   I/O     O                 
+DATA_OUT<1>                   2     FB3_15  91   I/O     O                 
+DATA_OUT<2>                   2     FB3_16  90   I/O     O                 
+
+Signals Used by Logic in Function Block
+  1: DATA_IN_AV         8: SPIN_LINK_OUT<5>        15: XLXI_21/NIBBLE_BUFFER<0> 
+  2: DATA_OUT_AV        9: SPIN_LINK_OUT<6>        16: XLXI_21/NIBBLE_BUFFER<1> 
+  3: SPIN_LINK_OUT<0>  10: XLXI_20/BSY_CLEAR       17: XLXI_21/NIBBLE_BUFFER<2> 
+  4: SPIN_LINK_OUT<1>  11: XLXI_20/BSY_SET         18: XLXI_21/NIBBLE_BUFFER<3> 
+  5: SPIN_LINK_OUT<2>  12: XLXI_21/DATA_BUFFER<0>  19: XLXI_21/NIBBLE_BUFFER<4> 
+  6: SPIN_LINK_OUT<3>  13: XLXI_21/DATA_BUFFER<1>  20: XLXI_21/NIBBLE_BUFFER<5> 
+  7: SPIN_LINK_OUT<4>  14: XLXI_21/DATA_BUFFER<2>  21: XLXI_21/NIBBLE_BUFFER<6> 
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+XLXI_21/DECODED_STAT_or000034 
+                  ..XXXXXXX.....XXXXXXX................... 14      
+DATA_IN_BSY       .........XX............................. 2       
+N_PZ_232          .....XX..........XX..................... 4       
+N_PZ_217          ......XX..........XX.................... 4       
+XLXI_20/DATA_BUFFER<0> 
+                  X.X...........X......................... 3       
+XLXI_20/DATA_BUFFER<1> 
+                  X.XXXXXXX.....XXXXXXX................... 15      
+XLXI_21/DECODED_NIBBLE_cmp_eq0015 
+                  ..XXXXXXX.....XXXXXXX................... 14      
+XLXI_21/DECODED_NIBBLE_cmp_eq0014 
+                  ..XXXXXXX.....XXXXXXX................... 14      
+XLXI_21/DECODED_NIBBLE_mux0001<1>14 
+                  ..XXXXXXX.....XXXXXXX................... 14      
+XLXI_20/DATA_BUFFER<2> 
+                  X.XXXXXXX.....XXXXXXX................... 15      
+XLXI_21/DECODED_NIBBLE_cmp_eq0012 
+                  ..XXXXXXX.....XXXXXXX................... 14      
+XLXI_20/DATA_BUFFER<3> 
+                  X.XXXXXXX.....XXXXXXX................... 15      
+DATA_OUT<0>       .X.........X............................ 2       
+DATA_OUT<1>       .X..........X........................... 2       
+DATA_OUT<2>       .X...........X.......................... 2       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB4  ***********************************
+This function block is part of I/O Bank number:               1
+Number of function block inputs used/remaining:               27/13
+Number of function block control terms used/remaining:        3/1
+Number of PLA product terms used/remaining:                   54/2
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+SPIN_LINK_IN<5>               7     FB4_1   28   DGE/I/O O                 
+XLXI_21/DATA_BUFFER<2>        2     FB4_2        (b)     (b)    +          
+XLXI_21/DATA_BUFFER<1>        2     FB4_3        (b)     (b)    +          
+SPIN_LINK_IN<4>               4     FB4_4   29   I/O     O                 
+SPIN_LINK_IN<3>               7     FB4_5   30   I/O     O                 
+SPIN_LINK_IN<2>               7     FB4_6   32   I/O     O                 
+SPIN_LINK_IN<1>               7     FB4_7   33   I/O     O                 
+XLXI_21/DATA_BUFFER<0>        2     FB4_8        (b)     (b)    +          
+XLXI_20/DATA_NIBBLE<1>        5     FB4_9        (b)     (b)        +      
+XLXI_20/DATA_NIBBLE<0>        5     FB4_10       (b)     (b)            +  
+SPIN_LINK_IN<0>               7     FB4_11  34   I/O     O                 
+XLXI_21/DATA_BUFFER<5>        2     FB4_12  35   I/O     I      +          
+XLXI_21/DATA_BUFFER<4>        2     FB4_13  36   I/O     (b)    +          
+XLXI_21/DATA_BUFFER<3>        2     FB4_14  37   I/O     (b)    +          
+XLXI_21/NIBBLE_BUFFER<6>      1     FB4_15  39   I/O     I      +          
+XLXI_21/NIBBLE_BUFFER<5>      1     FB4_16  40   I/O     I      +          
+
+Signals Used by Logic in Function Block
+  1: DATA_IN<8>                   10: XLXI_20/DATA_BUFFER<7>  19: XLXI_20/_mux0000 
+  2: XLXI_20/DATA_BUFFER<0>       11: XLXI_20/DATA_BUFFER<8>  20: XLXI_20/_mux0005 
+  3: XLXI_20/DATA_BUFFER<1>       12: XLXI_20/DATA_NIBBLE<0>  21: XLXI_21/CLEAR_BUFFER 
+  4: XLXI_20/DATA_BUFFER<2>       13: XLXI_20/DATA_NIBBLE<1>  22: XLXI_21/DATA_BUFFER<4> 
+  5: XLXI_20/DATA_BUFFER<3>       14: XLXI_20/DATA_NIBBLE<2>  23: XLXI_21/DATA_BUFFER<5> 
+  6: XLXI_20/DATA_BUFFER<4>       15: XLXI_20/DATA_NIBBLE<3>  24: XLXI_21/DATA_BUFFER<6> 
+  7: XLXI_20/DATA_BUFFER<5>       16: XLXI_20/DATA_NIBBLE<4>  25: XLXI_21/DATA_BUFFER<7> 
+  8: XLXI_20/DATA_BUFFER<6>       17: XLXI_20/SEND1           26: XLXI_21/DECODED_NIBBLE<0> 
+  9: XLXI_20/DATA_BUFFER<6>.COMB  18: XLXI_20/SEND2           27: XLXI_21/DECODED_NIBBLE<1> 
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+SPIN_LINK_IN<5>   X..XX..XXXX..XXXXX...................... 12      
+XLXI_21/DATA_BUFFER<2> 
+                  ....................X..X................ 2       
+XLXI_21/DATA_BUFFER<1> 
+                  ....................X.X................. 2       
+SPIN_LINK_IN<4>   X..XX..XXXX..XXXXX...................... 12      
+SPIN_LINK_IN<3>   XXXXXXXXXXXXXXXXXX...................... 18      
+SPIN_LINK_IN<2>   XXXXXXXXXXXXXXXXXX...................... 18      
+SPIN_LINK_IN<1>   XXXXXXXXXXXXXXXXXX...................... 18      
+XLXI_21/DATA_BUFFER<0> 
+                  ....................XX.................. 2       
+XLXI_20/DATA_NIBBLE<1> 
+                  ......X.........XXX..................... 4       
+XLXI_20/DATA_NIBBLE<0> 
+                  .....X..........XX.X.................... 4       
+SPIN_LINK_IN<0>   XXXXXXXXXXXXXXXXXX...................... 18      
+XLXI_21/DATA_BUFFER<5> 
+                  ....................X.....X............. 2       
+XLXI_21/DATA_BUFFER<4> 
+                  ....................X....X.............. 2       
+XLXI_21/DATA_BUFFER<3> 
+                  ....................X...X............... 2       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB5  ***********************************
+This function block is part of I/O Bank number:               2
+Number of function block inputs used/remaining:               37/3
+Number of function block control terms used/remaining:        2/2
+Number of PLA product terms used/remaining:                   49/7
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+(unused)                      0     FB5_1   65   I/O           
+(unused)                      0     FB5_2   66   I/O           
+(unused)                      0     FB5_3   67   I/O           
+N_PZ_273                      2     FB5_4        (b)     (b)               
+(unused)                      0     FB5_5   68   I/O           
+N_PZ_272                      2     FB5_6        (b)     (b)               
+XLXI_21/DATA_BUFFER<7>        2     FB5_7   70   I/O     (b)    +          
+XLXI_21/DECODED_NIBBLE_mux0001<0>36
+                              16    FB5_8        (b)     (b)               
+N_PZ_271                      2     FB5_9        (b)     (b)               
+XLXI_21/ACK_STATUS1           2     FB5_10       (b)     (b)               
+XLXI_21/DECODED_NIBBLE<2>     16    FB5_11  71   I/O     (b)    +          
+XLXI_21/DATA_BUFFER<6>        2     FB5_12  72   I/O     (b)    +          
+N_PZ_275                      2     FB5_13  73   I/O     (b)               
+N_PZ_274                      2     FB5_14  74   I/O     (b)               
+DATA_OUT_AV                   2     FB5_15  76   I/O     O          +      
+XLXI_21/DAV_CLEAR             2     FB5_16       (b)     (b)        +      
+
+Signals Used by Logic in Function Block
+  1: DATA_O_ACK        14: SPIN_LINK_OUT<4>                   26: XLXI_21/DECODED_NIBBLE_cmp_eq0006 
+  2: N_PZ_215          15: SPIN_LINK_OUT<5>                   27: XLXI_21/DECODED_NIBBLE_cmp_eq0012 
+  3: N_PZ_217          16: SPIN_LINK_OUT<6>                   28: XLXI_21/DECODED_NIBBLE_cmp_eq0014 
+  4: N_PZ_232          17: XLXI_20/DATA_BUFFER<0>.COMB        29: XLXI_21/DECODED_NIBBLE_cmp_eq0015 
+  5: N_PZ_271          18: XLXI_20/DATA_BUFFER<3>.COMB        30: XLXI_21/DECODED_STAT_or000034 
+  6: N_PZ_272          19: XLXI_21/ACK_OK                     31: XLXI_21/NIBBLE_BUFFER<0> 
+  7: N_PZ_273          20: XLXI_21/CLEAR_BUFFER               32: XLXI_21/NIBBLE_BUFFER<1> 
+  8: N_PZ_274          21: XLXI_21/DAV_CLEAR                  33: XLXI_21/NIBBLE_BUFFER<2> 
+  9: N_PZ_275          22: XLXI_21/DAV_SET_mux0002            34: XLXI_21/NIBBLE_BUFFER<3> 
+ 10: SPIN_LINK_OUT<0>  23: XLXI_21/DECODED_NIBBLE<2>          35: XLXI_21/NIBBLE_BUFFER<4> 
+ 11: SPIN_LINK_OUT<1>  24: XLXI_21/DECODED_NIBBLE<3>          36: XLXI_21/NIBBLE_BUFFER<5> 
+ 12: SPIN_LINK_OUT<2>  25: XLXI_21/DECODED_NIBBLE_cmp_eq0005  37: XLXI_21/NIBBLE_BUFFER<6> 
+ 13: SPIN_LINK_OUT<3> 
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+N_PZ_273          ...........X....................X....... 2       
+N_PZ_272          ..............X....................X.... 2       
+XLXI_21/DATA_BUFFER<7> 
+                  ...................X...X................ 2       
+XLXI_21/DECODED_NIBBLE_mux0001<0>36 
+                  .........XXXXXXX..............XXXXXXX... 14      
+N_PZ_271          ............X....................X...... 2       
+XLXI_21/ACK_STATUS1 
+                  X.................X..................... 2       
+XLXI_21/DECODED_NIBBLE<2> 
+                  .XXXXXXXX.......XX.X..X.XXXXXX.......... 18      
+XLXI_21/DATA_BUFFER<6> 
+                  ...................X..X................. 2       
+N_PZ_275          .............X....................X..... 2       
+N_PZ_274          ...............X....................X... 2       
+DATA_OUT_AV       ....................XX.................. 2       
+XLXI_21/DAV_CLEAR 
+                  X...................X................... 2       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB6  ***********************************
+This function block is part of I/O Bank number:               1
+Number of function block inputs used/remaining:               23/17
+Number of function block control terms used/remaining:        1/3
+Number of PLA product terms used/remaining:                   34/22
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+(unused)                      0     FB6_1   64   I/O           
+(unused)                      0     FB6_2   63   I/O           
+(unused)                      0     FB6_3   61   I/O           
+(unused)                      0     FB6_4   60   I/O           
+(unused)                      0     FB6_5   59   I/O           
+(unused)                      0     FB6_6   58   I/O           
+(unused)                      0     FB6_7        (b)           
+(unused)                      0     FB6_8        (b)           
+(unused)                      0     FB6_9        (b)           
+(unused)                      0     FB6_10       (b)           
+XLXI_21/DECODED_NIBBLE<1>     13    FB6_11       (b)     (b)    +          
+(unused)                      0     FB6_12  56   I/O           
+XLXI_21/DECODED_NIBBLE<0>     13    FB6_13       (b)     (b)    +          
+(unused)                      0     FB6_14  55   I/O           
+XLXI_21/DECODED_NIBBLE<3>     11    FB6_15       (b)     (b)    +          
+(unused)                      0     FB6_16  54   I/O           
+
+Signals Used by Logic in Function Block
+  1: N_PZ_215           9: XLXI_20/DATA_BUFFER<0>.COMB  17: XLXI_21/DECODED_NIBBLE_cmp_eq0005 
+  2: N_PZ_217          10: XLXI_20/DATA_BUFFER<1>.COMB  18: XLXI_21/DECODED_NIBBLE_cmp_eq0006 
+  3: N_PZ_232          11: XLXI_20/DATA_BUFFER<2>.COMB  19: XLXI_21/DECODED_NIBBLE_cmp_eq0012 
+  4: N_PZ_271          12: XLXI_20/DATA_BUFFER<3>.COMB  20: XLXI_21/DECODED_NIBBLE_cmp_eq0014 
+  5: N_PZ_272          13: XLXI_21/CLEAR_BUFFER         21: XLXI_21/DECODED_NIBBLE_cmp_eq0015 
+  6: N_PZ_273          14: XLXI_21/DECODED_NIBBLE<0>    22: XLXI_21/DECODED_NIBBLE_mux0001<1>14 
+  7: N_PZ_274          15: XLXI_21/DECODED_NIBBLE<1>    23: XLXI_21/DECODED_STAT_or000034 
+  8: N_PZ_275          16: XLXI_21/DECODED_NIBBLE<3>   
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+XLXI_21/DECODED_NIBBLE<1> 
+                  XXXXXXXXX.X.X.X..X.XX.X................. 16      
+XLXI_21/DECODED_NIBBLE<0> 
+                  XXXXXXXXXX.XXX..X...X.X................. 16      
+XLXI_21/DECODED_NIBBLE<3> 
+                  XXXXXXX.XXXXX..X..XXXXX................. 18      
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB7  ***********************************
+This function block is part of I/O Bank number:               2
+Number of function block inputs used/remaining:               8/32
+Number of function block control terms used/remaining:        1/3
+Number of PLA product terms used/remaining:                   9/47
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+(unused)                      0     FB7_1   77   I/O     I     
+DATA_OUT<8>                   2     FB7_2   78   I/O     O      +          
+(unused)                      0     FB7_3        (b)           
+(unused)                      0     FB7_4   79   I/O           
+XLXI_20/DATA_BUFFER<5>        1     FB7_5   80   I/O     I                 
+XLXI_20/DATA_BUFFER<4>        1     FB7_6   81   I/O     I                 
+(unused)                      0     FB7_7        (b)           
+(unused)                      0     FB7_8        (b)           
+(unused)                      0     FB7_9        (b)           
+(unused)                      0     FB7_10       (b)           
+DATA_OUT<7>                   2     FB7_11  82   I/O     O      +          
+(unused)                      0     FB7_12       (b)           
+DATA_OUT<6>                   2     FB7_13  85   I/O     O      +          
+DATA_OUT<5>                   2     FB7_14  86   I/O     O      +          
+DATA_OUT<4>                   2     FB7_15  87   I/O     O      +          
+DATA_OUT<3>                   2     FB7_16  89   I/O     O      +          
+
+Signals Used by Logic in Function Block
+  1: DATA_IN_AV               4: XLXI_21/DATA_BUFFER<4>   7: XLXI_21/DATA_BUFFER<7> 
+  2: DATA_OUT_AV              5: XLXI_21/DATA_BUFFER<5>   8: XLXI_21/DATA_BUFFER<8> 
+  3: XLXI_21/DATA_BUFFER<3>   6: XLXI_21/DATA_BUFFER<6> 
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+DATA_OUT<8>       .X.....X................................ 2       
+DATA_OUT<7>       .X....X................................. 2       
+DATA_OUT<6>       .X...X.................................. 2       
+DATA_OUT<5>       .X..X................................... 2       
+DATA_OUT<4>       .X.X.................................... 2       
+DATA_OUT<3>       .XX..................................... 2       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB8  ***********************************
+This function block is part of I/O Bank number:               1
+Number of function block inputs used/remaining:               1/39
+Number of function block control terms used/remaining:        1/3
+Number of PLA product terms used/remaining:                   1/55
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+(unused)                      0     FB8_1        (b)           
+(unused)                      0     FB8_2   53   I/O           
+(unused)                      0     FB8_3   52   I/O           
+(unused)                      0     FB8_4   50   I/O           
+(unused)                      0     FB8_5        (b)           
+(unused)                      0     FB8_6   49   I/O           
+(unused)                      0     FB8_7        (b)           
+(unused)                      0     FB8_8        (b)           
+(unused)                      0     FB8_9        (b)           
+(unused)                      0     FB8_10       (b)           
+(unused)                      0     FB8_11       (b)           
+(unused)                      0     FB8_12  46   I/O           
+(unused)                      0     FB8_13  44   I/O           
+XLXI_21/NIBBLE_BUFFER<2>      1     FB8_14  43   I/O     I      +          
+XLXI_21/NIBBLE_BUFFER<3>      1     FB8_15  42   I/O     I      +          
+XLXI_21/NIBBLE_BUFFER<4>      1     FB8_16  41   I/O     I      +          
+
+Signals Used by Logic in Function Block
+  1: XLXI_21/CLEAR_BUFFER 
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*******************************  Equations  ********************************
+
+********** Mapped Logic **********
+
+LDCP_DATA_IN_BSY: LDCP port map (DATA_IN_BSY,'0',XLXI_20/BSY_CLEAR,'0',XLXI_20/BSY_SET);
+
+LDCP_DATA_OUT0: LDCP port map (DATA_OUT(0),XLXI_21/DATA_BUFFER(0),DATA_OUT_AV,'0','0');
+
+LDCP_DATA_OUT1: LDCP port map (DATA_OUT(1),XLXI_21/DATA_BUFFER(1),DATA_OUT_AV,'0','0');
+
+LDCP_DATA_OUT2: LDCP port map (DATA_OUT(2),XLXI_21/DATA_BUFFER(2),DATA_OUT_AV,'0','0');
+
+LDCP_DATA_OUT3: LDCP port map (DATA_OUT(3),XLXI_21/DATA_BUFFER(3),DATA_OUT_AV,'0','0');
+
+LDCP_DATA_OUT4: LDCP port map (DATA_OUT(4),XLXI_21/DATA_BUFFER(4),DATA_OUT_AV,'0','0');
+
+LDCP_DATA_OUT5: LDCP port map (DATA_OUT(5),XLXI_21/DATA_BUFFER(5),DATA_OUT_AV,'0','0');
+
+LDCP_DATA_OUT6: LDCP port map (DATA_OUT(6),XLXI_21/DATA_BUFFER(6),DATA_OUT_AV,'0','0');
+
+LDCP_DATA_OUT7: LDCP port map (DATA_OUT(7),XLXI_21/DATA_BUFFER(7),DATA_OUT_AV,'0','0');
+
+LDCP_DATA_OUT8: LDCP port map (DATA_OUT(8),XLXI_21/DATA_BUFFER(8),DATA_OUT_AV,'0','0');
+
+LDCP_DATA_OUT_AV: LDCP port map (DATA_OUT_AV,NOT '0',NOT XLXI_21/DAV_SET_mux0002,XLXI_21/DAV_CLEAR,'0');
+
+
+N_PZ_215 <= ((SPIN_LINK_OUT(1) AND NOT XLXI_21/NIBBLE_BUFFER(1))
+	OR (NOT SPIN_LINK_OUT(1) AND XLXI_21/NIBBLE_BUFFER(1)));
+
+
+N_PZ_217 <= ((SPIN_LINK_OUT(4) AND NOT XLXI_21/NIBBLE_BUFFER(4))
+	OR (NOT SPIN_LINK_OUT(4) AND XLXI_21/NIBBLE_BUFFER(4))
+	OR (SPIN_LINK_OUT(5) AND NOT XLXI_21/NIBBLE_BUFFER(5))
+	OR (NOT SPIN_LINK_OUT(5) AND XLXI_21/NIBBLE_BUFFER(5)));
+
+
+N_PZ_232 <= ((SPIN_LINK_OUT(3) AND NOT XLXI_21/NIBBLE_BUFFER(3))
+	OR (NOT SPIN_LINK_OUT(3) AND XLXI_21/NIBBLE_BUFFER(3))
+	OR (SPIN_LINK_OUT(4) AND XLXI_21/NIBBLE_BUFFER(4))
+	OR (NOT SPIN_LINK_OUT(4) AND NOT XLXI_21/NIBBLE_BUFFER(4)));
+
+
+N_PZ_271 <= ((SPIN_LINK_OUT(3) AND NOT XLXI_21/NIBBLE_BUFFER(3))
+	OR (NOT SPIN_LINK_OUT(3) AND XLXI_21/NIBBLE_BUFFER(3)));
+
+
+N_PZ_272 <= ((SPIN_LINK_OUT(5) AND NOT XLXI_21/NIBBLE_BUFFER(5))
+	OR (NOT SPIN_LINK_OUT(5) AND XLXI_21/NIBBLE_BUFFER(5)));
+
+
+N_PZ_273 <= ((SPIN_LINK_OUT(2) AND XLXI_21/NIBBLE_BUFFER(2))
+	OR (NOT SPIN_LINK_OUT(2) AND NOT XLXI_21/NIBBLE_BUFFER(2)));
+
+
+N_PZ_274 <= ((SPIN_LINK_OUT(6) AND XLXI_21/NIBBLE_BUFFER(6))
+	OR (NOT SPIN_LINK_OUT(6) AND NOT XLXI_21/NIBBLE_BUFFER(6)));
+
+
+N_PZ_275 <= ((SPIN_LINK_OUT(4) AND NOT XLXI_21/NIBBLE_BUFFER(4))
+	OR (NOT SPIN_LINK_OUT(4) AND XLXI_21/NIBBLE_BUFFER(4)));
+
+FTCPE_SPIN_LINK_IN0: FTCPE port map (SPIN_LINK_IN(0),SPIN_LINK_IN_T(0),XLXI_20/DATA_BUFFER(6).COMB,'0','0','1');
+SPIN_LINK_IN_T(0) <= ((NOT DATA_IN(8) AND XLXI_20/SEND1 AND 
+	NOT XLXI_20/DATA_BUFFER(1) AND NOT XLXI_20/DATA_BUFFER(0) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND XLXI_20/SEND2 AND 
+	NOT XLXI_20/DATA_BUFFER(4) AND NOT XLXI_20/DATA_BUFFER(5) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/SEND2 AND 
+	NOT XLXI_20/DATA_NIBBLE(0) AND NOT XLXI_20/DATA_NIBBLE(1) AND NOT XLXI_20/DATA_NIBBLE(4))
+	OR (NOT DATA_IN(8) AND XLXI_20/SEND1 AND 
+	XLXI_20/DATA_BUFFER(3) AND XLXI_20/DATA_BUFFER(1) AND XLXI_20/DATA_BUFFER(0) AND 
+	XLXI_20/DATA_BUFFER(2) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND XLXI_20/SEND2 AND 
+	XLXI_20/DATA_BUFFER(6) AND XLXI_20/DATA_BUFFER(4) AND XLXI_20/DATA_BUFFER(5) AND 
+	NOT XLXI_20/DATA_BUFFER(8) AND XLXI_20/DATA_BUFFER(7))
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/SEND2 AND 
+	XLXI_20/DATA_NIBBLE(0) AND XLXI_20/DATA_NIBBLE(1) AND NOT XLXI_20/DATA_NIBBLE(4) AND 
+	XLXI_20/DATA_NIBBLE(2) AND XLXI_20/DATA_NIBBLE(3)));
+
+FTCPE_SPIN_LINK_IN1: FTCPE port map (SPIN_LINK_IN(1),SPIN_LINK_IN_T(1),XLXI_20/DATA_BUFFER(6).COMB,'0','0','1');
+SPIN_LINK_IN_T(1) <= ((NOT DATA_IN(8) AND XLXI_20/SEND1 AND 
+	NOT XLXI_20/DATA_BUFFER(1) AND XLXI_20/DATA_BUFFER(0) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND XLXI_20/SEND2 AND 
+	XLXI_20/DATA_BUFFER(4) AND NOT XLXI_20/DATA_BUFFER(5) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/SEND2 AND 
+	XLXI_20/DATA_NIBBLE(0) AND NOT XLXI_20/DATA_NIBBLE(1) AND NOT XLXI_20/DATA_NIBBLE(4))
+	OR (NOT DATA_IN(8) AND XLXI_20/SEND1 AND 
+	XLXI_20/DATA_BUFFER(3) AND NOT XLXI_20/DATA_BUFFER(1) AND XLXI_20/DATA_BUFFER(2) AND 
+	NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND XLXI_20/SEND2 AND 
+	XLXI_20/DATA_BUFFER(6) AND NOT XLXI_20/DATA_BUFFER(5) AND NOT XLXI_20/DATA_BUFFER(8) AND 
+	XLXI_20/DATA_BUFFER(7))
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/SEND2 AND 
+	NOT XLXI_20/DATA_NIBBLE(1) AND NOT XLXI_20/DATA_NIBBLE(4) AND XLXI_20/DATA_NIBBLE(2) AND 
+	XLXI_20/DATA_NIBBLE(3)));
+
+FTCPE_SPIN_LINK_IN2: FTCPE port map (SPIN_LINK_IN(2),SPIN_LINK_IN_T(2),XLXI_20/DATA_BUFFER(6).COMB,'0','0','1');
+SPIN_LINK_IN_T(2) <= ((NOT DATA_IN(8) AND XLXI_20/SEND1 AND 
+	XLXI_20/DATA_BUFFER(1) AND NOT XLXI_20/DATA_BUFFER(0) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND XLXI_20/SEND2 AND 
+	NOT XLXI_20/DATA_BUFFER(4) AND XLXI_20/DATA_BUFFER(5) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/SEND2 AND 
+	NOT XLXI_20/DATA_NIBBLE(0) AND XLXI_20/DATA_NIBBLE(1) AND NOT XLXI_20/DATA_NIBBLE(4))
+	OR (NOT DATA_IN(8) AND XLXI_20/SEND1 AND 
+	XLXI_20/DATA_BUFFER(3) AND NOT XLXI_20/DATA_BUFFER(1) AND XLXI_20/DATA_BUFFER(0) AND 
+	XLXI_20/DATA_BUFFER(2) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND XLXI_20/SEND2 AND 
+	XLXI_20/DATA_BUFFER(6) AND XLXI_20/DATA_BUFFER(4) AND NOT XLXI_20/DATA_BUFFER(5) AND 
+	NOT XLXI_20/DATA_BUFFER(8) AND XLXI_20/DATA_BUFFER(7))
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/SEND2 AND 
+	XLXI_20/DATA_NIBBLE(0) AND NOT XLXI_20/DATA_NIBBLE(1) AND NOT XLXI_20/DATA_NIBBLE(4) AND 
+	XLXI_20/DATA_NIBBLE(2) AND XLXI_20/DATA_NIBBLE(3)));
+
+FTCPE_SPIN_LINK_IN3: FTCPE port map (SPIN_LINK_IN(3),SPIN_LINK_IN_T(3),XLXI_20/DATA_BUFFER(6).COMB,'0','0','1');
+SPIN_LINK_IN_T(3) <= ((NOT DATA_IN(8) AND XLXI_20/SEND1 AND 
+	XLXI_20/DATA_BUFFER(1) AND XLXI_20/DATA_BUFFER(0) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND XLXI_20/SEND2 AND 
+	XLXI_20/DATA_BUFFER(4) AND XLXI_20/DATA_BUFFER(5) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/SEND2 AND 
+	XLXI_20/DATA_NIBBLE(0) AND XLXI_20/DATA_NIBBLE(1) AND NOT XLXI_20/DATA_NIBBLE(4))
+	OR (NOT DATA_IN(8) AND XLXI_20/SEND1 AND 
+	XLXI_20/DATA_BUFFER(3) AND XLXI_20/DATA_BUFFER(1) AND XLXI_20/DATA_BUFFER(2) AND 
+	NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND XLXI_20/SEND2 AND 
+	XLXI_20/DATA_BUFFER(6) AND XLXI_20/DATA_BUFFER(5) AND NOT XLXI_20/DATA_BUFFER(8) AND 
+	XLXI_20/DATA_BUFFER(7))
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/SEND2 AND 
+	XLXI_20/DATA_NIBBLE(1) AND NOT XLXI_20/DATA_NIBBLE(4) AND XLXI_20/DATA_NIBBLE(2) AND 
+	XLXI_20/DATA_NIBBLE(3)));
+
+FTCPE_SPIN_LINK_IN4: FTCPE port map (SPIN_LINK_IN(4),SPIN_LINK_IN_T(4),XLXI_20/DATA_BUFFER(6).COMB,'0','0','1');
+SPIN_LINK_IN_T(4) <= ((NOT DATA_IN(8) AND XLXI_20/SEND1 AND 
+	NOT XLXI_20/DATA_BUFFER(3) AND NOT XLXI_20/DATA_BUFFER(2) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND XLXI_20/SEND2 AND 
+	NOT XLXI_20/DATA_BUFFER(6) AND NOT XLXI_20/DATA_BUFFER(8) AND NOT XLXI_20/DATA_BUFFER(7))
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/SEND2 AND 
+	NOT XLXI_20/DATA_NIBBLE(4) AND NOT XLXI_20/DATA_NIBBLE(2) AND NOT XLXI_20/DATA_NIBBLE(3)));
+
+FTCPE_SPIN_LINK_IN5: FTCPE port map (SPIN_LINK_IN(5),SPIN_LINK_IN_T(5),XLXI_20/DATA_BUFFER(6).COMB,'0','0','1');
+SPIN_LINK_IN_T(5) <= NOT (((NOT DATA_IN(8) AND XLXI_20/SEND1 AND 
+	XLXI_20/DATA_BUFFER(3) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT DATA_IN(8) AND XLXI_20/SEND1 AND 
+	NOT XLXI_20/DATA_BUFFER(2) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND XLXI_20/SEND2 AND 
+	NOT XLXI_20/DATA_BUFFER(6) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND XLXI_20/SEND2 AND 
+	NOT XLXI_20/DATA_BUFFER(8) AND XLXI_20/DATA_BUFFER(7))
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/SEND2 AND 
+	NOT XLXI_20/DATA_NIBBLE(4) AND NOT XLXI_20/DATA_NIBBLE(2))
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/SEND2 AND 
+	NOT XLXI_20/DATA_NIBBLE(4) AND XLXI_20/DATA_NIBBLE(3))));
+
+FTCPE_SPIN_LINK_IN6: FTCPE port map (SPIN_LINK_IN(6),SPIN_LINK_IN_T(6),XLXI_20/DATA_BUFFER(6).COMB,'0','0','1');
+SPIN_LINK_IN_T(6) <= NOT (((NOT DATA_IN(8) AND XLXI_20/SEND1 AND 
+	NOT XLXI_20/DATA_BUFFER(3) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT DATA_IN(8) AND XLXI_20/SEND1 AND 
+	XLXI_20/DATA_BUFFER(2) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND XLXI_20/SEND2 AND 
+	XLXI_20/DATA_BUFFER(6) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND XLXI_20/SEND2 AND 
+	NOT XLXI_20/DATA_BUFFER(8) AND NOT XLXI_20/DATA_BUFFER(7))
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/SEND2 AND 
+	NOT XLXI_20/DATA_NIBBLE(4) AND XLXI_20/DATA_NIBBLE(2))
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/SEND2 AND 
+	NOT XLXI_20/DATA_NIBBLE(4) AND NOT XLXI_20/DATA_NIBBLE(3))));
+
+FTCPE_SPIN_LINK_OUT_ACK: FTCPE port map (SPIN_LINK_OUT_ACK,'0',XLXI_21/ACK_OK,'0','0','1');
+
+FDDCPE_XLXI_20/BSY_CLEAR: FDDCPE port map (XLXI_20/BSY_CLEAR,XLXI_20/BSY_CLEAR_D,SPIN_LINK_IN_ACK,XLXI_20/BSY_CLEAR,'0','1');
+XLXI_20/BSY_CLEAR_D <= NOT ((NOT XLXI_20/BSY_CLEAR AND XLXI_20/SEL));
+
+FDDCPE_XLXI_20/BSY_SET: FDDCPE port map (XLXI_20/BSY_SET,!'0',DATA_IN_AV,XLXI_20/BSY_SET,'0','1');
+
+
+XLXI_20/DATA_BUFFER(0).COMB <= ((SPIN_LINK_OUT(0) AND NOT XLXI_21/NIBBLE_BUFFER(0))
+	OR (NOT SPIN_LINK_OUT(0) AND XLXI_21/NIBBLE_BUFFER(0)));FDDCPE_XLXI_20/DATA_BUFFER0: FDDCPE port map (XLXI_20/DATA_BUFFER(0),DATA_IN(0),DATA_IN_AV,'0','0','1');
+
+
+XLXI_20/DATA_BUFFER(1).COMB <= ((SPIN_LINK_OUT(0) AND NOT XLXI_21/NIBBLE_BUFFER(0))
+	OR (NOT SPIN_LINK_OUT(0) AND XLXI_21/NIBBLE_BUFFER(0))
+	OR (SPIN_LINK_OUT(1) AND XLXI_21/NIBBLE_BUFFER(1))
+	OR (NOT SPIN_LINK_OUT(1) AND NOT XLXI_21/NIBBLE_BUFFER(1))
+	OR (SPIN_LINK_OUT(3) AND NOT XLXI_21/NIBBLE_BUFFER(3))
+	OR (NOT SPIN_LINK_OUT(3) AND XLXI_21/NIBBLE_BUFFER(3))
+	OR (SPIN_LINK_OUT(2) AND NOT XLXI_21/NIBBLE_BUFFER(2))
+	OR (NOT SPIN_LINK_OUT(2) AND XLXI_21/NIBBLE_BUFFER(2))
+	OR (SPIN_LINK_OUT(4) AND NOT XLXI_21/NIBBLE_BUFFER(4))
+	OR (NOT SPIN_LINK_OUT(4) AND XLXI_21/NIBBLE_BUFFER(4))
+	OR (SPIN_LINK_OUT(5) AND NOT XLXI_21/NIBBLE_BUFFER(5))
+	OR (NOT SPIN_LINK_OUT(5) AND XLXI_21/NIBBLE_BUFFER(5))
+	OR (SPIN_LINK_OUT(6) AND XLXI_21/NIBBLE_BUFFER(6))
+	OR (NOT SPIN_LINK_OUT(6) AND NOT XLXI_21/NIBBLE_BUFFER(6)));FDDCPE_XLXI_20/DATA_BUFFER1: FDDCPE port map (XLXI_20/DATA_BUFFER(1),DATA_IN(1),DATA_IN_AV,'0','0','1');
+
+
+XLXI_20/DATA_BUFFER(2).COMB <= ((SPIN_LINK_OUT(0) AND NOT XLXI_21/NIBBLE_BUFFER(0))
+	OR (NOT SPIN_LINK_OUT(0) AND XLXI_21/NIBBLE_BUFFER(0))
+	OR (SPIN_LINK_OUT(1) AND NOT XLXI_21/NIBBLE_BUFFER(1))
+	OR (NOT SPIN_LINK_OUT(1) AND XLXI_21/NIBBLE_BUFFER(1))
+	OR (SPIN_LINK_OUT(3) AND NOT XLXI_21/NIBBLE_BUFFER(3))
+	OR (NOT SPIN_LINK_OUT(3) AND XLXI_21/NIBBLE_BUFFER(3))
+	OR (SPIN_LINK_OUT(2) AND XLXI_21/NIBBLE_BUFFER(2))
+	OR (NOT SPIN_LINK_OUT(2) AND NOT XLXI_21/NIBBLE_BUFFER(2))
+	OR (SPIN_LINK_OUT(4) AND NOT XLXI_21/NIBBLE_BUFFER(4))
+	OR (NOT SPIN_LINK_OUT(4) AND XLXI_21/NIBBLE_BUFFER(4))
+	OR (SPIN_LINK_OUT(5) AND NOT XLXI_21/NIBBLE_BUFFER(5))
+	OR (NOT SPIN_LINK_OUT(5) AND XLXI_21/NIBBLE_BUFFER(5))
+	OR (SPIN_LINK_OUT(6) AND XLXI_21/NIBBLE_BUFFER(6))
+	OR (NOT SPIN_LINK_OUT(6) AND NOT XLXI_21/NIBBLE_BUFFER(6)));FDDCPE_XLXI_20/DATA_BUFFER2: FDDCPE port map (XLXI_20/DATA_BUFFER(2),DATA_IN(2),DATA_IN_AV,'0','0','1');
+
+
+XLXI_20/DATA_BUFFER(3).COMB <= ((SPIN_LINK_OUT(0) AND NOT XLXI_21/NIBBLE_BUFFER(0))
+	OR (NOT SPIN_LINK_OUT(0) AND XLXI_21/NIBBLE_BUFFER(0))
+	OR (SPIN_LINK_OUT(1) AND XLXI_21/NIBBLE_BUFFER(1))
+	OR (NOT SPIN_LINK_OUT(1) AND NOT XLXI_21/NIBBLE_BUFFER(1))
+	OR (SPIN_LINK_OUT(3) AND NOT XLXI_21/NIBBLE_BUFFER(3))
+	OR (NOT SPIN_LINK_OUT(3) AND XLXI_21/NIBBLE_BUFFER(3))
+	OR (SPIN_LINK_OUT(2) AND XLXI_21/NIBBLE_BUFFER(2))
+	OR (NOT SPIN_LINK_OUT(2) AND NOT XLXI_21/NIBBLE_BUFFER(2))
+	OR (SPIN_LINK_OUT(4) AND NOT XLXI_21/NIBBLE_BUFFER(4))
+	OR (NOT SPIN_LINK_OUT(4) AND XLXI_21/NIBBLE_BUFFER(4))
+	OR (SPIN_LINK_OUT(5) AND NOT XLXI_21/NIBBLE_BUFFER(5))
+	OR (NOT SPIN_LINK_OUT(5) AND XLXI_21/NIBBLE_BUFFER(5))
+	OR (SPIN_LINK_OUT(6) AND NOT XLXI_21/NIBBLE_BUFFER(6))
+	OR (NOT SPIN_LINK_OUT(6) AND XLXI_21/NIBBLE_BUFFER(6)));FDDCPE_XLXI_20/DATA_BUFFER3: FDDCPE port map (XLXI_20/DATA_BUFFER(3),DATA_IN(3),DATA_IN_AV,'0','0','1');
+
+FDDCPE_XLXI_20/DATA_BUFFER4: FDDCPE port map (XLXI_20/DATA_BUFFER(4),DATA_IN(4),DATA_IN_AV,'0','0','1');
+
+FDDCPE_XLXI_20/DATA_BUFFER5: FDDCPE port map (XLXI_20/DATA_BUFFER(5),DATA_IN(5),DATA_IN_AV,'0','0','1');
+
+
+XLXI_20/DATA_BUFFER(6).COMB <= ((XLXI_20/SEND1 AND NOT XLXI_20/SEND2)
+	OR (NOT XLXI_20/SEND1 AND XLXI_20/SEND2));FDDCPE_XLXI_20/DATA_BUFFER6: FDDCPE port map (XLXI_20/DATA_BUFFER(6),DATA_IN(6),DATA_IN_AV,'0','0','1');
+
+
+XLXI_20/DATA_BUFFER(7).COMB <= ((NOT DATA_IN(8) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/DATA_BUFFER(8)));FDDCPE_XLXI_20/DATA_BUFFER7: FDDCPE port map (XLXI_20/DATA_BUFFER(7),DATA_IN(7),DATA_IN_AV,'0','0','1');
+
+FDDCPE_XLXI_20/DATA_BUFFER8: FDDCPE port map (XLXI_20/DATA_BUFFER(8),DATA_IN(8),DATA_IN_AV,'0','0','1');
+
+LDCP_XLXI_20/DATA_NIBBLE0: LDCP port map (XLXI_20/DATA_NIBBLE(0),XLXI_20/DATA_NIBBLE_D(0),XLXI_20/SEND2,XLXI_20/DATA_NIBBLE_CLR(0),XLXI_20/DATA_NIBBLE_PRE(0));
+XLXI_20/DATA_NIBBLE_D(0) <= NOT (((XLXI_20/SEND1 AND NOT XLXI_20/_mux0005)
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/DATA_BUFFER(4))));
+XLXI_20/DATA_NIBBLE_CLR(0) <= (XLXI_20/SEND1 AND NOT XLXI_20/_mux0005);
+XLXI_20/DATA_NIBBLE_PRE(0) <= (XLXI_20/SEND1 AND XLXI_20/_mux0005);
+
+LDCP_XLXI_20/DATA_NIBBLE1: LDCP port map (XLXI_20/DATA_NIBBLE(1),XLXI_20/DATA_NIBBLE_D(1),XLXI_20/SEND2,XLXI_20/DATA_NIBBLE_CLR(1),XLXI_20/DATA_NIBBLE_PRE(1));
+XLXI_20/DATA_NIBBLE_D(1) <= NOT (((XLXI_20/SEND1 AND NOT XLXI_20/_mux0000)
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/DATA_BUFFER(5))));
+XLXI_20/DATA_NIBBLE_CLR(1) <= (XLXI_20/SEND1 AND NOT XLXI_20/_mux0000);
+XLXI_20/DATA_NIBBLE_PRE(1) <= (XLXI_20/SEND1 AND XLXI_20/_mux0000);
+
+LDCP_XLXI_20/DATA_NIBBLE2: LDCP port map (XLXI_20/DATA_NIBBLE(2),XLXI_20/DATA_NIBBLE_D(2),XLXI_20/SEND2,XLXI_20/DATA_NIBBLE_CLR(2),XLXI_20/DATA_NIBBLE_PRE(2));
+XLXI_20/DATA_NIBBLE_D(2) <= NOT (((XLXI_20/SEND1 AND NOT XLXI_20/_mux0001)
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/DATA_BUFFER(6))));
+XLXI_20/DATA_NIBBLE_CLR(2) <= (XLXI_20/SEND1 AND NOT XLXI_20/_mux0001);
+XLXI_20/DATA_NIBBLE_PRE(2) <= (XLXI_20/SEND1 AND XLXI_20/_mux0001);
+
+LDCP_XLXI_20/DATA_NIBBLE3: LDCP port map (XLXI_20/DATA_NIBBLE(3),XLXI_20/DATA_NIBBLE_D(3),XLXI_20/SEND2,XLXI_20/DATA_NIBBLE_CLR(3),XLXI_20/DATA_NIBBLE_PRE(3));
+XLXI_20/DATA_NIBBLE_D(3) <= NOT (((XLXI_20/SEND1 AND NOT XLXI_20/_mux0002)
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/DATA_BUFFER(7))));
+XLXI_20/DATA_NIBBLE_CLR(3) <= (XLXI_20/SEND1 AND NOT XLXI_20/_mux0002);
+XLXI_20/DATA_NIBBLE_PRE(3) <= (XLXI_20/SEND1 AND XLXI_20/_mux0002);
+
+LDCP_XLXI_20/DATA_NIBBLE4: LDCP port map (XLXI_20/DATA_NIBBLE(4),XLXI_20/DATA_NIBBLE_D(4),XLXI_20/SEND2,XLXI_20/DATA_NIBBLE_CLR(4),XLXI_20/DATA_NIBBLE_PRE(4));
+XLXI_20/DATA_NIBBLE_D(4) <= NOT (((NOT DATA_IN(8) AND NOT XLXI_20/DATA_BUFFER(8))
+	OR (NOT XLXI_20/SEND1 AND NOT XLXI_20/DATA_BUFFER(8))));
+XLXI_20/DATA_NIBBLE_CLR(4) <= (NOT DATA_IN(8) AND XLXI_20/SEND1 AND 
+	NOT XLXI_20/DATA_BUFFER(8));
+XLXI_20/DATA_NIBBLE_PRE(4) <= (XLXI_20/SEND1 AND NOT XLXI_20/DATA_BUFFER(7).COMB);
+
+LDCP_XLXI_20/SEL: LDCP port map (XLXI_20/SEL,XLXI_20/SEL_D,XLXI_20/SEND2,XLXI_20/SEL_CLR,XLXI_20/SEL_PRE);
+XLXI_20/SEL_D <= (NOT DATA_IN(8) AND XLXI_20/SEND1);
+XLXI_20/SEL_CLR <= (DATA_IN(8) AND XLXI_20/SEND1);
+XLXI_20/SEL_PRE <= (NOT DATA_IN(8) AND XLXI_20/SEND1);
+
+FDDCPE_XLXI_20/SEND1: FDDCPE port map (XLXI_20/SEND1,NOT XLXI_20/SEND2,DATA_IN_AV,XLXI_20/SEND_CLEAR,'0','1');
+
+FDDCPE_XLXI_20/SEND2: FDDCPE port map (XLXI_20/SEND2,XLXI_20/SEND2_D,SPIN_LINK_IN_ACK,XLXI_20/SEND_CLEAR,'0','1');
+XLXI_20/SEND2_D <= NOT ((NOT XLXI_20/SEL AND NOT XLXI_20/SEND2));
+
+FDCPE_XLXI_20/SEND_CLEAR: FDCPE port map (XLXI_20/SEND_CLEAR,NOT '0',XLXI_20/DATA_BUFFER(6).COMB,XLXI_20/SEND_CLEAR,'0','1');
+
+
+XLXI_20/_mux0000 <= (NOT DATA_IN(8) AND XLXI_20/DATA_BUFFER(1));
+
+
+XLXI_20/_mux0001 <= (NOT DATA_IN(8) AND XLXI_20/DATA_BUFFER(2));
+
+
+XLXI_20/_mux0002 <= (NOT DATA_IN(8) AND XLXI_20/DATA_BUFFER(3));
+
+
+XLXI_20/_mux0005 <= (NOT DATA_IN(8) AND XLXI_20/DATA_BUFFER(0));
+
+
+XLXI_21/ACK_OK <= ((XLXI_21/CLEAR_BUFFER AND NOT XLXI_21/ACK_STATUS1 AND 
+	XLXI_21/DECODED_NIBBLE(4))
+	OR (XLXI_21/CLEAR_BUFFER AND NOT XLXI_21/ACK_STATUS1 AND 
+	XLXI_21/SEL)
+	OR (NOT XLXI_21/CLEAR_BUFFER AND NOT XLXI_21/ACK_STATUS1 AND 
+	NOT XLXI_21/ACK_STATUS2));
+
+FDCPE_XLXI_21/ACK_STATUS1: FDCPE port map (XLXI_21/ACK_STATUS1,NOT '0',DATA_O_ACK,NOT XLXI_21/ACK_OK,'0','1');
+
+LDCP_XLXI_21/ACK_STATUS2: LDCP port map (XLXI_21/ACK_STATUS2,XLXI_21/ACK_STATUS2_D,XLXI_21/CLEAR_BUFFER,NOT XLXI_21/ACK_OK,'0');
+XLXI_21/ACK_STATUS2_D <= (NOT XLXI_21/DECODED_NIBBLE(4) AND NOT XLXI_21/SEL);
+
+
+XLXI_21/BUFFERED_SET_Clk_INV6 <= ((NOT XLXI_21/CLEAR_BUFFER AND XLXI_21/ACK_STATUS2)
+	OR (XLXI_21/CLEAR_BUFFER AND NOT XLXI_21/DECODED_NIBBLE(4) AND 
+	NOT XLXI_21/SEL));
+
+FDCPE_XLXI_21/BUFFERED_SET: FDCPE port map (XLXI_21/BUFFERED_SET,'0',XLXI_21/BUFFERED_SET_C,'0',XLXI_21/CLEAR_BUFFER,'1');
+XLXI_21/BUFFERED_SET_C <= (NOT XLXI_21/ACK_STATUS1 AND 
+	NOT XLXI_21/BUFFERED_SET_Clk_INV6);
+
+
+XLXI_21/CLEAR_BUFFER <= ((NOT XLXI_21/CLEAR_BUFFER AND NOT XLXI_21/BUFFERED_SET AND 
+	N_PZ_215 AND XLXI_21/DECODED_STAT_or000034)
+	OR (NOT XLXI_21/CLEAR_BUFFER AND NOT XLXI_21/BUFFERED_SET AND 
+	XLXI_20/DATA_BUFFER(0).COMB AND XLXI_21/DECODED_STAT_or000034)
+	OR (NOT XLXI_21/CLEAR_BUFFER AND NOT XLXI_21/BUFFERED_SET AND 
+	NOT N_PZ_273 AND XLXI_21/DECODED_STAT_or000034)
+	OR (NOT XLXI_21/CLEAR_BUFFER AND NOT XLXI_21/BUFFERED_SET AND 
+	N_PZ_271 AND N_PZ_217 AND XLXI_21/DECODED_STAT_or000034)
+	OR (NOT XLXI_21/CLEAR_BUFFER AND NOT XLXI_21/BUFFERED_SET AND 
+	N_PZ_271 AND NOT N_PZ_274 AND XLXI_21/DECODED_STAT_or000034)
+	OR (NOT XLXI_21/CLEAR_BUFFER AND NOT XLXI_21/BUFFERED_SET AND 
+	N_PZ_217 AND NOT N_PZ_274 AND XLXI_21/DECODED_STAT_or000034)
+	OR (NOT XLXI_21/CLEAR_BUFFER AND NOT XLXI_21/BUFFERED_SET AND 
+	N_PZ_272 AND XLXI_21/DECODED_STAT_or000034 AND NOT N_PZ_232));
+
+LDCP_XLXI_21/DATA_BUFFER0: LDCP port map (XLXI_21/DATA_BUFFER(0),XLXI_21/DATA_BUFFER(4),XLXI_21/CLEAR_BUFFER,'0','0');
+
+LDCP_XLXI_21/DATA_BUFFER1: LDCP port map (XLXI_21/DATA_BUFFER(1),XLXI_21/DATA_BUFFER(5),XLXI_21/CLEAR_BUFFER,'0','0');
+
+LDCP_XLXI_21/DATA_BUFFER2: LDCP port map (XLXI_21/DATA_BUFFER(2),XLXI_21/DATA_BUFFER(6),XLXI_21/CLEAR_BUFFER,'0','0');
+
+LDCP_XLXI_21/DATA_BUFFER3: LDCP port map (XLXI_21/DATA_BUFFER(3),XLXI_21/DATA_BUFFER(7),XLXI_21/CLEAR_BUFFER,'0','0');
+
+LDCP_XLXI_21/DATA_BUFFER4: LDCP port map (XLXI_21/DATA_BUFFER(4),XLXI_21/DECODED_NIBBLE(0),XLXI_21/CLEAR_BUFFER,'0','0');
+
+LDCP_XLXI_21/DATA_BUFFER5: LDCP port map (XLXI_21/DATA_BUFFER(5),XLXI_21/DECODED_NIBBLE(1),XLXI_21/CLEAR_BUFFER,'0','0');
+
+LDCP_XLXI_21/DATA_BUFFER6: LDCP port map (XLXI_21/DATA_BUFFER(6),XLXI_21/DECODED_NIBBLE(2),XLXI_21/CLEAR_BUFFER,'0','0');
+
+LDCP_XLXI_21/DATA_BUFFER7: LDCP port map (XLXI_21/DATA_BUFFER(7),XLXI_21/DECODED_NIBBLE(3),XLXI_21/CLEAR_BUFFER,'0','0');
+
+LDCP_XLXI_21/DATA_BUFFER8: LDCP port map (XLXI_21/DATA_BUFFER(8),XLXI_21/DECODED_NIBBLE(4),XLXI_21/CLEAR_BUFFER,'0','0');
+
+FDCPE_XLXI_21/DAV_CLEAR: FDCPE port map (XLXI_21/DAV_CLEAR,NOT '0',DATA_O_ACK,XLXI_21/DAV_CLEAR,'0','1');
+
+LDCP_XLXI_21/DAV_SET: LDCP port map (XLXI_21/DAV_SET,XLXI_21/DAV_SET_D,XLXI_21/CLEAR_BUFFER,NOT XLXI_21/DAV_SET_mux0002,'0');
+XLXI_21/DAV_SET_D <= NOT ((NOT XLXI_21/DECODED_NIBBLE(4) AND NOT XLXI_21/SEL));
+
+
+XLXI_21/DAV_SET_mux0002 <= ((NOT XLXI_21/CLEAR_BUFFER AND NOT XLXI_21/DAV_SET)
+	OR (XLXI_21/CLEAR_BUFFER AND NOT XLXI_21/DECODED_NIBBLE(4) AND 
+	NOT XLXI_21/SEL));
+
+LDCP_XLXI_21/DECODED_NIBBLE0: LDCP port map (XLXI_21/DECODED_NIBBLE(0),XLXI_21/DECODED_NIBBLE_D(0),NOT XLXI_21/CLEAR_BUFFER,'0','0');
+XLXI_21/DECODED_NIBBLE_D(0) <= NOT (((NOT XLXI_21/DECODED_NIBBLE(0) AND 
+	XLXI_20/DATA_BUFFER(3).COMB AND XLXI_20/DATA_BUFFER(1).COMB AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0005 AND XLXI_20/DATA_BUFFER(0).COMB AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015)
+	OR (NOT XLXI_21/DECODED_NIBBLE(0) AND 
+	XLXI_20/DATA_BUFFER(3).COMB AND XLXI_20/DATA_BUFFER(1).COMB AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0005 AND NOT N_PZ_273 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015)
+	OR (XLXI_20/DATA_BUFFER(3).COMB AND 
+	XLXI_20/DATA_BUFFER(1).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0005 AND 
+	XLXI_20/DATA_BUFFER(0).COMB AND XLXI_21/DECODED_STAT_or000034 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015)
+	OR (XLXI_20/DATA_BUFFER(3).COMB AND 
+	XLXI_20/DATA_BUFFER(1).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0005 AND NOT N_PZ_273 AND 
+	XLXI_21/DECODED_STAT_or000034 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015)
+	OR (NOT XLXI_21/DECODED_NIBBLE(0) AND 
+	XLXI_20/DATA_BUFFER(3).COMB AND XLXI_20/DATA_BUFFER(1).COMB AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0005 AND N_PZ_215 AND N_PZ_232 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015)
+	OR (NOT XLXI_21/DECODED_NIBBLE(0) AND 
+	XLXI_20/DATA_BUFFER(3).COMB AND XLXI_20/DATA_BUFFER(1).COMB AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0005 AND NOT N_PZ_215 AND NOT N_PZ_271 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015)
+	OR (NOT XLXI_21/DECODED_NIBBLE(0) AND 
+	XLXI_20/DATA_BUFFER(3).COMB AND XLXI_20/DATA_BUFFER(1).COMB AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0005 AND N_PZ_217 AND NOT N_PZ_274 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015)
+	OR (NOT XLXI_21/DECODED_NIBBLE(0) AND 
+	XLXI_20/DATA_BUFFER(3).COMB AND XLXI_20/DATA_BUFFER(1).COMB AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0005 AND NOT N_PZ_217 AND N_PZ_274 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015)
+	OR (NOT XLXI_21/DECODED_NIBBLE(0) AND 
+	XLXI_20/DATA_BUFFER(3).COMB AND XLXI_20/DATA_BUFFER(1).COMB AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0005 AND N_PZ_272 AND N_PZ_275 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015)
+	OR (XLXI_20/DATA_BUFFER(3).COMB AND 
+	XLXI_20/DATA_BUFFER(1).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0005 AND N_PZ_215 AND 
+	XLXI_21/DECODED_STAT_or000034 AND N_PZ_232 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015)
+	OR (XLXI_20/DATA_BUFFER(3).COMB AND 
+	XLXI_20/DATA_BUFFER(1).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0005 AND N_PZ_217 AND 
+	NOT N_PZ_274 AND XLXI_21/DECODED_STAT_or000034 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015)
+	OR (XLXI_20/DATA_BUFFER(3).COMB AND 
+	XLXI_20/DATA_BUFFER(1).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0005 AND N_PZ_272 AND 
+	N_PZ_275 AND XLXI_21/DECODED_STAT_or000034 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015)));
+
+LDCP_XLXI_21/DECODED_NIBBLE1: LDCP port map (XLXI_21/DECODED_NIBBLE(1),XLXI_21/DECODED_NIBBLE_D(1),NOT XLXI_21/CLEAR_BUFFER,'0','0');
+XLXI_21/DECODED_NIBBLE_D(1) <= NOT (((N_PZ_215 AND XLXI_21/DECODED_STAT_or000034 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND XLXI_20/DATA_BUFFER(2).COMB AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0006 AND XLXI_21/DECODED_NIBBLE_cmp_eq0014)
+	OR (N_PZ_215 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	NOT XLXI_21/DECODED_NIBBLE(1) AND XLXI_20/DATA_BUFFER(2).COMB AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0006 AND XLXI_21/DECODED_NIBBLE_cmp_eq0014)
+	OR (XLXI_20/DATA_BUFFER(0).COMB AND 
+	XLXI_21/DECODED_STAT_or000034 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_20/DATA_BUFFER(2).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0006 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014)
+	OR (XLXI_20/DATA_BUFFER(0).COMB AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND NOT XLXI_21/DECODED_NIBBLE(1) AND 
+	XLXI_20/DATA_BUFFER(2).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0006 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014)
+	OR (NOT N_PZ_271 AND N_PZ_273 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND NOT XLXI_21/DECODED_NIBBLE(1) AND 
+	XLXI_20/DATA_BUFFER(2).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0006 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014)
+	OR (NOT N_PZ_273 AND XLXI_21/DECODED_STAT_or000034 AND 
+	N_PZ_232 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_20/DATA_BUFFER(2).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0006 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014)
+	OR (NOT N_PZ_273 AND N_PZ_232 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND NOT XLXI_21/DECODED_NIBBLE(1) AND 
+	XLXI_20/DATA_BUFFER(2).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0006 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014)
+	OR (N_PZ_217 AND NOT N_PZ_274 AND 
+	XLXI_21/DECODED_STAT_or000034 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_20/DATA_BUFFER(2).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0006 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014)
+	OR (N_PZ_217 AND NOT N_PZ_274 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND NOT XLXI_21/DECODED_NIBBLE(1) AND 
+	XLXI_20/DATA_BUFFER(2).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0006 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014)
+	OR (NOT N_PZ_217 AND N_PZ_274 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND NOT XLXI_21/DECODED_NIBBLE(1) AND 
+	XLXI_20/DATA_BUFFER(2).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0006 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014)
+	OR (N_PZ_272 AND N_PZ_275 AND 
+	XLXI_21/DECODED_STAT_or000034 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_20/DATA_BUFFER(2).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0006 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014)
+	OR (N_PZ_272 AND N_PZ_275 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND NOT XLXI_21/DECODED_NIBBLE(1) AND 
+	XLXI_20/DATA_BUFFER(2).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0006 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014)));
+
+LDCP_XLXI_21/DECODED_NIBBLE2: LDCP port map (XLXI_21/DECODED_NIBBLE(2),XLXI_21/DECODED_NIBBLE_D(2),NOT XLXI_21/CLEAR_BUFFER,'0','0');
+XLXI_21/DECODED_NIBBLE_D(2) <= NOT (((NOT N_PZ_274 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014 AND NOT XLXI_21/DECODED_NIBBLE(2))
+	OR (N_PZ_275 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014 AND NOT XLXI_21/DECODED_NIBBLE(2))
+	OR (NOT N_PZ_215 AND NOT N_PZ_217 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND XLXI_21/DECODED_NIBBLE_cmp_eq0014 AND 
+	NOT XLXI_21/DECODED_NIBBLE(2))
+	OR (N_PZ_271 AND XLXI_20/DATA_BUFFER(0).COMB AND 
+	XLXI_21/DECODED_STAT_or000034 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014)
+	OR (N_PZ_271 AND XLXI_20/DATA_BUFFER(0).COMB AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND XLXI_21/DECODED_NIBBLE_cmp_eq0014 AND 
+	NOT XLXI_21/DECODED_NIBBLE(2))
+	OR (N_PZ_271 AND NOT N_PZ_274 AND 
+	XLXI_21/DECODED_STAT_or000034 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014)
+	OR (N_PZ_217 AND NOT N_PZ_274 AND 
+	XLXI_21/DECODED_STAT_or000034 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014)
+	OR (N_PZ_272 AND XLXI_21/DECODED_STAT_or000034 AND 
+	NOT N_PZ_232 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014)
+	OR (N_PZ_275 AND XLXI_21/DECODED_STAT_or000034 AND 
+	N_PZ_232 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014)
+	OR (NOT N_PZ_215 AND XLXI_20/DATA_BUFFER(0).COMB AND 
+	NOT N_PZ_272 AND XLXI_21/DECODED_STAT_or000034 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND XLXI_21/DECODED_NIBBLE_cmp_eq0014)
+	OR (NOT N_PZ_215 AND NOT N_PZ_273 AND 
+	XLXI_21/DECODED_STAT_or000034 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0006 AND XLXI_21/DECODED_NIBBLE_cmp_eq0014)
+	OR (NOT N_PZ_215 AND NOT N_PZ_273 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND XLXI_21/DECODED_NIBBLE_cmp_eq0006 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014 AND NOT XLXI_21/DECODED_NIBBLE(2))
+	OR (XLXI_20/DATA_BUFFER(3).COMB AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0005 AND N_PZ_215 AND XLXI_21/DECODED_STAT_or000034 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND XLXI_21/DECODED_NIBBLE_cmp_eq0014 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0012)
+	OR (XLXI_20/DATA_BUFFER(3).COMB AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0005 AND N_PZ_215 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014 AND NOT XLXI_21/DECODED_NIBBLE(2) AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0012)
+	OR (NOT N_PZ_215 AND NOT N_PZ_271 AND 
+	NOT XLXI_20/DATA_BUFFER(0).COMB AND N_PZ_273 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014 AND NOT XLXI_21/DECODED_NIBBLE(2))));
+
+LDCP_XLXI_21/DECODED_NIBBLE3: LDCP port map (XLXI_21/DECODED_NIBBLE(3),XLXI_21/DECODED_NIBBLE_D(3),NOT XLXI_21/CLEAR_BUFFER,'0','0');
+XLXI_21/DECODED_NIBBLE_D(3) <= NOT ((NOT XLXI_21/DECODED_STAT_or000034 AND 
+	XLXI_21/DECODED_NIBBLE(3))
+	XOR ((NOT XLXI_21/DECODED_STAT_or000034 AND 
+	XLXI_21/DECODED_NIBBLE(3))
+	OR (XLXI_20/DATA_BUFFER(3).COMB AND 
+	XLXI_20/DATA_BUFFER(1).COMB AND N_PZ_215 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_20/DATA_BUFFER(2).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0014 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0012 AND XLXI_21/DECODED_NIBBLE_mux0001(1)14)
+	OR (XLXI_20/DATA_BUFFER(3).COMB AND 
+	XLXI_20/DATA_BUFFER(1).COMB AND XLXI_20/DATA_BUFFER(0).COMB AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND XLXI_20/DATA_BUFFER(2).COMB AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014 AND XLXI_21/DECODED_NIBBLE_cmp_eq0012 AND 
+	XLXI_21/DECODED_NIBBLE_mux0001(1)14)
+	OR (XLXI_20/DATA_BUFFER(3).COMB AND 
+	XLXI_20/DATA_BUFFER(1).COMB AND NOT N_PZ_273 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_20/DATA_BUFFER(2).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0014 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0012 AND XLXI_21/DECODED_NIBBLE_mux0001(1)14)
+	OR (XLXI_20/DATA_BUFFER(3).COMB AND 
+	XLXI_20/DATA_BUFFER(1).COMB AND N_PZ_271 AND N_PZ_217 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND XLXI_20/DATA_BUFFER(2).COMB AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014 AND XLXI_21/DECODED_NIBBLE_cmp_eq0012 AND 
+	XLXI_21/DECODED_NIBBLE_mux0001(1)14)
+	OR (XLXI_20/DATA_BUFFER(3).COMB AND 
+	XLXI_20/DATA_BUFFER(1).COMB AND NOT N_PZ_271 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_20/DATA_BUFFER(2).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0014 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0012 AND NOT XLXI_21/DECODED_NIBBLE(3) AND 
+	XLXI_21/DECODED_NIBBLE_mux0001(1)14)
+	OR (XLXI_20/DATA_BUFFER(3).COMB AND 
+	XLXI_20/DATA_BUFFER(1).COMB AND N_PZ_217 AND NOT N_PZ_274 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND XLXI_20/DATA_BUFFER(2).COMB AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0014 AND XLXI_21/DECODED_NIBBLE_cmp_eq0012 AND 
+	XLXI_21/DECODED_NIBBLE_mux0001(1)14)
+	OR (XLXI_20/DATA_BUFFER(3).COMB AND 
+	XLXI_20/DATA_BUFFER(1).COMB AND N_PZ_274 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_20/DATA_BUFFER(2).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0014 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0012 AND NOT XLXI_21/DECODED_NIBBLE(3) AND 
+	XLXI_21/DECODED_NIBBLE_mux0001(1)14)
+	OR (XLXI_20/DATA_BUFFER(3).COMB AND 
+	XLXI_20/DATA_BUFFER(1).COMB AND N_PZ_272 AND XLXI_21/DECODED_STAT_or000034 AND 
+	NOT N_PZ_232 AND XLXI_21/DECODED_NIBBLE_cmp_eq0015 AND 
+	XLXI_20/DATA_BUFFER(2).COMB AND XLXI_21/DECODED_NIBBLE_cmp_eq0014 AND 
+	XLXI_21/DECODED_NIBBLE_cmp_eq0012 AND XLXI_21/DECODED_NIBBLE_mux0001(1)14)));
+
+LDCP_XLXI_21/DECODED_NIBBLE4: LDCP port map (XLXI_21/DECODED_NIBBLE(4),XLXI_21/DECODED_NIBBLE_D(4),NOT XLXI_21/CLEAR_BUFFER,'0','0');
+XLXI_21/DECODED_NIBBLE_D(4) <= ((NOT XLXI_21/DECODED_NIBBLE_mux0001(0)36)
+	OR (N_PZ_215 AND N_PZ_271)
+	OR (XLXI_20/DATA_BUFFER(0).COMB AND NOT N_PZ_273)
+	OR (N_PZ_217 AND NOT N_PZ_274)
+	OR (N_PZ_272 AND N_PZ_275)
+	OR (XLXI_21/DECODED_NIBBLE(4) AND NOT N_PZ_215 AND NOT N_PZ_271 AND 
+	NOT XLXI_20/DATA_BUFFER(0).COMB AND N_PZ_273)
+	OR (XLXI_21/DECODED_NIBBLE(4) AND NOT N_PZ_215 AND NOT N_PZ_271 AND 
+	NOT N_PZ_217 AND N_PZ_274)
+	OR (XLXI_21/DECODED_NIBBLE(4) AND 
+	NOT XLXI_20/DATA_BUFFER(0).COMB AND N_PZ_273 AND NOT N_PZ_217 AND N_PZ_274));
+
+
+XLXI_21/DECODED_NIBBLE_cmp_eq0005 <= ((SPIN_LINK_OUT(0) AND NOT XLXI_21/NIBBLE_BUFFER(0))
+	OR (NOT SPIN_LINK_OUT(0) AND XLXI_21/NIBBLE_BUFFER(0))
+	OR (SPIN_LINK_OUT(1) AND XLXI_21/NIBBLE_BUFFER(1))
+	OR (NOT SPIN_LINK_OUT(1) AND NOT XLXI_21/NIBBLE_BUFFER(1))
+	OR (SPIN_LINK_OUT(3) AND NOT XLXI_21/NIBBLE_BUFFER(3))
+	OR (NOT SPIN_LINK_OUT(3) AND XLXI_21/NIBBLE_BUFFER(3))
+	OR (SPIN_LINK_OUT(2) AND NOT XLXI_21/NIBBLE_BUFFER(2))
+	OR (NOT SPIN_LINK_OUT(2) AND XLXI_21/NIBBLE_BUFFER(2))
+	OR (SPIN_LINK_OUT(4) AND NOT XLXI_21/NIBBLE_BUFFER(4))
+	OR (NOT SPIN_LINK_OUT(4) AND XLXI_21/NIBBLE_BUFFER(4))
+	OR (SPIN_LINK_OUT(5) AND XLXI_21/NIBBLE_BUFFER(5))
+	OR (NOT SPIN_LINK_OUT(5) AND NOT XLXI_21/NIBBLE_BUFFER(5))
+	OR (SPIN_LINK_OUT(6) AND NOT XLXI_21/NIBBLE_BUFFER(6))
+	OR (NOT SPIN_LINK_OUT(6) AND XLXI_21/NIBBLE_BUFFER(6)));
+
+
+XLXI_21/DECODED_NIBBLE_cmp_eq0006 <= ((SPIN_LINK_OUT(0) AND NOT XLXI_21/NIBBLE_BUFFER(0))
+	OR (NOT SPIN_LINK_OUT(0) AND XLXI_21/NIBBLE_BUFFER(0))
+	OR (SPIN_LINK_OUT(1) AND NOT XLXI_21/NIBBLE_BUFFER(1))
+	OR (NOT SPIN_LINK_OUT(1) AND XLXI_21/NIBBLE_BUFFER(1))
+	OR (SPIN_LINK_OUT(3) AND NOT XLXI_21/NIBBLE_BUFFER(3))
+	OR (NOT SPIN_LINK_OUT(3) AND XLXI_21/NIBBLE_BUFFER(3))
+	OR (SPIN_LINK_OUT(2) AND XLXI_21/NIBBLE_BUFFER(2))
+	OR (NOT SPIN_LINK_OUT(2) AND NOT XLXI_21/NIBBLE_BUFFER(2))
+	OR (SPIN_LINK_OUT(4) AND NOT XLXI_21/NIBBLE_BUFFER(4))
+	OR (NOT SPIN_LINK_OUT(4) AND XLXI_21/NIBBLE_BUFFER(4))
+	OR (SPIN_LINK_OUT(5) AND XLXI_21/NIBBLE_BUFFER(5))
+	OR (NOT SPIN_LINK_OUT(5) AND NOT XLXI_21/NIBBLE_BUFFER(5))
+	OR (SPIN_LINK_OUT(6) AND NOT XLXI_21/NIBBLE_BUFFER(6))
+	OR (NOT SPIN_LINK_OUT(6) AND XLXI_21/NIBBLE_BUFFER(6)));
+
+
+XLXI_21/DECODED_NIBBLE_cmp_eq0012 <= ((SPIN_LINK_OUT(0) AND XLXI_21/NIBBLE_BUFFER(0))
+	OR (NOT SPIN_LINK_OUT(0) AND NOT XLXI_21/NIBBLE_BUFFER(0))
+	OR (SPIN_LINK_OUT(1) AND XLXI_21/NIBBLE_BUFFER(1))
+	OR (NOT SPIN_LINK_OUT(1) AND NOT XLXI_21/NIBBLE_BUFFER(1))
+	OR (SPIN_LINK_OUT(3) AND NOT XLXI_21/NIBBLE_BUFFER(3))
+	OR (NOT SPIN_LINK_OUT(3) AND XLXI_21/NIBBLE_BUFFER(3))
+	OR (SPIN_LINK_OUT(2) AND NOT XLXI_21/NIBBLE_BUFFER(2))
+	OR (NOT SPIN_LINK_OUT(2) AND XLXI_21/NIBBLE_BUFFER(2))
+	OR (SPIN_LINK_OUT(4) AND NOT XLXI_21/NIBBLE_BUFFER(4))
+	OR (NOT SPIN_LINK_OUT(4) AND XLXI_21/NIBBLE_BUFFER(4))
+	OR (SPIN_LINK_OUT(5) AND NOT XLXI_21/NIBBLE_BUFFER(5))
+	OR (NOT SPIN_LINK_OUT(5) AND XLXI_21/NIBBLE_BUFFER(5))
+	OR (SPIN_LINK_OUT(6) AND NOT XLXI_21/NIBBLE_BUFFER(6))
+	OR (NOT SPIN_LINK_OUT(6) AND XLXI_21/NIBBLE_BUFFER(6)));
+
+
+XLXI_21/DECODED_NIBBLE_cmp_eq0014 <= ((SPIN_LINK_OUT(0) AND NOT XLXI_21/NIBBLE_BUFFER(0))
+	OR (NOT SPIN_LINK_OUT(0) AND XLXI_21/NIBBLE_BUFFER(0))
+	OR (SPIN_LINK_OUT(1) AND NOT XLXI_21/NIBBLE_BUFFER(1))
+	OR (NOT SPIN_LINK_OUT(1) AND XLXI_21/NIBBLE_BUFFER(1))
+	OR (SPIN_LINK_OUT(3) AND XLXI_21/NIBBLE_BUFFER(3))
+	OR (NOT SPIN_LINK_OUT(3) AND NOT XLXI_21/NIBBLE_BUFFER(3))
+	OR (SPIN_LINK_OUT(2) AND XLXI_21/NIBBLE_BUFFER(2))
+	OR (NOT SPIN_LINK_OUT(2) AND NOT XLXI_21/NIBBLE_BUFFER(2))
+	OR (SPIN_LINK_OUT(4) AND NOT XLXI_21/NIBBLE_BUFFER(4))
+	OR (NOT SPIN_LINK_OUT(4) AND XLXI_21/NIBBLE_BUFFER(4))
+	OR (SPIN_LINK_OUT(5) AND NOT XLXI_21/NIBBLE_BUFFER(5))
+	OR (NOT SPIN_LINK_OUT(5) AND XLXI_21/NIBBLE_BUFFER(5))
+	OR (SPIN_LINK_OUT(6) AND NOT XLXI_21/NIBBLE_BUFFER(6))
+	OR (NOT SPIN_LINK_OUT(6) AND XLXI_21/NIBBLE_BUFFER(6)));
+
+
+XLXI_21/DECODED_NIBBLE_cmp_eq0015 <= ((SPIN_LINK_OUT(0) AND XLXI_21/NIBBLE_BUFFER(0))
+	OR (NOT SPIN_LINK_OUT(0) AND NOT XLXI_21/NIBBLE_BUFFER(0))
+	OR (SPIN_LINK_OUT(1) AND NOT XLXI_21/NIBBLE_BUFFER(1))
+	OR (NOT SPIN_LINK_OUT(1) AND XLXI_21/NIBBLE_BUFFER(1))
+	OR (SPIN_LINK_OUT(3) AND XLXI_21/NIBBLE_BUFFER(3))
+	OR (NOT SPIN_LINK_OUT(3) AND NOT XLXI_21/NIBBLE_BUFFER(3))
+	OR (SPIN_LINK_OUT(2) AND NOT XLXI_21/NIBBLE_BUFFER(2))
+	OR (NOT SPIN_LINK_OUT(2) AND XLXI_21/NIBBLE_BUFFER(2))
+	OR (SPIN_LINK_OUT(4) AND NOT XLXI_21/NIBBLE_BUFFER(4))
+	OR (NOT SPIN_LINK_OUT(4) AND XLXI_21/NIBBLE_BUFFER(4))
+	OR (SPIN_LINK_OUT(5) AND NOT XLXI_21/NIBBLE_BUFFER(5))
+	OR (NOT SPIN_LINK_OUT(5) AND XLXI_21/NIBBLE_BUFFER(5))
+	OR (SPIN_LINK_OUT(6) AND NOT XLXI_21/NIBBLE_BUFFER(6))
+	OR (NOT SPIN_LINK_OUT(6) AND XLXI_21/NIBBLE_BUFFER(6)));
+
+
+XLXI_21/DECODED_NIBBLE_mux0001(0)36 <= ((SPIN_LINK_OUT(0) AND XLXI_21/NIBBLE_BUFFER(0) AND 
+	SPIN_LINK_OUT(2) AND XLXI_21/NIBBLE_BUFFER(2))
+	OR (SPIN_LINK_OUT(0) AND XLXI_21/NIBBLE_BUFFER(0) AND 
+	NOT SPIN_LINK_OUT(2) AND NOT XLXI_21/NIBBLE_BUFFER(2))
+	OR (NOT SPIN_LINK_OUT(0) AND NOT XLXI_21/NIBBLE_BUFFER(0) AND 
+	SPIN_LINK_OUT(2) AND XLXI_21/NIBBLE_BUFFER(2))
+	OR (NOT SPIN_LINK_OUT(0) AND NOT XLXI_21/NIBBLE_BUFFER(0) AND 
+	NOT SPIN_LINK_OUT(2) AND NOT XLXI_21/NIBBLE_BUFFER(2))
+	OR (SPIN_LINK_OUT(1) AND XLXI_21/NIBBLE_BUFFER(1) AND 
+	SPIN_LINK_OUT(3) AND XLXI_21/NIBBLE_BUFFER(3))
+	OR (SPIN_LINK_OUT(1) AND XLXI_21/NIBBLE_BUFFER(1) AND 
+	NOT SPIN_LINK_OUT(3) AND NOT XLXI_21/NIBBLE_BUFFER(3))
+	OR (NOT SPIN_LINK_OUT(1) AND NOT XLXI_21/NIBBLE_BUFFER(1) AND 
+	SPIN_LINK_OUT(3) AND XLXI_21/NIBBLE_BUFFER(3))
+	OR (NOT SPIN_LINK_OUT(1) AND NOT XLXI_21/NIBBLE_BUFFER(1) AND 
+	NOT SPIN_LINK_OUT(3) AND NOT XLXI_21/NIBBLE_BUFFER(3))
+	OR (SPIN_LINK_OUT(4) AND XLXI_21/NIBBLE_BUFFER(4) AND 
+	SPIN_LINK_OUT(5) AND XLXI_21/NIBBLE_BUFFER(5) AND SPIN_LINK_OUT(6) AND 
+	XLXI_21/NIBBLE_BUFFER(6))
+	OR (SPIN_LINK_OUT(4) AND XLXI_21/NIBBLE_BUFFER(4) AND 
+	SPIN_LINK_OUT(5) AND XLXI_21/NIBBLE_BUFFER(5) AND NOT SPIN_LINK_OUT(6) AND 
+	NOT XLXI_21/NIBBLE_BUFFER(6))
+	OR (SPIN_LINK_OUT(4) AND XLXI_21/NIBBLE_BUFFER(4) AND 
+	NOT SPIN_LINK_OUT(5) AND NOT XLXI_21/NIBBLE_BUFFER(5) AND SPIN_LINK_OUT(6) AND 
+	XLXI_21/NIBBLE_BUFFER(6))
+	OR (SPIN_LINK_OUT(4) AND XLXI_21/NIBBLE_BUFFER(4) AND 
+	NOT SPIN_LINK_OUT(5) AND NOT XLXI_21/NIBBLE_BUFFER(5) AND NOT SPIN_LINK_OUT(6) AND 
+	NOT XLXI_21/NIBBLE_BUFFER(6))
+	OR (NOT SPIN_LINK_OUT(4) AND NOT XLXI_21/NIBBLE_BUFFER(4) AND 
+	SPIN_LINK_OUT(5) AND XLXI_21/NIBBLE_BUFFER(5) AND SPIN_LINK_OUT(6) AND 
+	XLXI_21/NIBBLE_BUFFER(6))
+	OR (NOT SPIN_LINK_OUT(4) AND NOT XLXI_21/NIBBLE_BUFFER(4) AND 
+	SPIN_LINK_OUT(5) AND XLXI_21/NIBBLE_BUFFER(5) AND NOT SPIN_LINK_OUT(6) AND 
+	NOT XLXI_21/NIBBLE_BUFFER(6))
+	OR (NOT SPIN_LINK_OUT(4) AND NOT XLXI_21/NIBBLE_BUFFER(4) AND 
+	NOT SPIN_LINK_OUT(5) AND NOT XLXI_21/NIBBLE_BUFFER(5) AND SPIN_LINK_OUT(6) AND 
+	XLXI_21/NIBBLE_BUFFER(6))
+	OR (NOT SPIN_LINK_OUT(4) AND NOT XLXI_21/NIBBLE_BUFFER(4) AND 
+	NOT SPIN_LINK_OUT(5) AND NOT XLXI_21/NIBBLE_BUFFER(5) AND NOT SPIN_LINK_OUT(6) AND 
+	NOT XLXI_21/NIBBLE_BUFFER(6)));
+
+
+XLXI_21/DECODED_NIBBLE_mux0001(1)14 <= ((SPIN_LINK_OUT(0) AND XLXI_21/NIBBLE_BUFFER(0))
+	OR (NOT SPIN_LINK_OUT(0) AND NOT XLXI_21/NIBBLE_BUFFER(0))
+	OR (SPIN_LINK_OUT(1) AND NOT XLXI_21/NIBBLE_BUFFER(1))
+	OR (NOT SPIN_LINK_OUT(1) AND XLXI_21/NIBBLE_BUFFER(1))
+	OR (SPIN_LINK_OUT(3) AND NOT XLXI_21/NIBBLE_BUFFER(3))
+	OR (NOT SPIN_LINK_OUT(3) AND XLXI_21/NIBBLE_BUFFER(3))
+	OR (SPIN_LINK_OUT(2) AND NOT XLXI_21/NIBBLE_BUFFER(2))
+	OR (NOT SPIN_LINK_OUT(2) AND XLXI_21/NIBBLE_BUFFER(2))
+	OR (SPIN_LINK_OUT(4) AND NOT XLXI_21/NIBBLE_BUFFER(4))
+	OR (NOT SPIN_LINK_OUT(4) AND XLXI_21/NIBBLE_BUFFER(4))
+	OR (SPIN_LINK_OUT(5) AND NOT XLXI_21/NIBBLE_BUFFER(5))
+	OR (NOT SPIN_LINK_OUT(5) AND XLXI_21/NIBBLE_BUFFER(5))
+	OR (SPIN_LINK_OUT(6) AND XLXI_21/NIBBLE_BUFFER(6))
+	OR (NOT SPIN_LINK_OUT(6) AND NOT XLXI_21/NIBBLE_BUFFER(6)));
+
+
+XLXI_21/DECODED_STAT_or000034 <= ((SPIN_LINK_OUT(3) AND NOT XLXI_21/NIBBLE_BUFFER(3))
+	OR (NOT SPIN_LINK_OUT(3) AND XLXI_21/NIBBLE_BUFFER(3))
+	OR (SPIN_LINK_OUT(4) AND NOT XLXI_21/NIBBLE_BUFFER(4))
+	OR (NOT SPIN_LINK_OUT(4) AND XLXI_21/NIBBLE_BUFFER(4))
+	OR (SPIN_LINK_OUT(5) AND NOT XLXI_21/NIBBLE_BUFFER(5))
+	OR (NOT SPIN_LINK_OUT(5) AND XLXI_21/NIBBLE_BUFFER(5))
+	OR (SPIN_LINK_OUT(6) AND NOT XLXI_21/NIBBLE_BUFFER(6))
+	OR (NOT SPIN_LINK_OUT(6) AND XLXI_21/NIBBLE_BUFFER(6))
+	OR (SPIN_LINK_OUT(0) AND NOT XLXI_21/NIBBLE_BUFFER(0) AND 
+	SPIN_LINK_OUT(1) AND NOT XLXI_21/NIBBLE_BUFFER(1))
+	OR (SPIN_LINK_OUT(0) AND NOT XLXI_21/NIBBLE_BUFFER(0) AND 
+	NOT SPIN_LINK_OUT(1) AND XLXI_21/NIBBLE_BUFFER(1))
+	OR (SPIN_LINK_OUT(0) AND NOT XLXI_21/NIBBLE_BUFFER(0) AND 
+	SPIN_LINK_OUT(2) AND NOT XLXI_21/NIBBLE_BUFFER(2))
+	OR (SPIN_LINK_OUT(0) AND NOT XLXI_21/NIBBLE_BUFFER(0) AND 
+	NOT SPIN_LINK_OUT(2) AND XLXI_21/NIBBLE_BUFFER(2))
+	OR (NOT SPIN_LINK_OUT(0) AND XLXI_21/NIBBLE_BUFFER(0) AND 
+	SPIN_LINK_OUT(1) AND NOT XLXI_21/NIBBLE_BUFFER(1))
+	OR (NOT SPIN_LINK_OUT(0) AND XLXI_21/NIBBLE_BUFFER(0) AND 
+	NOT SPIN_LINK_OUT(1) AND XLXI_21/NIBBLE_BUFFER(1))
+	OR (NOT SPIN_LINK_OUT(0) AND XLXI_21/NIBBLE_BUFFER(0) AND 
+	SPIN_LINK_OUT(2) AND NOT XLXI_21/NIBBLE_BUFFER(2))
+	OR (NOT SPIN_LINK_OUT(0) AND XLXI_21/NIBBLE_BUFFER(0) AND 
+	NOT SPIN_LINK_OUT(2) AND XLXI_21/NIBBLE_BUFFER(2))
+	OR (SPIN_LINK_OUT(1) AND NOT XLXI_21/NIBBLE_BUFFER(1) AND 
+	SPIN_LINK_OUT(2) AND NOT XLXI_21/NIBBLE_BUFFER(2))
+	OR (SPIN_LINK_OUT(1) AND NOT XLXI_21/NIBBLE_BUFFER(1) AND 
+	NOT SPIN_LINK_OUT(2) AND XLXI_21/NIBBLE_BUFFER(2))
+	OR (NOT SPIN_LINK_OUT(1) AND XLXI_21/NIBBLE_BUFFER(1) AND 
+	SPIN_LINK_OUT(2) AND NOT XLXI_21/NIBBLE_BUFFER(2))
+	OR (NOT SPIN_LINK_OUT(1) AND XLXI_21/NIBBLE_BUFFER(1) AND 
+	NOT SPIN_LINK_OUT(2) AND XLXI_21/NIBBLE_BUFFER(2)));
+
+FDCPE_XLXI_21/NIBBLE_BUFFER0: FDCPE port map (XLXI_21/NIBBLE_BUFFER(0),SPIN_LINK_OUT(0),XLXI_21/CLEAR_BUFFER,'0','0','1');
+
+FDCPE_XLXI_21/NIBBLE_BUFFER1: FDCPE port map (XLXI_21/NIBBLE_BUFFER(1),SPIN_LINK_OUT(1),XLXI_21/CLEAR_BUFFER,'0','0','1');
+
+FDCPE_XLXI_21/NIBBLE_BUFFER2: FDCPE port map (XLXI_21/NIBBLE_BUFFER(2),SPIN_LINK_OUT(2),XLXI_21/CLEAR_BUFFER,'0','0','1');
+
+FDCPE_XLXI_21/NIBBLE_BUFFER3: FDCPE port map (XLXI_21/NIBBLE_BUFFER(3),SPIN_LINK_OUT(3),XLXI_21/CLEAR_BUFFER,'0','0','1');
+
+FDCPE_XLXI_21/NIBBLE_BUFFER4: FDCPE port map (XLXI_21/NIBBLE_BUFFER(4),SPIN_LINK_OUT(4),XLXI_21/CLEAR_BUFFER,'0','0','1');
+
+FDCPE_XLXI_21/NIBBLE_BUFFER5: FDCPE port map (XLXI_21/NIBBLE_BUFFER(5),SPIN_LINK_OUT(5),XLXI_21/CLEAR_BUFFER,'0','0','1');
+
+FDCPE_XLXI_21/NIBBLE_BUFFER6: FDCPE port map (XLXI_21/NIBBLE_BUFFER(6),SPIN_LINK_OUT(6),XLXI_21/CLEAR_BUFFER,'0','0','1');
+
+LDCP_XLXI_21/SEL: LDCP port map (XLXI_21/SEL,XLXI_21/SEL_D,XLXI_21/CLEAR_BUFFER,'0','0');
+XLXI_21/SEL_D <= (NOT XLXI_21/DECODED_NIBBLE(4) AND NOT XLXI_21/SEL);
+
+
+Register Legend:
+ FDCPE (Q,D,C,CLR,PRE,CE); 
+ FDDCPE (Q,D,C,CLR,PRE,CE); 
+ FTCPE (Q,D,C,CLR,PRE,CE); 
+ FTDCPE (Q,D,C,CLR,PRE,CE); 
+ LDCP  (Q,D,G,CLR,PRE); 
+
+******************************  Device Pin Out *****************************
+
+Device : XC2C128-7-VQ100
+
+
+   --------------------------------------------------  
+  /100 98  96  94  92  90  88  86  84  82  80  78  76  \
+ |   99  97  95  93  91  89  87  85  83  81  79  77    |
+ | 1                                               75  | 
+ | 2                                               74  | 
+ | 3                                               73  | 
+ | 4                                               72  | 
+ | 5                                               71  | 
+ | 6                                               70  | 
+ | 7                                               69  | 
+ | 8                                               68  | 
+ | 9                                               67  | 
+ | 10                                              66  | 
+ | 11                                              65  | 
+ | 12                                              64  | 
+ | 13                XC2C128-7-VQ100               63  | 
+ | 14                                              62  | 
+ | 15                                              61  | 
+ | 16                                              60  | 
+ | 17                                              59  | 
+ | 18                                              58  | 
+ | 19                                              57  | 
+ | 20                                              56  | 
+ | 21                                              55  | 
+ | 22                                              54  | 
+ | 23                                              53  | 
+ | 24                                              52  | 
+ | 25                                              51  | 
+ |   27  29  31  33  35  37  39  41  43  45  47  49    |
+  \26  28  30  32  34  36  38  40  42  44  46  48  50  /
+   --------------------------------------------------  
+
+
+Pin Signal                         Pin Signal                        
+No. Name                           No. Name                          
+  1 DATA_IN_BSY                      51 VCCIO-1.8                     
+  2 DATA_IN<8>                       52 KPR                           
+  3 DATA_IN<7>                       53 KPR                           
+  4 DATA_IN<6>                       54 KPR                           
+  5 VCCAUX                           55 KPR                           
+  6 KPR                              56 KPR                           
+  7 KPR                              57 VCC                           
+  8 KPR                              58 KPR                           
+  9 KPR                              59 KPR                           
+ 10 KPR                              60 KPR                           
+ 11 KPR                              61 KPR                           
+ 12 KPR                              62 GND                           
+ 13 KPR                              63 KPR                           
+ 14 KPR                              64 KPR                           
+ 15 KPR                              65 KPR                           
+ 16 KPR                              66 KPR                           
+ 17 KPR                              67 KPR                           
+ 18 KPR                              68 KPR                           
+ 19 KPR                              69 GND                           
+ 20 VCCIO-1.8                        70 KPR                           
+ 21 GND                              71 KPR                           
+ 22 SPIN_LINK_OUT<1>                 72 KPR                           
+ 23 SPIN_LINK_OUT<0>                 73 KPR                           
+ 24 SPIN_LINK_OUT_ACK                74 KPR                           
+ 25 GND                              75 GND                           
+ 26 VCC                              76 DATA_OUT_AV                   
+ 27 SPIN_LINK_IN<6>                  77 DATA_O_ACK                    
+ 28 SPIN_LINK_IN<5>                  78 DATA_OUT<8>                   
+ 29 SPIN_LINK_IN<4>                  79 KPR                           
+ 30 SPIN_LINK_IN<3>                  80 DATA_IN<5>                    
+ 31 GND                              81 DATA_IN<4>                    
+ 32 SPIN_LINK_IN<2>                  82 DATA_OUT<7>                   
+ 33 SPIN_LINK_IN<1>                  83 TDO                           
+ 34 SPIN_LINK_IN<0>                  84 GND                           
+ 35 SPIN_LINK_IN_ACK                 85 DATA_OUT<6>                   
+ 36 KPR                              86 DATA_OUT<5>                   
+ 37 KPR                              87 DATA_OUT<4>                   
+ 38 VCCIO-1.8                        88 VCCIO-3.3                     
+ 39 SPIN_LINK_OUT<6>                 89 DATA_OUT<3>                   
+ 40 SPIN_LINK_OUT<5>                 90 DATA_OUT<2>                   
+ 41 SPIN_LINK_OUT<4>                 91 DATA_OUT<1>                   
+ 42 SPIN_LINK_OUT<3>                 92 DATA_OUT<0>                   
+ 43 SPIN_LINK_OUT<2>                 93 DATA_IN<3>                    
+ 44 KPR                              94 DATA_IN<2>                    
+ 45 TDI                              95 DATA_IN<1>                    
+ 46 KPR                              96 DATA_IN<0>                    
+ 47 TMS                              97 DATA_IN_AV                    
+ 48 TCK                              98 VCCIO-3.3                     
+ 49 KPR                              99 KPR                           
+ 50 KPR                             100 GND                           
+
+
+Legend :  NC  = Not Connected, unbonded pin
+        PGND  = Unused I/O configured as additional Ground pin
+         KPR  = Unused I/O with weak keeper (leave unconnected)
+         WPU  = Unused I/O with weak pull up (leave unconnected)
+         TIE  = Unused I/O floating -- must tie to VCC, GND or other signal
+         VCC  = Dedicated Power Pin
+      VCCAUX  = Power supply for JTAG pins
+   VCCIO-3.3  = I/O supply voltage for LVTTL, LVCMOS33, SSTL3_I
+   VCCIO-2.5  = I/O supply voltage for LVCMOS25, SSTL2_I
+   VCCIO-1.8  = I/O supply voltage for LVCMOS18
+   VCCIO-1.5  = I/O supply voltage for LVCMOS15, HSTL_I
+        VREF  = Reference voltage for indicated input standard
+       *VREF  = Reference voltage pin selected by software
+         GND  = Dedicated Ground Pin
+         TDI  = Test Data In, JTAG pin
+         TDO  = Test Data Out, JTAG pin
+         TCK  = Test Clock, JTAG pin
+         TMS  = Test Mode Select, JTAG pin
+  PROHIBITED  = User reserved pin
+****************************  Compiler Options  ****************************
+
+Following is a list of all global compiler options used by the fitter run.
+
+Device(s) Specified                         : xc2c128-7-VQ100
+Optimization Method                         : SPEED
+Multi-Level Logic Optimization              : ON
+Ignore Timing Specifications                : OFF
+Default Register Power Up Value             : LOW
+Keep User Location Constraints              : ON
+What-You-See-Is-What-You-Get                : OFF
+Exhaustive Fitting                          : ON
+Keep Unused Inputs                          : OFF
+Slew Rate                                   : FAST
+Set Unused I/O Pin Termination              : KEEPER
+Global Clock Optimization                   : OFF
+Global Set/Reset Optimization               : OFF
+Global Ouput Enable Optimization            : OFF
+Enable Input Registers                      : ON
+Function Block Fan-in Limit                 : 38
+Use DATA_GATE Attribute                     : OFF
+Set Tristate Outputs to Termination Mode    : KEEPER
+Default Voltage Standard for All Outputs    : LVCMOS18
+Input Limit                                 : 32
+Pterm Limit                                 : 36
+</pre>
+<form><span class="pgRef"><table width="90%" align="center"><tr>
+<td align="left"><input type="button" onclick="javascript:parent.leftnav.showTop()" onmouseover="window.status='goto top of page'; return true;" onmouseout="window.status=''" value="back to top"></td>
+<td align="right"><input type="button" onclick="window.print()" onmouseover="window.status='print page'; return true;" onmouseout="window.status=''" value="print page"></td>
+</tr></table></span></form>
+</body></html>

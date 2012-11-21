@@ -1,0 +1,844 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.1
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Symbol_decoder.vf
+// /___/   /\     Timestamp : 08/08/2012 17:09:39
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family xbr -verilog C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Symbol_decoder.vf -w C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Symbol_decoder.sch
+//Design Name: Symbol_decoder
+//Device: xbr
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module OR7_MXILINX_Symbol_decoder(I0, 
+                                  I1, 
+                                  I2, 
+                                  I3, 
+                                  I4, 
+                                  I5, 
+                                  I6, 
+                                  O);
+
+    input I0;
+    input I1;
+    input I2;
+    input I3;
+    input I4;
+    input I5;
+    input I6;
+   output O;
+   
+   wire I36;
+   
+   OR4  I_36_89 (.I0(I3), 
+                .I1(I4), 
+                .I2(I5), 
+                .I3(I6), 
+                .O(I36));
+   OR4  I_36_90 (.I0(I0), 
+                .I1(I1), 
+                .I2(I2), 
+                .I3(I36), 
+                .O(O));
+endmodule
+`timescale 1ns / 1ps
+
+module OR9_MXILINX_Symbol_decoder(I0, 
+                                  I1, 
+                                  I2, 
+                                  I3, 
+                                  I4, 
+                                  I5, 
+                                  I6, 
+                                  I7, 
+                                  I8, 
+                                  O);
+
+    input I0;
+    input I1;
+    input I2;
+    input I3;
+    input I4;
+    input I5;
+    input I6;
+    input I7;
+    input I8;
+   output O;
+   
+   wire S0;
+   wire S1;
+   
+   OR4  I_36_94 (.I0(I0), 
+                .I1(I1), 
+                .I2(I2), 
+                .I3(I3), 
+                .O(S0));
+   OR3  I_36_110 (.I0(S0), 
+                 .I1(S1), 
+                 .I2(I8), 
+                 .O(O));
+   OR4  I_36_119 (.I0(I4), 
+                 .I1(I5), 
+                 .I2(I6), 
+                 .I3(I7), 
+                 .O(S1));
+endmodule
+`timescale 1ns / 1ps
+
+module OR8_MXILINX_Symbol_decoder(I0, 
+                                  I1, 
+                                  I2, 
+                                  I3, 
+                                  I4, 
+                                  I5, 
+                                  I6, 
+                                  I7, 
+                                  O);
+
+    input I0;
+    input I1;
+    input I2;
+    input I3;
+    input I4;
+    input I5;
+    input I6;
+    input I7;
+   output O;
+   
+   wire S0;
+   wire S1;
+   
+   OR2  I_36_94 (.I0(S0), 
+                .I1(S1), 
+                .O(O));
+   OR4  I_36_95 (.I0(I4), 
+                .I1(I5), 
+                .I2(I6), 
+                .I3(I7), 
+                .O(S1));
+   OR4  I_36_112 (.I0(I0), 
+                 .I1(I1), 
+                 .I2(I2), 
+                 .I3(I3), 
+                 .O(S0));
+endmodule
+`timescale 1ns / 1ps
+
+module AND7_MXILINX_Symbol_decoder(I0, 
+                                   I1, 
+                                   I2, 
+                                   I3, 
+                                   I4, 
+                                   I5, 
+                                   I6, 
+                                   O);
+
+    input I0;
+    input I1;
+    input I2;
+    input I3;
+    input I4;
+    input I5;
+    input I6;
+   output O;
+   
+   wire I36;
+   
+   AND4  I_36_69 (.I0(I3), 
+                 .I1(I4), 
+                 .I2(I5), 
+                 .I3(I6), 
+                 .O(I36));
+   AND4  I_36_85 (.I0(I0), 
+                 .I1(I1), 
+                 .I2(I2), 
+                 .I3(I36), 
+                 .O(O));
+endmodule
+`timescale 1ns / 1ps
+
+module Symbol_decoder(NIBBLE_IN, 
+                      ERROR, 
+                      OK, 
+                      SYMBOL);
+
+    input [6:0] NIBBLE_IN;
+   output ERROR;
+   output OK;
+   output [16:0] SYMBOL;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_3;
+   wire XLXN_4;
+   wire XLXN_5;
+   wire XLXN_8;
+   wire XLXN_10;
+   wire XLXN_11;
+   wire XLXN_13;
+   wire XLXN_14;
+   wire XLXN_32;
+   wire XLXN_33;
+   wire XLXN_34;
+   wire XLXN_35;
+   wire XLXN_36;
+   wire XLXN_44;
+   wire XLXN_45;
+   wire XLXN_46;
+   wire XLXN_47;
+   wire XLXN_48;
+   wire XLXN_56;
+   wire XLXN_57;
+   wire XLXN_58;
+   wire XLXN_59;
+   wire XLXN_60;
+   wire XLXN_68;
+   wire XLXN_69;
+   wire XLXN_70;
+   wire XLXN_71;
+   wire XLXN_72;
+   wire XLXN_80;
+   wire XLXN_81;
+   wire XLXN_82;
+   wire XLXN_83;
+   wire XLXN_84;
+   wire XLXN_92;
+   wire XLXN_93;
+   wire XLXN_94;
+   wire XLXN_95;
+   wire XLXN_96;
+   wire XLXN_104;
+   wire XLXN_228;
+   wire XLXN_229;
+   wire XLXN_230;
+   wire XLXN_231;
+   wire XLXN_239;
+   wire XLXN_240;
+   wire XLXN_241;
+   wire XLXN_242;
+   wire XLXN_243;
+   wire XLXN_251;
+   wire XLXN_252;
+   wire XLXN_253;
+   wire XLXN_254;
+   wire XLXN_255;
+   wire XLXN_263;
+   wire XLXN_264;
+   wire XLXN_266;
+   wire XLXN_267;
+   wire XLXN_268;
+   wire XLXN_292;
+   wire XLXN_293;
+   wire XLXN_294;
+   wire XLXN_295;
+   wire XLXN_296;
+   wire XLXN_304;
+   wire XLXN_305;
+   wire XLXN_306;
+   wire XLXN_307;
+   wire XLXN_308;
+   wire XLXN_309;
+   wire XLXN_318;
+   wire XLXN_319;
+   wire XLXN_320;
+   wire XLXN_321;
+   wire XLXN_329;
+   wire XLXN_330;
+   wire XLXN_331;
+   wire XLXN_332;
+   wire XLXN_333;
+   wire XLXN_341;
+   wire XLXN_342;
+   wire XLXN_343;
+   wire XLXN_344;
+   wire XLXN_345;
+   wire XLXN_350;
+   wire XLXN_351;
+   wire XLXN_352;
+   wire XLXN_353;
+   wire XLXN_354;
+   wire XLXN_355;
+   wire XLXN_363;
+   wire XLXN_365;
+   wire XLXN_366;
+   wire XLXN_367;
+   wire XLXN_368;
+   wire XLXN_369;
+   wire XLXN_384;
+   wire XLXN_385;
+   wire XLXN_387;
+   wire XLXN_388;
+   wire XLXN_389;
+   wire XLXN_390;
+   wire XLXN_391;
+   wire XLXN_392;
+   wire XLXN_393;
+   wire XLXN_395;
+   wire XLXN_396;
+   wire XLXN_397;
+   wire XLXN_398;
+   wire XLXN_399;
+   wire XLXN_400;
+   wire XLXN_401;
+   wire XLXN_403;
+   wire XLXN_404;
+   wire XLXN_405;
+   wire XLXN_406;
+   wire XLXN_407;
+   wire XLXN_408;
+   wire XLXN_409;
+   wire XLXN_411;
+   wire XLXN_412;
+   wire XLXN_413;
+   wire XLXN_414;
+   wire XLXN_415;
+   wire XLXN_416;
+   wire XLXN_417;
+   wire XLXN_419;
+   wire XLXN_420;
+   wire XLXN_421;
+   wire XLXN_422;
+   wire XLXN_423;
+   wire XLXN_424;
+   wire XLXN_425;
+   wire XLXN_475;
+   wire XLXN_476;
+   wire XLXN_477;
+   wire XLXN_519;
+   wire XLXN_520;
+   wire XLXN_521;
+   wire [16:0] SYMBOL_DUMMY;
+   
+   assign SYMBOL[16:0] = SYMBOL_DUMMY[16:0];
+   (* HU_SET = "XLXI_1_9" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_1 (.I0(XLXN_1), 
+                                       .I1(XLXN_2), 
+                                       .I2(NIBBLE_IN[4]), 
+                                       .I3(XLXN_3), 
+                                       .I4(XLXN_4), 
+                                       .I5(XLXN_5), 
+                                       .I6(NIBBLE_IN[0]), 
+                                       .O(SYMBOL_DUMMY[0]));
+   INV  XLXI_2 (.I(NIBBLE_IN[1]), 
+               .O(XLXN_5));
+   INV  XLXI_3 (.I(NIBBLE_IN[2]), 
+               .O(XLXN_4));
+   INV  XLXI_4 (.I(NIBBLE_IN[3]), 
+               .O(XLXN_3));
+   INV  XLXI_5 (.I(NIBBLE_IN[5]), 
+               .O(XLXN_2));
+   INV  XLXI_6 (.I(NIBBLE_IN[6]), 
+               .O(XLXN_1));
+   (* HU_SET = "XLXI_7_10" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_7 (.I0(XLXN_14), 
+                                       .I1(XLXN_13), 
+                                       .I2(NIBBLE_IN[4]), 
+                                       .I3(XLXN_11), 
+                                       .I4(XLXN_10), 
+                                       .I5(NIBBLE_IN[1]), 
+                                       .I6(XLXN_8), 
+                                       .O(SYMBOL_DUMMY[1]));
+   INV  XLXI_8 (.I(NIBBLE_IN[2]), 
+               .O(XLXN_10));
+   INV  XLXI_9 (.I(NIBBLE_IN[3]), 
+               .O(XLXN_11));
+   INV  XLXI_10 (.I(NIBBLE_IN[5]), 
+                .O(XLXN_13));
+   INV  XLXI_11 (.I(NIBBLE_IN[6]), 
+                .O(XLXN_14));
+   INV  XLXI_12 (.I(NIBBLE_IN[0]), 
+                .O(XLXN_8));
+   (* HU_SET = "XLXI_13_11" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_13 (.I0(XLXN_36), 
+                                        .I1(XLXN_35), 
+                                        .I2(NIBBLE_IN[4]), 
+                                        .I3(XLXN_34), 
+                                        .I4(NIBBLE_IN[2]), 
+                                        .I5(XLXN_33), 
+                                        .I6(XLXN_32), 
+                                        .O(SYMBOL_DUMMY[2]));
+   INV  XLXI_14 (.I(NIBBLE_IN[3]), 
+                .O(XLXN_34));
+   INV  XLXI_15 (.I(NIBBLE_IN[5]), 
+                .O(XLXN_35));
+   INV  XLXI_16 (.I(NIBBLE_IN[6]), 
+                .O(XLXN_36));
+   INV  XLXI_17 (.I(NIBBLE_IN[0]), 
+                .O(XLXN_32));
+   INV  XLXI_18 (.I(NIBBLE_IN[5]), 
+                .O(XLXN_47));
+   INV  XLXI_19 (.I(NIBBLE_IN[6]), 
+                .O(XLXN_48));
+   INV  XLXI_20 (.I(NIBBLE_IN[0]), 
+                .O(XLXN_44));
+   (* HU_SET = "XLXI_21_12" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_21 (.I0(XLXN_48), 
+                                        .I1(XLXN_47), 
+                                        .I2(NIBBLE_IN[4]), 
+                                        .I3(NIBBLE_IN[3]), 
+                                        .I4(XLXN_46), 
+                                        .I5(XLXN_45), 
+                                        .I6(XLXN_44), 
+                                        .O(SYMBOL_DUMMY[3]));
+   INV  XLXI_22 (.I(NIBBLE_IN[1]), 
+                .O(XLXN_33));
+   (* HU_SET = "XLXI_23_13" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_23 (.I0(XLXN_60), 
+                                        .I1(NIBBLE_IN[5]), 
+                                        .I2(XLXN_59), 
+                                        .I3(XLXN_58), 
+                                        .I4(XLXN_57), 
+                                        .I5(XLXN_56), 
+                                        .I6(NIBBLE_IN[0]), 
+                                        .O(SYMBOL_DUMMY[4]));
+   INV  XLXI_24 (.I(NIBBLE_IN[2]), 
+                .O(XLXN_57));
+   INV  XLXI_25 (.I(NIBBLE_IN[3]), 
+                .O(XLXN_58));
+   INV  XLXI_26 (.I(NIBBLE_IN[6]), 
+                .O(XLXN_60));
+   INV  XLXI_40 (.I(NIBBLE_IN[1]), 
+                .O(XLXN_45));
+   INV  XLXI_41 (.I(NIBBLE_IN[2]), 
+                .O(XLXN_46));
+   INV  XLXI_43 (.I(NIBBLE_IN[4]), 
+                .O(XLXN_59));
+   INV  XLXI_104 (.I(NIBBLE_IN[1]), 
+                 .O(XLXN_56));
+   (* HU_SET = "XLXI_105_14" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_105 (.I0(XLXN_72), 
+                                         .I1(NIBBLE_IN[5]), 
+                                         .I2(XLXN_71), 
+                                         .I3(XLXN_70), 
+                                         .I4(XLXN_69), 
+                                         .I5(NIBBLE_IN[1]), 
+                                         .I6(XLXN_68), 
+                                         .O(SYMBOL_DUMMY[5]));
+   INV  XLXI_106 (.I(NIBBLE_IN[2]), 
+                 .O(XLXN_69));
+   INV  XLXI_107 (.I(NIBBLE_IN[3]), 
+                 .O(XLXN_70));
+   INV  XLXI_108 (.I(NIBBLE_IN[4]), 
+                 .O(XLXN_71));
+   INV  XLXI_109 (.I(NIBBLE_IN[6]), 
+                 .O(XLXN_72));
+   INV  XLXI_110 (.I(NIBBLE_IN[0]), 
+                 .O(XLXN_68));
+   (* HU_SET = "XLXI_111_15" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_111 (.I0(XLXN_84), 
+                                         .I1(NIBBLE_IN[5]), 
+                                         .I2(XLXN_83), 
+                                         .I3(XLXN_82), 
+                                         .I4(NIBBLE_IN[2]), 
+                                         .I5(XLXN_81), 
+                                         .I6(XLXN_80), 
+                                         .O(SYMBOL_DUMMY[6]));
+   INV  XLXI_112 (.I(NIBBLE_IN[1]), 
+                 .O(XLXN_81));
+   INV  XLXI_113 (.I(NIBBLE_IN[3]), 
+                 .O(XLXN_82));
+   INV  XLXI_114 (.I(NIBBLE_IN[4]), 
+                 .O(XLXN_83));
+   INV  XLXI_115 (.I(NIBBLE_IN[6]), 
+                 .O(XLXN_84));
+   INV  XLXI_116 (.I(NIBBLE_IN[0]), 
+                 .O(XLXN_80));
+   (* HU_SET = "XLXI_117_16" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_117 (.I0(XLXN_96), 
+                                         .I1(NIBBLE_IN[5]), 
+                                         .I2(XLXN_95), 
+                                         .I3(NIBBLE_IN[3]), 
+                                         .I4(XLXN_94), 
+                                         .I5(XLXN_93), 
+                                         .I6(XLXN_92), 
+                                         .O(SYMBOL_DUMMY[7]));
+   INV  XLXI_118 (.I(NIBBLE_IN[2]), 
+                 .O(XLXN_94));
+   INV  XLXI_119 (.I(NIBBLE_IN[1]), 
+                 .O(XLXN_93));
+   INV  XLXI_120 (.I(NIBBLE_IN[4]), 
+                 .O(XLXN_95));
+   INV  XLXI_121 (.I(NIBBLE_IN[6]), 
+                 .O(XLXN_96));
+   INV  XLXI_122 (.I(NIBBLE_IN[0]), 
+                 .O(XLXN_92));
+   (* HU_SET = "XLXI_123_17" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_123 (.I0(NIBBLE_IN[6]), 
+                                         .I1(XLXN_231), 
+                                         .I2(XLXN_230), 
+                                         .I3(XLXN_229), 
+                                         .I4(XLXN_228), 
+                                         .I5(XLXN_104), 
+                                         .I6(NIBBLE_IN[0]), 
+                                         .O(SYMBOL_DUMMY[8]));
+   INV  XLXI_124 (.I(NIBBLE_IN[3]), 
+                 .O(XLXN_229));
+   INV  XLXI_125 (.I(NIBBLE_IN[2]), 
+                 .O(XLXN_228));
+   INV  XLXI_126 (.I(NIBBLE_IN[4]), 
+                 .O(XLXN_230));
+   INV  XLXI_127 (.I(NIBBLE_IN[5]), 
+                 .O(XLXN_231));
+   INV  XLXI_128 (.I(NIBBLE_IN[1]), 
+                 .O(XLXN_104));
+   INV  XLXI_231 (.I(NIBBLE_IN[2]), 
+                 .O(XLXN_240));
+   (* HU_SET = "XLXI_232_18" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_232 (.I0(NIBBLE_IN[6]), 
+                                         .I1(XLXN_243), 
+                                         .I2(XLXN_242), 
+                                         .I3(XLXN_241), 
+                                         .I4(XLXN_240), 
+                                         .I5(NIBBLE_IN[1]), 
+                                         .I6(XLXN_239), 
+                                         .O(SYMBOL_DUMMY[9]));
+   INV  XLXI_233 (.I(NIBBLE_IN[5]), 
+                 .O(XLXN_243));
+   INV  XLXI_234 (.I(NIBBLE_IN[4]), 
+                 .O(XLXN_242));
+   INV  XLXI_235 (.I(NIBBLE_IN[3]), 
+                 .O(XLXN_241));
+   INV  XLXI_236 (.I(NIBBLE_IN[0]), 
+                 .O(XLXN_239));
+   INV  XLXI_237 (.I(NIBBLE_IN[1]), 
+                 .O(XLXN_252));
+   (* HU_SET = "XLXI_238_19" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_238 (.I0(NIBBLE_IN[6]), 
+                                         .I1(XLXN_255), 
+                                         .I2(XLXN_254), 
+                                         .I3(XLXN_253), 
+                                         .I4(NIBBLE_IN[2]), 
+                                         .I5(XLXN_252), 
+                                         .I6(XLXN_251), 
+                                         .O(SYMBOL_DUMMY[10]));
+   INV  XLXI_239 (.I(NIBBLE_IN[3]), 
+                 .O(XLXN_253));
+   INV  XLXI_240 (.I(NIBBLE_IN[5]), 
+                 .O(XLXN_255));
+   INV  XLXI_241 (.I(NIBBLE_IN[4]), 
+                 .O(XLXN_254));
+   INV  XLXI_242 (.I(NIBBLE_IN[0]), 
+                 .O(XLXN_251));
+   INV  XLXI_243 (.I(NIBBLE_IN[1]), 
+                 .O(XLXN_264));
+   (* HU_SET = "XLXI_244_20" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_244 (.I0(NIBBLE_IN[6]), 
+                                         .I1(XLXN_268), 
+                                         .I2(XLXN_267), 
+                                         .I3(NIBBLE_IN[3]), 
+                                         .I4(XLXN_266), 
+                                         .I5(XLXN_264), 
+                                         .I6(XLXN_263), 
+                                         .O(SYMBOL_DUMMY[11]));
+   INV  XLXI_245 (.I(NIBBLE_IN[4]), 
+                 .O(XLXN_267));
+   INV  XLXI_246 (.I(NIBBLE_IN[5]), 
+                 .O(XLXN_268));
+   INV  XLXI_247 (.I(NIBBLE_IN[2]), 
+                 .O(XLXN_266));
+   INV  XLXI_248 (.I(NIBBLE_IN[0]), 
+                 .O(XLXN_263));
+   INV  XLXI_249 (.I(NIBBLE_IN[3]), 
+                 .O(XLXN_293));
+   (* HU_SET = "XLXI_250_21" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_250 (.I0(XLXN_296), 
+                                         .I1(XLXN_295), 
+                                         .I2(XLXN_294), 
+                                         .I3(XLXN_293), 
+                                         .I4(XLXN_292), 
+                                         .I5(NIBBLE_IN[1]), 
+                                         .I6(NIBBLE_IN[0]), 
+                                         .O(SYMBOL_DUMMY[12]));
+   INV  XLXI_251 (.I(NIBBLE_IN[6]), 
+                 .O(XLXN_296));
+   INV  XLXI_252 (.I(NIBBLE_IN[5]), 
+                 .O(XLXN_295));
+   INV  XLXI_253 (.I(NIBBLE_IN[4]), 
+                 .O(XLXN_294));
+   INV  XLXI_254 (.I(NIBBLE_IN[2]), 
+                 .O(XLXN_292));
+   INV  XLXI_255 (.I(NIBBLE_IN[3]), 
+                 .O(XLXN_306));
+   (* HU_SET = "XLXI_256_22" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_256 (.I0(XLXN_309), 
+                                         .I1(XLXN_308), 
+                                         .I2(XLXN_307), 
+                                         .I3(XLXN_306), 
+                                         .I4(NIBBLE_IN[2]), 
+                                         .I5(NIBBLE_IN[1]), 
+                                         .I6(XLXN_305), 
+                                         .O(SYMBOL_DUMMY[13]));
+   INV  XLXI_257 (.I(NIBBLE_IN[6]), 
+                 .O(XLXN_309));
+   INV  XLXI_258 (.I(NIBBLE_IN[5]), 
+                 .O(XLXN_308));
+   INV  XLXI_259 (.I(NIBBLE_IN[4]), 
+                 .O(XLXN_307));
+   INV  XLXI_260 (.I(NIBBLE_IN[0]), 
+                 .O(XLXN_305));
+   INV  XLXI_267 (.I(NIBBLE_IN[1]), 
+                 .O(XLXN_318));
+   (* HU_SET = "XLXI_268_23" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_268 (.I0(XLXN_321), 
+                                         .I1(XLXN_320), 
+                                         .I2(XLXN_319), 
+                                         .I3(NIBBLE_IN[3]), 
+                                         .I4(NIBBLE_IN[2]), 
+                                         .I5(XLXN_318), 
+                                         .I6(XLXN_304), 
+                                         .O(SYMBOL_DUMMY[14]));
+   INV  XLXI_269 (.I(NIBBLE_IN[6]), 
+                 .O(XLXN_321));
+   INV  XLXI_270 (.I(NIBBLE_IN[5]), 
+                 .O(XLXN_320));
+   INV  XLXI_271 (.I(NIBBLE_IN[4]), 
+                 .O(XLXN_319));
+   INV  XLXI_272 (.I(NIBBLE_IN[0]), 
+                 .O(XLXN_304));
+   INV  XLXI_273 (.I(NIBBLE_IN[2]), 
+                 .O(XLXN_342));
+   (* HU_SET = "XLXI_274_24" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_274 (.I0(XLXN_345), 
+                                         .I1(XLXN_344), 
+                                         .I2(XLXN_343), 
+                                         .I3(NIBBLE_IN[3]), 
+                                         .I4(XLXN_342), 
+                                         .I5(XLXN_341), 
+                                         .I6(NIBBLE_IN[0]), 
+                                         .O(SYMBOL_DUMMY[15]));
+   INV  XLXI_275 (.I(NIBBLE_IN[6]), 
+                 .O(XLXN_345));
+   INV  XLXI_276 (.I(NIBBLE_IN[5]), 
+                 .O(XLXN_344));
+   INV  XLXI_277 (.I(NIBBLE_IN[4]), 
+                 .O(XLXN_343));
+   INV  XLXI_278 (.I(NIBBLE_IN[1]), 
+                 .O(XLXN_341));
+   INV  XLXI_279 (.I(NIBBLE_IN[1]), 
+                 .O(XLXN_330));
+   (* HU_SET = "XLXI_280_25" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_280 (.I0(NIBBLE_IN[6]), 
+                                         .I1(NIBBLE_IN[5]), 
+                                         .I2(XLXN_333), 
+                                         .I3(XLXN_332), 
+                                         .I4(XLXN_331), 
+                                         .I5(XLXN_330), 
+                                         .I6(XLXN_329), 
+                                         .O(SYMBOL_DUMMY[16]));
+   INV  XLXI_281 (.I(NIBBLE_IN[4]), 
+                 .O(XLXN_333));
+   INV  XLXI_282 (.I(NIBBLE_IN[3]), 
+                 .O(XLXN_332));
+   INV  XLXI_283 (.I(NIBBLE_IN[2]), 
+                 .O(XLXN_331));
+   INV  XLXI_284 (.I(NIBBLE_IN[0]), 
+                 .O(XLXN_329));
+   (* HU_SET = "XLXI_286_26" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_286 (.I0(NIBBLE_IN[0]), 
+                                         .I1(XLXN_350), 
+                                         .I2(XLXN_351), 
+                                         .I3(XLXN_352), 
+                                         .I4(XLXN_353), 
+                                         .I5(XLXN_354), 
+                                         .I6(XLXN_355), 
+                                         .O(XLXN_419));
+   INV  XLXI_287 (.I(NIBBLE_IN[1]), 
+                 .O(XLXN_350));
+   INV  XLXI_288 (.I(NIBBLE_IN[2]), 
+                 .O(XLXN_351));
+   INV  XLXI_289 (.I(NIBBLE_IN[3]), 
+                 .O(XLXN_352));
+   INV  XLXI_290 (.I(NIBBLE_IN[4]), 
+                 .O(XLXN_353));
+   INV  XLXI_291 (.I(NIBBLE_IN[5]), 
+                 .O(XLXN_354));
+   INV  XLXI_292 (.I(NIBBLE_IN[6]), 
+                 .O(XLXN_355));
+   (* HU_SET = "XLXI_301_27" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_301 (.I0(XLXN_363), 
+                                         .I1(NIBBLE_IN[1]), 
+                                         .I2(XLXN_365), 
+                                         .I3(XLXN_366), 
+                                         .I4(XLXN_367), 
+                                         .I5(XLXN_368), 
+                                         .I6(XLXN_369), 
+                                         .O(XLXN_420));
+   INV  XLXI_302 (.I(NIBBLE_IN[5]), 
+                 .O(XLXN_368));
+   INV  XLXI_303 (.I(NIBBLE_IN[6]), 
+                 .O(XLXN_369));
+   INV  XLXI_304 (.I(NIBBLE_IN[4]), 
+                 .O(XLXN_367));
+   INV  XLXI_305 (.I(NIBBLE_IN[3]), 
+                 .O(XLXN_366));
+   INV  XLXI_306 (.I(NIBBLE_IN[2]), 
+                 .O(XLXN_365));
+   INV  XLXI_308 (.I(NIBBLE_IN[0]), 
+                 .O(XLXN_363));
+   (* HU_SET = "XLXI_325_28" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_325 (.I0(XLXN_384), 
+                                         .I1(XLXN_385), 
+                                         .I2(NIBBLE_IN[2]), 
+                                         .I3(XLXN_387), 
+                                         .I4(XLXN_388), 
+                                         .I5(XLXN_389), 
+                                         .I6(XLXN_390), 
+                                         .O(XLXN_421));
+   INV  XLXI_326 (.I(NIBBLE_IN[5]), 
+                 .O(XLXN_389));
+   INV  XLXI_327 (.I(NIBBLE_IN[6]), 
+                 .O(XLXN_390));
+   INV  XLXI_328 (.I(NIBBLE_IN[4]), 
+                 .O(XLXN_388));
+   INV  XLXI_329 (.I(NIBBLE_IN[3]), 
+                 .O(XLXN_387));
+   INV  XLXI_331 (.I(NIBBLE_IN[1]), 
+                 .O(XLXN_385));
+   INV  XLXI_332 (.I(NIBBLE_IN[0]), 
+                 .O(XLXN_384));
+   (* HU_SET = "XLXI_333_29" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_333 (.I0(XLXN_391), 
+                                         .I1(XLXN_392), 
+                                         .I2(XLXN_393), 
+                                         .I3(NIBBLE_IN[3]), 
+                                         .I4(XLXN_395), 
+                                         .I5(XLXN_396), 
+                                         .I6(XLXN_397), 
+                                         .O(XLXN_422));
+   INV  XLXI_334 (.I(NIBBLE_IN[5]), 
+                 .O(XLXN_396));
+   INV  XLXI_335 (.I(NIBBLE_IN[6]), 
+                 .O(XLXN_397));
+   INV  XLXI_336 (.I(NIBBLE_IN[4]), 
+                 .O(XLXN_395));
+   INV  XLXI_338 (.I(NIBBLE_IN[2]), 
+                 .O(XLXN_393));
+   INV  XLXI_339 (.I(NIBBLE_IN[1]), 
+                 .O(XLXN_392));
+   INV  XLXI_340 (.I(NIBBLE_IN[0]), 
+                 .O(XLXN_391));
+   (* HU_SET = "XLXI_341_30" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_341 (.I0(XLXN_398), 
+                                         .I1(XLXN_399), 
+                                         .I2(XLXN_400), 
+                                         .I3(XLXN_401), 
+                                         .I4(NIBBLE_IN[4]), 
+                                         .I5(XLXN_403), 
+                                         .I6(XLXN_404), 
+                                         .O(XLXN_423));
+   INV  XLXI_342 (.I(NIBBLE_IN[5]), 
+                 .O(XLXN_403));
+   INV  XLXI_343 (.I(NIBBLE_IN[6]), 
+                 .O(XLXN_404));
+   INV  XLXI_345 (.I(NIBBLE_IN[3]), 
+                 .O(XLXN_401));
+   INV  XLXI_346 (.I(NIBBLE_IN[2]), 
+                 .O(XLXN_400));
+   INV  XLXI_347 (.I(NIBBLE_IN[1]), 
+                 .O(XLXN_399));
+   INV  XLXI_348 (.I(NIBBLE_IN[0]), 
+                 .O(XLXN_398));
+   (* HU_SET = "XLXI_349_31" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_349 (.I0(XLXN_405), 
+                                         .I1(XLXN_406), 
+                                         .I2(XLXN_407), 
+                                         .I3(XLXN_408), 
+                                         .I4(XLXN_409), 
+                                         .I5(NIBBLE_IN[5]), 
+                                         .I6(XLXN_411), 
+                                         .O(XLXN_424));
+   INV  XLXI_351 (.I(NIBBLE_IN[6]), 
+                 .O(XLXN_411));
+   INV  XLXI_352 (.I(NIBBLE_IN[4]), 
+                 .O(XLXN_409));
+   INV  XLXI_353 (.I(NIBBLE_IN[3]), 
+                 .O(XLXN_408));
+   INV  XLXI_354 (.I(NIBBLE_IN[2]), 
+                 .O(XLXN_407));
+   INV  XLXI_355 (.I(NIBBLE_IN[1]), 
+                 .O(XLXN_406));
+   INV  XLXI_356 (.I(NIBBLE_IN[0]), 
+                 .O(XLXN_405));
+   (* HU_SET = "XLXI_357_32" *) 
+   AND7_MXILINX_Symbol_decoder  XLXI_357 (.I0(XLXN_412), 
+                                         .I1(XLXN_413), 
+                                         .I2(XLXN_414), 
+                                         .I3(XLXN_415), 
+                                         .I4(XLXN_416), 
+                                         .I5(XLXN_417), 
+                                         .I6(NIBBLE_IN[6]), 
+                                         .O(XLXN_425));
+   INV  XLXI_358 (.I(NIBBLE_IN[5]), 
+                 .O(XLXN_417));
+   INV  XLXI_360 (.I(NIBBLE_IN[4]), 
+                 .O(XLXN_416));
+   INV  XLXI_361 (.I(NIBBLE_IN[3]), 
+                 .O(XLXN_415));
+   INV  XLXI_362 (.I(NIBBLE_IN[2]), 
+                 .O(XLXN_414));
+   INV  XLXI_363 (.I(NIBBLE_IN[1]), 
+                 .O(XLXN_413));
+   INV  XLXI_364 (.I(NIBBLE_IN[0]), 
+                 .O(XLXN_412));
+   (* HU_SET = "XLXI_365_33" *) 
+   OR7_MXILINX_Symbol_decoder  XLXI_365 (.I0(XLXN_419), 
+                                        .I1(XLXN_420), 
+                                        .I2(XLXN_421), 
+                                        .I3(XLXN_422), 
+                                        .I4(XLXN_423), 
+                                        .I5(XLXN_424), 
+                                        .I6(XLXN_425), 
+                                        .O(XLXN_475));
+   (* HU_SET = "XLXI_367_34" *) 
+   OR8_MXILINX_Symbol_decoder  XLXI_367 (.I0(SYMBOL_DUMMY[9]), 
+                                        .I1(SYMBOL_DUMMY[10]), 
+                                        .I2(SYMBOL_DUMMY[11]), 
+                                        .I3(SYMBOL_DUMMY[12]), 
+                                        .I4(SYMBOL_DUMMY[13]), 
+                                        .I5(SYMBOL_DUMMY[14]), 
+                                        .I6(SYMBOL_DUMMY[15]), 
+                                        .I7(SYMBOL_DUMMY[16]), 
+                                        .O(XLXN_477));
+   OR2  XLXI_368 (.I0(XLXN_476), 
+                 .I1(XLXN_477), 
+                 .O(XLXN_519));
+   (* HU_SET = "XLXI_369_35" *) 
+   OR9_MXILINX_Symbol_decoder  XLXI_369 (.I0(SYMBOL_DUMMY[0]), 
+                                        .I1(SYMBOL_DUMMY[1]), 
+                                        .I2(SYMBOL_DUMMY[2]), 
+                                        .I3(SYMBOL_DUMMY[3]), 
+                                        .I4(SYMBOL_DUMMY[4]), 
+                                        .I5(SYMBOL_DUMMY[5]), 
+                                        .I6(SYMBOL_DUMMY[6]), 
+                                        .I7(SYMBOL_DUMMY[7]), 
+                                        .I8(SYMBOL_DUMMY[8]), 
+                                        .O(XLXN_476));
+   (* HU_SET = "XLXI_370_36" *) 
+   OR7_MXILINX_Symbol_decoder  XLXI_370 (.I0(NIBBLE_IN[0]), 
+                                        .I1(NIBBLE_IN[1]), 
+                                        .I2(NIBBLE_IN[2]), 
+                                        .I3(NIBBLE_IN[3]), 
+                                        .I4(NIBBLE_IN[4]), 
+                                        .I5(NIBBLE_IN[5]), 
+                                        .I6(NIBBLE_IN[6]), 
+                                        .O(XLXN_521));
+   AND2B1  XLXI_371 (.I0(XLXN_520), 
+                    .I1(XLXN_521), 
+                    .O(ERROR));
+   AND2  XLXI_372 (.I0(XLXN_521), 
+                  .I1(XLXN_519), 
+                  .O(OK));
+   OR2  XLXI_375 (.I0(XLXN_475), 
+                 .I1(XLXN_519), 
+                 .O(XLXN_520));
+endmodule

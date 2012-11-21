@@ -1,0 +1,126 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.1
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Selector_module.vf
+// /___/   /\     Timestamp : 08/07/2012 18:29:44
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family xbr -verilog C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Selector_module.vf -w C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Selector_module.sch
+//Design Name: Selector_module
+//Device: xbr
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module FDC_MXILINX_Selector_module(C, 
+                                   CLR, 
+                                   D, 
+                                   Q);
+
+   parameter INIT = 1'b0;
+   
+    input C;
+    input CLR;
+    input D;
+   output Q;
+   
+   wire XLXN_5;
+   
+   GND  I_36_55 (.G(XLXN_5));
+   FDCP  U0 (.C(C), 
+            .CLR(CLR), 
+            .D(D), 
+            .PRE(XLXN_5), 
+            .Q(Q));
+endmodule
+`timescale 1ns / 1ps
+
+module FTC_MXILINX_Selector_module(C, 
+                                   CLR, 
+                                   T, 
+                                   Q);
+
+   parameter INIT = 1'b0;
+   
+    input C;
+    input CLR;
+    input T;
+   output Q;
+   
+   wire TQ;
+   wire Q_DUMMY;
+   
+   assign Q = Q_DUMMY;
+   XOR2  I_36_32 (.I0(T), 
+                 .I1(Q_DUMMY), 
+                 .O(TQ));
+   (* HU_SET = "I_36_35_0" *) 
+   FDC_MXILINX_Selector_module  I_36_35 (.C(C), 
+                                        .CLR(CLR), 
+                                        .D(TQ), 
+                                        .Q(Q_DUMMY));
+endmodule
+`timescale 1ns / 1ps
+
+module Selector_module(CLR, 
+                       EOP, 
+                       OK, 
+                       DAV, 
+                       SEL);
+
+    input CLR;
+    input EOP;
+    input OK;
+   output DAV;
+   output SEL;
+   
+   wire XLXN_5;
+   wire XLXN_11;
+   wire XLXN_23;
+   wire XLXN_35;
+   wire XLXN_41;
+   wire XLXN_42;
+   wire XLXN_43;
+   wire XLXN_45;
+   wire DAV_DUMMY;
+   wire SEL_DUMMY;
+   
+   assign DAV = DAV_DUMMY;
+   assign SEL = SEL_DUMMY;
+   (* HU_SET = "XLXI_1_1" *) 
+   FTC_MXILINX_Selector_module #( .INIT(1'b0) ) XLXI_1 (.C(XLXN_5), 
+                                       .CLR(CLR), 
+                                       .T(XLXN_45), 
+                                       .Q(SEL_DUMMY));
+   BUF  XLXI_3 (.I(XLXN_23), 
+               .O(XLXN_41));
+   INV  XLXI_4 (.I(XLXN_23), 
+               .O(XLXN_5));
+   INV  XLXI_6 (.I(SEL_DUMMY), 
+               .O(XLXN_11));
+   BUF  XLXI_7 (.I(SEL_DUMMY), 
+               .O(XLXN_42));
+   (* HU_SET = "XLXI_9_2" *) 
+   FTC_MXILINX_Selector_module #( .INIT(1'b0) ) XLXI_9 (.C(XLXN_11), 
+                                       .CLR(CLR), 
+                                       .T(XLXN_43), 
+                                       .Q(XLXN_35));
+   OR2  XLXI_12 (.I0(XLXN_35), 
+                .I1(EOP), 
+                .O(DAV_DUMMY));
+   AND2B1  XLXI_13 (.I0(DAV_DUMMY), 
+                   .I1(OK), 
+                   .O(XLXN_23));
+   BUF  XLXI_14 (.I(XLXN_42), 
+                .O(XLXN_43));
+   BUF  XLXI_15 (.I(XLXN_41), 
+                .O(XLXN_45));
+endmodule

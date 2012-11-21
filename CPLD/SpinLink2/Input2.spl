@@ -1,0 +1,8 @@
+[Inputs]
+DACK
+=SPLI[6:0]=
+[Outputs]
+DAV
+ACK
+=DATA_OUT[8:0]=
+[BiDir]

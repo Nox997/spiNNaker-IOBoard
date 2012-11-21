@@ -1,0 +1,71 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.1
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Symbol_encoder.vf
+// /___/   /\     Timestamp : 08/08/2012 17:09:36
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family xbr -verilog C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Symbol_encoder.vf -w C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Symbol_encoder.sch
+//Design Name: Symbol_encoder
+//Device: xbr
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Symbol_encoder(SYMBOL, 
+                      NIBBLE);
+
+    input [16:0] SYMBOL;
+   output [6:0] NIBBLE;
+   
+   
+   OR5  XLXI_30 (.I0(SYMBOL[15]), 
+                .I1(SYMBOL[12]), 
+                .I2(SYMBOL[8]), 
+                .I3(SYMBOL[4]), 
+                .I4(SYMBOL[0]), 
+                .O(NIBBLE[0]));
+   OR5  XLXI_31 (.I0(SYMBOL[13]), 
+                .I1(SYMBOL[12]), 
+                .I2(SYMBOL[9]), 
+                .I3(SYMBOL[5]), 
+                .I4(SYMBOL[1]), 
+                .O(NIBBLE[1]));
+   OR5  XLXI_32 (.I0(SYMBOL[14]), 
+                .I1(SYMBOL[13]), 
+                .I2(SYMBOL[10]), 
+                .I3(SYMBOL[6]), 
+                .I4(SYMBOL[2]), 
+                .O(NIBBLE[2]));
+   OR5  XLXI_33 (.I0(SYMBOL[15]), 
+                .I1(SYMBOL[14]), 
+                .I2(SYMBOL[11]), 
+                .I3(SYMBOL[7]), 
+                .I4(SYMBOL[3]), 
+                .O(NIBBLE[3]));
+   OR5  XLXI_34 (.I0(SYMBOL[16]), 
+                .I1(SYMBOL[7]), 
+                .I2(SYMBOL[6]), 
+                .I3(SYMBOL[5]), 
+                .I4(SYMBOL[4]), 
+                .O(NIBBLE[5]));
+   OR5  XLXI_35 (.I0(SYMBOL[16]), 
+                .I1(SYMBOL[11]), 
+                .I2(SYMBOL[10]), 
+                .I3(SYMBOL[9]), 
+                .I4(SYMBOL[8]), 
+                .O(NIBBLE[6]));
+   OR4  XLXI_36 (.I0(SYMBOL[3]), 
+                .I1(SYMBOL[2]), 
+                .I2(SYMBOL[1]), 
+                .I3(SYMBOL[0]), 
+                .O(NIBBLE[4]));
+endmodule

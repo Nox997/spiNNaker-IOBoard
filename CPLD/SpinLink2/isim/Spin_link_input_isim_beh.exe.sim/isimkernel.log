@@ -1,0 +1,29 @@
+Command line:
+   Spin_link_input_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  49499
+
+Thu Aug 09 12:34:52 2012
+
+
+ Elaboration Time: 0.078125 sec
+
+ Current Memory Usage: 492.052 Meg
+
+ Total Signals          : 1422
+ Total Nets             : 342
+ Total Signal Drivers   : 315
+ Total Blocks           : 314
+ Total Primitive Blocks : 262
+ Total Processes        : 350
+ Total Traceable Variables  : 69
+ Total Scalar Nets and Variables : 825
+Total Line Count : 223
+
+ Total Simulation Time: 0.34375 sec
+
+ Current Memory Usage: 492.052 Meg
+
+Thu Aug 09 15:07:41 2012
+

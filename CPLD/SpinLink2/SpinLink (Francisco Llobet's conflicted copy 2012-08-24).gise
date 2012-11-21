@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<generated_project xmlns="http://www.xilinx.com/XMLSchema" xmlns:xil_pn="http://www.xilinx.com/XMLSchema">
+
+  <!--                                                          -->
+
+  <!--             For tool use only. Do not edit.              -->
+
+  <!--                                                          -->
+
+  <!-- ProjectNavigator created generated project file.         -->
+
+  <!-- For use in tracking generated file and other information -->
+
+  <!-- allowing preservation of process status.                 -->
+
+  <!--                                                          -->
+
+  <!-- Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved. -->
+
+  <version xmlns="http://www.xilinx.com/XMLSchema">11.1</version>
+
+  <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="SpinLink.xise"/>
+
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Auto_Reply.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="Auto_Reply.spl"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Auto_Reply.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="Auto_Reply.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Auto_Reply.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Auto_Reply_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Auto_Reply_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="Dual_Flank_Toggler.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="Dual_Flank_Toggler.vf">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Dual_Flank_Toggler_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="Encoder_16_to_4.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="Encoder_16_to_4.vf">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="Input_buffer.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="Input_buffer.vf">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Input_buffer_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_JHD" xil_pn:name="MAIN.JHD"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="Output_buffer.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="Output_buffer.vf">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="Output_buffer_drc.vf"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Output_buffer_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SPLI_Control_logic.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="SPLI_Control_logic.spl"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="SPLI_Control_logic.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="SPLI_Control_logic.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="SPLI_Control_logic.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Selector_Module2.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="Selector_Module2.spl"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Selector_Module2.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="Selector_Module2.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Selector_Module2.xst"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="Selector_module.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="Selector_module.vf">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Selector_module_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SpinLink_Input.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="SpinLink_Input.spl"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="SpinLink_Input.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="SpinLink_Input.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="SpinLink_Input.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="SpinLink_Output.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="SpinLink_Output.spl"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="SpinLink_Output.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="SpinLink_Output.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="SpinLink_Output.xst"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="Spin_link_input.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="Spin_link_input.vf">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Spin_link_input_beh.prj"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="Spin_link_input_drc.vf"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Spin_link_input_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="Spin_link_input_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="Spin_link_output.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="Spin_link_output.vf">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="Spin_link_output_drc.vf"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="Symbol_decoder.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="Symbol_decoder.vf">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="Symbol_decoder_drc.vf"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="Symbol_encoder.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="Symbol_encoder.vf">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_CMD" xil_pn:name="_impact.cmd"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="_impact.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="main.bld"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_CHK" xil_pn:name="main.chk"/>
+    <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="main.cmd_log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_CXT" xil_pn:name="main.cxt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_GYD" xil_pn:name="main.gyd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_JEDEC" xil_pn:name="main.jed"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="main.log"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="main.lso"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MFD" xil_pn:name="main.mfd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGA" xil_pn:name="main.nga"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="main.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="main.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="main.ngr"/>
+    <file xil_pn:fileType="FILE_PAD_MISC" xil_pn:name="main.pad"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PNX" xil_pn:name="main.pnx"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="main.prj"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="main.rpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="main.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="main.sym" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="main.syr"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="main.tim"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="main.tspec"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="main.vf">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_VM6" xil_pn:name="main.vm6"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="main.xml"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="main.xst"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="main_build.xml"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="main_drc.vf"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="main_envsettings.html"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="main_html"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="main_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="main_ngdbuild.xrpt"/>
+    <file xil_pn:fileType="FILE_PAD_EXCEL_REPORT" xil_pn:name="main_pad.csv"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="main_summary.html"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="main_vhdl.prj"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="main_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="spin_router.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="spin_router.vf">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="spin_router_drc.vf"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="toggler.sym" xil_pn:origination="imported"/>
+    <file xil_pn:fileType="FILE_VERILOG" xil_pn:name="toggler.vf">
+      <branch xil_pn:name="Implementation"/>
+      <branch xil_pn:name="BehavioralSim"/>
+    </file>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
+
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1344434483" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1344434483">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1344507942" xil_pn:in_ck="3093838707763953809" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1344507942">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="Auto_Reply.vhd"/>
+      <outfile xil_pn:name="SPLI_Control_logic.vhd"/>
+      <outfile xil_pn:name="Selector_Module2.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1344508487" xil_pn:in_ck="-1095563028955104504" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-1759320005227658367" xil_pn:start_ts="1344508482">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="Dual_Flank_Toggler.vf"/>
+      <outfile xil_pn:name="Encoder_16_to_4.vf"/>
+      <outfile xil_pn:name="Input_buffer.vf"/>
+      <outfile xil_pn:name="Output_buffer.vf"/>
+      <outfile xil_pn:name="Selector_module.vf"/>
+      <outfile xil_pn:name="Spin_link_input.vf"/>
+      <outfile xil_pn:name="Spin_link_output.vf"/>
+      <outfile xil_pn:name="Symbol_decoder.vf"/>
+      <outfile xil_pn:name="Symbol_encoder.vf"/>
+      <outfile xil_pn:name="main.vf"/>
+      <outfile xil_pn:name="spin_router.vf"/>
+      <outfile xil_pn:name="toggler.vf"/>
+    </transform>
+    <transform xil_pn:end_ts="1344508487" xil_pn:in_ck="7186981866184790433" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1344508487">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="Auto_Reply.vhd"/>
+      <outfile xil_pn:name="Dual_Flank_Toggler.vf"/>
+      <outfile xil_pn:name="Encoder_16_to_4.vf"/>
+      <outfile xil_pn:name="Input_buffer.vf"/>
+      <outfile xil_pn:name="Output_buffer.vf"/>
+      <outfile xil_pn:name="SPLI_Control_logic.vhd"/>
+      <outfile xil_pn:name="Selector_Module2.vhd"/>
+      <outfile xil_pn:name="Selector_module.vf"/>
+      <outfile xil_pn:name="Spin_link_input.vf"/>
+      <outfile xil_pn:name="Spin_link_output.vf"/>
+      <outfile xil_pn:name="Symbol_decoder.vf"/>
+      <outfile xil_pn:name="Symbol_encoder.vf"/>
+      <outfile xil_pn:name="main.vf"/>
+      <outfile xil_pn:name="spin_router.vf"/>
+      <outfile xil_pn:name="toggler.vf"/>
+    </transform>
+    <transform xil_pn:end_ts="1344508490" xil_pn:in_ck="7186981866184790433" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-5218438163950647857" xil_pn:start_ts="1344508487">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="Spin_link_input_beh.prj"/>
+      <outfile xil_pn:name="Spin_link_input_isim_beh.exe"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1344508490" xil_pn:in_ck="-2302252732932751611" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-5838252623472152558" xil_pn:start_ts="1344508490">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="Spin_link_input_isim_beh.wdb"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+    </transform>
+    <transform xil_pn:end_ts="1344375815" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1344375815">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1345545858" xil_pn:in_ck="-1095563028955104504" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="2500351139745048016" xil_pn:start_ts="1345545856">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="Dual_Flank_Toggler.vf"/>
+      <outfile xil_pn:name="Encoder_16_to_4.vf"/>
+      <outfile xil_pn:name="Input_buffer.vf"/>
+      <outfile xil_pn:name="Output_buffer.vf"/>
+      <outfile xil_pn:name="Selector_module.vf"/>
+      <outfile xil_pn:name="Spin_link_input.vf"/>
+      <outfile xil_pn:name="Spin_link_output.vf"/>
+      <outfile xil_pn:name="Symbol_decoder.vf"/>
+      <outfile xil_pn:name="Symbol_encoder.vf"/>
+      <outfile xil_pn:name="main.vf"/>
+      <outfile xil_pn:name="spin_router.vf"/>
+      <outfile xil_pn:name="toggler.vf"/>
+    </transform>
+    <transform xil_pn:end_ts="1345653161" xil_pn:in_ck="3488344942503903600" xil_pn:name="TRANEXT_xstsynthesize_xbr" xil_pn:prop_ck="4536130976253987649" xil_pn:start_ts="1345653156">
+      <status xil_pn:value="FailedRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name=".lso"/>
+      <outfile xil_pn:name="MAIN.JHD"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="main.lso"/>
+      <outfile xil_pn:name="main.ngc"/>
+      <outfile xil_pn:name="main.ngr"/>
+      <outfile xil_pn:name="main.prj"/>
+      <outfile xil_pn:name="main.syr"/>
+      <outfile xil_pn:name="main.xst"/>
+      <outfile xil_pn:name="main_vhdl.prj"/>
+      <outfile xil_pn:name="main_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1345636157" xil_pn:in_ck="4774924128945" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="123229027435927655" xil_pn:start_ts="1345636156">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1345652734" xil_pn:in_ck="-5850685518144584932" xil_pn:name="TRAN_ngdbuild" xil_pn:prop_ck="1690418988910260344" xil_pn:start_ts="1345652727">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+      <outfile xil_pn:name="main.bld"/>
+      <outfile xil_pn:name="main.ngd"/>
+      <outfile xil_pn:name="main_ngdbuild.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1345652744" xil_pn:in_ck="4774924121452" xil_pn:name="TRANEXT_vm6File_xbr" xil_pn:prop_ck="-2515816761640270128" xil_pn:start_ts="1345652734">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="main.chk"/>
+      <outfile xil_pn:name="main.cxt"/>
+      <outfile xil_pn:name="main.gyd"/>
+      <outfile xil_pn:name="main.log"/>
+      <outfile xil_pn:name="main.mfd"/>
+      <outfile xil_pn:name="main.nga"/>
+      <outfile xil_pn:name="main.pad"/>
+      <outfile xil_pn:name="main.pnx"/>
+      <outfile xil_pn:name="main.rpt"/>
+      <outfile xil_pn:name="main.tim"/>
+      <outfile xil_pn:name="main.tspec"/>
+      <outfile xil_pn:name="main.vm6"/>
+      <outfile xil_pn:name="main.xml"/>
+      <outfile xil_pn:name="main_build.xml"/>
+      <outfile xil_pn:name="main_html"/>
+      <outfile xil_pn:name="main_pad.csv"/>
+    </transform>
+    <transform xil_pn:end_ts="1345652746" xil_pn:in_ck="4774924130316" xil_pn:name="TRANEXT_crtProg_xbr" xil_pn:prop_ck="5245363024343" xil_pn:start_ts="1345652744">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="main.jed"/>
+    </transform>
+    <transform xil_pn:end_ts="1345627793" xil_pn:in_ck="4774924117030" xil_pn:name="TRAN_configureTargetDevice_CPLD" xil_pn:prop_ck="3990039742483918989" xil_pn:start_ts="1345627791">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <outfile xil_pn:name="_impact.cmd"/>
+      <outfile xil_pn:name="_impact.log"/>
+    </transform>
+    <transform xil_pn:end_ts="1344088775" xil_pn:in_ck="4774924130316" xil_pn:name="TRAN_timRpt" xil_pn:prop_ck="111903974446" xil_pn:start_ts="1344088771">
+      <status xil_pn:value="AbortedRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
+    </transform>
+  </transforms>
+
+</generated_project>

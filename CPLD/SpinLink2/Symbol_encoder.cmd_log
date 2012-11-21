@@ -1,0 +1,1 @@
+sch2sym -intstyle ise -family xbr -w -refsym Symbol_encoder F:/CPLD/SpinLink/Symbol_encoder.sch F:/CPLD/SpinLink/Symbol_encoder.sym 

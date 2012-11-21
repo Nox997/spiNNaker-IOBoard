@@ -1,0 +1,1 @@
+sch2sym -intstyle ise -family xbr -w -refsym toggler F:/CPLD/SpinLink/toggler.sch F:/CPLD/SpinLink/toggler.sym 

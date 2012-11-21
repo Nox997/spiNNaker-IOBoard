@@ -1,0 +1,8 @@
+[Inputs]
+DAV
+ACK
+=DATA_IN[8:0]=
+[Outputs]
+BSY
+=SPL_O[6:0]=
+[BiDir]

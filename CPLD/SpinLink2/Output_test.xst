@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink2/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink2/xst"
+elaborate
+-ifn Output_test.prj
+-ifmt mixed

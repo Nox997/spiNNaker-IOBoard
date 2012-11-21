@@ -1,0 +1,35 @@
+sch2sym -intstyle ise -family xbr -refsym Spin_link_output F:/CPLD/SpinLink/Spin_link_output.sch F:/CPLD/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -refsym Spin_link_output F:/CPLD/SpinLink/Spin_link_output.sch F:/CPLD/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -refsym Spin_link_output F:/CPLD/SpinLink/Spin_link_output.sch F:/CPLD/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output F:/CPLD/SpinLink/Spin_link_output.sch F:/CPLD/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output F:/CPLD/SpinLink/Spin_link_output.sch F:/CPLD/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output F:/CPLD/SpinLink/Spin_link_output.sch F:/CPLD/SpinLink/Spin_link_output.sym 
+sch2hdl -intstyle ise -family xbr -verilog Spin_link_output_drc.vf -w F:/CPLD/SpinLink/Spin_link_output.sch 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output F:/CPLD/SpinLink/Spin_link_output.sch F:/CPLD/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output F:/CPLD/SpinLink/Spin_link_output.sch F:/CPLD/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output F:/CPLD/SpinLink/Spin_link_output.sch F:/CPLD/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2hdl -intstyle ise -family xbr -verilog Spin_link_output_drc.vf -w C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2hdl -intstyle ise -family xbr -verilog Spin_link_output_drc.vf -w C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Spin_link_output C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sym 

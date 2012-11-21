@@ -1,0 +1,46 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.1
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Spin_link_input.vf
+// /___/   /\     Timestamp : 08/10/2012 14:39:52
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family xbr -verilog C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_input.vf -w C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_input.sch
+//Design Name: Spin_link_input
+//Device: xbr
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Spin_link_input(DATA_O_ACK, 
+                       SPIN_LINK_IN, 
+                       DATA_OUT, 
+                       DATA_OUT_AV, 
+                       SPIN_LINK_IN_ACK);
+
+    input DATA_O_ACK;
+    input [6:0] SPIN_LINK_IN;
+   output [8:0] DATA_OUT;
+   output DATA_OUT_AV;
+   output SPIN_LINK_IN_ACK;
+   
+   wire XLXN_282;
+   
+   BUF  XLXI_45 (.I(XLXN_282), 
+                .O(DATA_OUT_AV));
+   Auto_Reply  XLXI_83 (.CLR_IN(), 
+                       .DACK(DATA_O_ACK), 
+                       .NIBBLE_IN(SPIN_LINK_IN[6:0]), 
+                       .ACK(SPIN_LINK_IN_ACK), 
+                       .CLR(), 
+                       .DATA_OUT(DATA_OUT[8:0]), 
+                       .DAV(XLXN_282));
+endmodule

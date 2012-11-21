@@ -1,0 +1,8 @@
+vhdtdtfi -lib work Selector_Module2.vhd -prj SpinLink -o Selector_Module2.spl -module Selector_Module2 -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Selector_Module2.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Selector_Module2.sym 
+vhdtdtfi -lib work Selector_Module2.vhd -prj SpinLink -o Selector_Module2.spl -module Selector_Module2 -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Selector_Module2.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Selector_Module2.sym 
+vhdtdtfi -lib work Selector_Module2.vhd -prj SpinLink -o Selector_Module2.spl -module Selector_Module2 -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Selector_Module2.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Selector_Module2.sym 
+vhdtdtfi -lib work Selector_Module2.vhd -prj SpinLink -o Selector_Module2.spl -module Selector_Module2 -template F:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Selector_Module2.spl D:/Dropbox/Dropbox/D-Thesis/Cpld/SpinLink/Selector_Module2.sym 

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/Dropbox/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_input_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="Spin_link_input" />
+            <top_module name="glbl" />
+            <top_module name="std_logic_1164" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="17" />
+   <wvobject fp_name="/Spin_link_input/DATA_O_ACK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">DATA_O_ACK</obj_property>
+      <obj_property name="ObjectShortName">DATA_O_ACK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Spin_link_input/SPIN_LINK_IN" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">SPIN_LINK_IN[6:0]</obj_property>
+      <obj_property name="ObjectShortName">SPIN_LINK_IN[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Spin_link_input/DATA_OUT" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">DATA_OUT[8:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_OUT[8:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Spin_link_input/DATA_OUT_AV" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">DATA_OUT_AV</obj_property>
+      <obj_property name="ObjectShortName">DATA_OUT_AV</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Spin_link_input/SPIN_LINK_IN_ACK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">SPIN_LINK_IN_ACK</obj_property>
+      <obj_property name="ObjectShortName">SPIN_LINK_IN_ACK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Spin_link_input/CLR" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLR</obj_property>
+      <obj_property name="ObjectShortName">CLR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Spin_link_input/DAV" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">DAV</obj_property>
+      <obj_property name="ObjectShortName">DAV</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Spin_link_input/ERR" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ERR</obj_property>
+      <obj_property name="ObjectShortName">ERR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Spin_link_input/OK" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">OK</obj_property>
+      <obj_property name="ObjectShortName">OK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Spin_link_input/XLXN_20" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">XLXN_20[6:0]</obj_property>
+      <obj_property name="ObjectShortName">XLXN_20[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Spin_link_input/XLXN_23" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">XLXN_23[16:0]</obj_property>
+      <obj_property name="ObjectShortName">XLXN_23[16:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Spin_link_input/XLXN_24" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">XLXN_24[4:0]</obj_property>
+      <obj_property name="ObjectShortName">XLXN_24[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Spin_link_input/XLXN_162" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">XLXN_162</obj_property>
+      <obj_property name="ObjectShortName">XLXN_162</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Spin_link_input/XLXN_200" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">XLXN_200</obj_property>
+      <obj_property name="ObjectShortName">XLXN_200</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Spin_link_input/XLXN_222" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">XLXN_222</obj_property>
+      <obj_property name="ObjectShortName">XLXN_222</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Spin_link_input/XLXN_225" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">XLXN_225</obj_property>
+      <obj_property name="ObjectShortName">XLXN_225</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Spin_link_input/XLXN_228" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">XLXN_228</obj_property>
+      <obj_property name="ObjectShortName">XLXN_228</obj_property>
+   </wvobject>
+</wave_config>

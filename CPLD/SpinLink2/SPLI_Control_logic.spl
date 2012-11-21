@@ -1,0 +1,11 @@
+[Inputs]
+SEL
+DAV
+ERR
+OK
+DACK
+CLR_IN
+[Outputs]
+CLR
+SPIN_IN_ACK
+[BiDir]

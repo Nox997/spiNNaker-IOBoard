@@ -1,0 +1,6 @@
+vhdtdtfi -lib work SPLI_Control_logic.vhd -prj SpinLink -o SPLI_Control_logic.spl -module SPLI_Control_logic -template F:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w SPLI_Control_logic.spl D:/Dropbox/Dropbox/D-Thesis/Cpld/SpinLink/SPLI_Control_logic.sym 
+vhdtdtfi -lib work SPLI_Control_logic.vhd -prj SpinLink -o SPLI_Control_logic.spl -module SPLI_Control_logic -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w SPLI_Control_logic.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/SPLI_Control_logic.sym 
+vhdtdtfi -lib work SPLI_Control_logic.vhd -prj SpinLink -o SPLI_Control_logic.spl -module SPLI_Control_logic -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w SPLI_Control_logic.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/SPLI_Control_logic.sym 

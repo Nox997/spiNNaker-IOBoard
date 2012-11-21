@@ -1,0 +1,7 @@
+verilog work "Symbol_decoder.vf"
+verilog work "Output_buffer.vf"
+verilog work "Encoder_16_to_4.vf"
+verilog work "Dual_Flank_Toggler.vf"
+vhdl work "Auto_Reply.vhd"
+verilog work "Spin_link_input.vf"
+verilog work "C:/Xilinx/14.1/ISE_DS/ISE//verilog/src/glbl.v"

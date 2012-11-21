@@ -1,0 +1,222 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.1
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Input_buffer.vf
+// /___/   /\     Timestamp : 09/03/2012 11:13:34
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family xbr -verilog C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Input_buffer.vf -w C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Input_buffer.sch
+//Design Name: Input_buffer
+//Device: xbr
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module XOR7_MXILINX_Input_buffer(I0, 
+                                 I1, 
+                                 I2, 
+                                 I3, 
+                                 I4, 
+                                 I5, 
+                                 I6, 
+                                 O);
+
+    input I0;
+    input I1;
+    input I2;
+    input I3;
+    input I4;
+    input I5;
+    input I6;
+   output O;
+   
+   wire I36;
+   
+   XOR4  I_36_89 (.I0(I3), 
+                 .I1(I4), 
+                 .I2(I5), 
+                 .I3(I6), 
+                 .O(I36));
+   XOR4  I_36_90 (.I0(I0), 
+                 .I1(I1), 
+                 .I2(I2), 
+                 .I3(I36), 
+                 .O(O));
+endmodule
+`timescale 1ns / 1ps
+
+module OR7_MXILINX_Input_buffer(I0, 
+                                I1, 
+                                I2, 
+                                I3, 
+                                I4, 
+                                I5, 
+                                I6, 
+                                O);
+
+    input I0;
+    input I1;
+    input I2;
+    input I3;
+    input I4;
+    input I5;
+    input I6;
+   output O;
+   
+   wire I36;
+   
+   OR4  I_36_89 (.I0(I3), 
+                .I1(I4), 
+                .I2(I5), 
+                .I3(I6), 
+                .O(I36));
+   OR4  I_36_90 (.I0(I0), 
+                .I1(I1), 
+                .I2(I2), 
+                .I3(I36), 
+                .O(O));
+endmodule
+`timescale 1ns / 1ps
+
+module FD_MXILINX_Input_buffer(C, 
+                               D, 
+                               Q);
+
+   parameter INIT = 1'b0;
+   
+    input C;
+    input D;
+   output Q;
+   
+   wire XLXN_4;
+   
+   GND  I_36_43 (.G(XLXN_4));
+   FDCP  U0 (.C(C), 
+            .CLR(XLXN_4), 
+            .D(D), 
+            .PRE(XLXN_4), 
+            .Q(Q));
+endmodule
+`timescale 1ns / 1ps
+
+module Input_buffer(DACK, 
+                    DACK_CLR, 
+                    LOAD, 
+                    SPIN_LINK_O, 
+                    DACK_OUT, 
+                    NIBBLE_OR, 
+                    NIBBLE_OUT, 
+                    NIBBLE_XOR, 
+                    OK);
+
+    input DACK;
+    input DACK_CLR;
+    input LOAD;
+    input [6:0] SPIN_LINK_O;
+   output DACK_OUT;
+   output NIBBLE_OR;
+   output [6:0] NIBBLE_OUT;
+   output NIBBLE_XOR;
+   output OK;
+   
+   wire XLXN_6;
+   wire XLXN_9;
+   wire XLXN_23;
+   wire XLXN_24;
+   wire XLXN_25;
+   wire XLXN_26;
+   wire XLXN_28;
+   wire XLXN_29;
+   wire NIBBLE_XOR_DUMMY;
+   wire NIBBLE_OR_DUMMY;
+   wire [6:0] NIBBLE_OUT_DUMMY;
+   
+   assign NIBBLE_OR = NIBBLE_OR_DUMMY;
+   assign NIBBLE_OUT[6:0] = NIBBLE_OUT_DUMMY[6:0];
+   assign NIBBLE_XOR = NIBBLE_XOR_DUMMY;
+   XOR2  XLXI_20 (.I0(XLXN_6), 
+                 .I1(SPIN_LINK_O[0]), 
+                 .O(NIBBLE_OUT_DUMMY[0]));
+   XOR2  XLXI_27 (.I0(XLXN_9), 
+                 .I1(SPIN_LINK_O[1]), 
+                 .O(NIBBLE_OUT_DUMMY[1]));
+   XOR2  XLXI_28 (.I0(XLXN_23), 
+                 .I1(SPIN_LINK_O[2]), 
+                 .O(NIBBLE_OUT_DUMMY[2]));
+   XOR2  XLXI_29 (.I0(XLXN_24), 
+                 .I1(SPIN_LINK_O[3]), 
+                 .O(NIBBLE_OUT_DUMMY[3]));
+   XOR2  XLXI_30 (.I0(XLXN_25), 
+                 .I1(SPIN_LINK_O[4]), 
+                 .O(NIBBLE_OUT_DUMMY[4]));
+   XOR2  XLXI_31 (.I0(XLXN_26), 
+                 .I1(SPIN_LINK_O[5]), 
+                 .O(NIBBLE_OUT_DUMMY[5]));
+   XOR2  XLXI_32 (.I0(XLXN_28), 
+                 .I1(SPIN_LINK_O[6]), 
+                 .O(NIBBLE_OUT_DUMMY[6]));
+   XOR2  XLXI_55 (.I0(XLXN_29), 
+                 .I1(DACK), 
+                 .O(DACK_OUT));
+   (* HU_SET = "XLXI_64_0" *) 
+   FD_MXILINX_Input_buffer #( .INIT(1'b0) ) XLXI_64 (.C(LOAD), 
+                                    .D(SPIN_LINK_O[0]), 
+                                    .Q(XLXN_6));
+   (* HU_SET = "XLXI_66_1" *) 
+   FD_MXILINX_Input_buffer #( .INIT(1'b0) ) XLXI_66 (.C(LOAD), 
+                                    .D(SPIN_LINK_O[2]), 
+                                    .Q(XLXN_23));
+   (* HU_SET = "XLXI_67_2" *) 
+   FD_MXILINX_Input_buffer #( .INIT(1'b0) ) XLXI_67 (.C(LOAD), 
+                                    .D(SPIN_LINK_O[3]), 
+                                    .Q(XLXN_24));
+   (* HU_SET = "XLXI_68_3" *) 
+   FD_MXILINX_Input_buffer #( .INIT(1'b0) ) XLXI_68 (.C(LOAD), 
+                                    .D(SPIN_LINK_O[4]), 
+                                    .Q(XLXN_25));
+   (* HU_SET = "XLXI_69_4" *) 
+   FD_MXILINX_Input_buffer #( .INIT(1'b0) ) XLXI_69 (.C(LOAD), 
+                                    .D(SPIN_LINK_O[5]), 
+                                    .Q(XLXN_26));
+   (* HU_SET = "XLXI_70_5" *) 
+   FD_MXILINX_Input_buffer #( .INIT(1'b0) ) XLXI_70 (.C(LOAD), 
+                                    .D(SPIN_LINK_O[6]), 
+                                    .Q(XLXN_28));
+   (* HU_SET = "XLXI_71_6" *) 
+   FD_MXILINX_Input_buffer #( .INIT(1'b0) ) XLXI_71 (.C(LOAD), 
+                                    .D(SPIN_LINK_O[1]), 
+                                    .Q(XLXN_9));
+   (* HU_SET = "XLXI_72_7" *) 
+   FD_MXILINX_Input_buffer #( .INIT(1'b0) ) XLXI_72 (.C(DACK_CLR), 
+                                    .D(DACK), 
+                                    .Q(XLXN_29));
+   (* HU_SET = "XLXI_77_8" *) 
+   OR7_MXILINX_Input_buffer  XLXI_77 (.I0(NIBBLE_OUT_DUMMY[6]), 
+                                     .I1(NIBBLE_OUT_DUMMY[5]), 
+                                     .I2(NIBBLE_OUT_DUMMY[4]), 
+                                     .I3(NIBBLE_OUT_DUMMY[3]), 
+                                     .I4(NIBBLE_OUT_DUMMY[2]), 
+                                     .I5(NIBBLE_OUT_DUMMY[1]), 
+                                     .I6(NIBBLE_OUT_DUMMY[0]), 
+                                     .O(NIBBLE_OR_DUMMY));
+   (* HU_SET = "XLXI_78_9" *) 
+   XOR7_MXILINX_Input_buffer  XLXI_78 (.I0(NIBBLE_OUT_DUMMY[6]), 
+                                      .I1(NIBBLE_OUT_DUMMY[5]), 
+                                      .I2(NIBBLE_OUT_DUMMY[4]), 
+                                      .I3(NIBBLE_OUT_DUMMY[3]), 
+                                      .I4(NIBBLE_OUT_DUMMY[2]), 
+                                      .I5(NIBBLE_OUT_DUMMY[1]), 
+                                      .I6(NIBBLE_OUT_DUMMY[0]), 
+                                      .O(NIBBLE_XOR_DUMMY));
+   AND2B1  XLXI_80 (.I0(NIBBLE_XOR_DUMMY), 
+                   .I1(NIBBLE_OR_DUMMY), 
+                   .O(OK));
+endmodule

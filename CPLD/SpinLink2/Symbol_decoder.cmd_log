@@ -1,0 +1,6 @@
+sch2sym -intstyle ise -family xbr -w -refsym Symbol_decoder F:/CPLD/SpinLink/Symbol_decoder.sch F:/CPLD/SpinLink/Symbol_decoder.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Symbol_decoder F:/CPLD/SpinLink/Symbol_decoder.sch F:/CPLD/SpinLink/Symbol_decoder.sym 
+sch2hdl -intstyle ise -family xbr -verilog Symbol_decoder_drc.vf -w F:/CPLD/SpinLink/Symbol_decoder.sch 
+sch2sym -intstyle ise -family xbr -w -refsym Symbol_decoder F:/CPLD/SpinLink/Symbol_decoder.sch F:/CPLD/SpinLink/Symbol_decoder.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Symbol_decoder C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Symbol_decoder.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Symbol_decoder.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Symbol_decoder C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Symbol_decoder.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Symbol_decoder.sym 

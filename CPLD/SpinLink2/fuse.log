@@ -1,0 +1,53 @@
+Running: C:\Xilinx\14.1\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -lib uni9000_ver -lib aim_ver -lib cpld_ver -lib xilinxcorelib_ver -o C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_input_isim_beh.exe -prj C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_input_beh.prj work.Spin_link_input work.glbl 
+ISim P.15xf (signature 0x2f00eba5)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Symbol_decoder.vf" into library work
+Analyzing Verilog file "C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.vf" into library work
+Analyzing Verilog file "C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Encoder_16_to_4.vf" into library work
+Analyzing Verilog file "C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Dual_Flank_Toggler.vf" into library work
+Analyzing Verilog file "C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_input.vf" into library work
+Analyzing Verilog file "C:/Xilinx/14.1/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Parsing VHDL file "C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 105188 KB
+Fuse CPU Usage: 327 ms
+Compiling module LD
+Compiling module LD4_MXILINX_Spin_link_input
+Compiling module INV
+Compiling module AND2
+Compiling module GND
+Compiling module FDCP
+Compiling module FDC_MXILINX_Spin_link_input
+Compiling module BUF
+Compiling module Output_buffer_MUSER_Spin_link_in...
+Compiling module AND4
+Compiling module AND7_MXILINX_Spin_link_input
+Compiling module OR4
+Compiling module OR7_MXILINX_Spin_link_input
+Compiling module OR2
+Compiling module OR8_MXILINX_Spin_link_input
+Compiling module OR3
+Compiling module OR9_MXILINX_Spin_link_input
+Compiling module AND2B1
+Compiling module Symbol_decoder_MUSER_Spin_link_i...
+Compiling module NOR2
+Compiling module NOR8_MXILINX_Spin_link_input
+Compiling module Encoder_16_to_4_MUSER_Spin_link_...
+Compiling module FDDCP
+Compiling module FDDC_MXILINX_Spin_link_input
+Compiling module Dual_Flank_Toggler_MUSER_Spin_li...
+Compiling module Spin_link_input
+Compiling module glbl
+Compiling package standard
+Compiling package std_logic_1164
+Compiling architecture behavioral of entity Auto_Reply [auto_reply_default]
+Time Resolution for simulation is 1ps.
+Waiting for 22 sub-compilation(s) to finish...
+Compiled 4 VHDL Units
+Compiled 27 Verilog Units
+Built simulation executable C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_input_isim_beh.exe
+Fuse Memory Usage: 118356 KB
+Fuse CPU Usage: 437 ms

@@ -1,0 +1,3 @@
+sch2hdl -intstyle ise -family xbr -verilog spin_router_drc.vf -w F:/CPLD/SpinLink/spin_router.sch 
+sch2sym -intstyle ise -family xbr -refsym spin_router F:/CPLD/SpinLink/spin_router.sch F:/CPLD/SpinLink/spin_router.sym 
+sch2sym -intstyle ise -family xbr -w -refsym spin_router F:/CPLD/SpinLink/spin_router.sch F:/CPLD/SpinLink/spin_router.sym 

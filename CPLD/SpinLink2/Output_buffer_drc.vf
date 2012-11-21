@@ -1,0 +1,134 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.1
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Output_buffer_drc.vf
+// /___/   /\     Timestamp : 08/20/2012 17:24:59
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: C:\Xilinx\14.1\ISE_DS\ISE\bin\nt\unwrapped\sch2hdl.exe -intstyle ise -family xbr -verilog Output_buffer_drc.vf -w C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output_buffer.sch
+//Design Name: Output_buffer
+//Device: xbr
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module FD_MXILINX_Output_buffer(C, 
+                                D, 
+                                Q);
+
+   parameter INIT = 1'b0;
+   
+    input C;
+    input D;
+   output Q;
+   
+   wire XLXN_4;
+   
+   GND  I_36_43 (.G(XLXN_4));
+   FDCP  U0 (.C(C), 
+            .CLR(XLXN_4), 
+            .D(D), 
+            .PRE(XLXN_4), 
+            .Q(Q));
+endmodule
+`timescale 1ns / 1ps
+
+module FD4_MXILINX_Output_buffer(C, 
+                                 D0, 
+                                 D1, 
+                                 D2, 
+                                 D3, 
+                                 Q0, 
+                                 Q1, 
+                                 Q2, 
+                                 Q3);
+
+    input C;
+    input D0;
+    input D1;
+    input D2;
+    input D3;
+   output Q0;
+   output Q1;
+   output Q2;
+   output Q3;
+   
+   
+   (* HU_SET = "U0_2" *) 
+   FD_MXILINX_Output_buffer #( .INIT(1'b0) ) U0 (.C(C), 
+                                .D(D0), 
+                                .Q(Q0));
+   (* HU_SET = "U1_1" *) 
+   FD_MXILINX_Output_buffer #( .INIT(1'b0) ) U1 (.C(C), 
+                                .D(D1), 
+                                .Q(Q1));
+   (* HU_SET = "U2_3" *) 
+   FD_MXILINX_Output_buffer #( .INIT(1'b0) ) U2 (.C(C), 
+                                .D(D2), 
+                                .Q(Q2));
+   (* HU_SET = "U3_0" *) 
+   FD_MXILINX_Output_buffer #( .INIT(1'b0) ) U3 (.C(C), 
+                                .D(D3), 
+                                .Q(Q3));
+endmodule
+`timescale 1ns / 1ps
+
+module Output_buffer(DATA_IN, 
+                     DAV_IN, 
+                     SEL_IN, 
+                     DATA_OUT, 
+                     DAV_OUT);
+
+    input [8:0] DATA_IN;
+    input DAV_IN;
+    input SEL_IN;
+   output [8:0] DATA_OUT;
+   output DAV_OUT;
+   
+   wire XLXN_37;
+   wire XLXN_40;
+   wire XLXN_53;
+   
+   (* HU_SET = "XLXI_21_6" *) 
+   FD4_MXILINX_Output_buffer  XLXI_21 (.C(XLXN_53), 
+                                      .D0(DATA_IN[0]), 
+                                      .D1(DATA_IN[1]), 
+                                      .D2(DATA_IN[2]), 
+                                      .D3(DATA_IN[3]), 
+                                      .Q0(DATA_OUT[0]), 
+                                      .Q1(DATA_OUT[1]), 
+                                      .Q2(DATA_OUT[2]), 
+                                      .Q3(DATA_OUT[3]));
+   (* HU_SET = "XLXI_22_5" *) 
+   FD4_MXILINX_Output_buffer  XLXI_22 (.C(XLXN_53), 
+                                      .D0(DATA_IN[4]), 
+                                      .D1(DATA_IN[5]), 
+                                      .D2(DATA_IN[6]), 
+                                      .D3(DATA_IN[7]), 
+                                      .Q0(DATA_OUT[4]), 
+                                      .Q1(DATA_OUT[5]), 
+                                      .Q2(DATA_OUT[6]), 
+                                      .Q3(DATA_OUT[7]));
+   (* HU_SET = "XLXI_23_4" *) 
+   FD_MXILINX_Output_buffer #( .INIT(1'b0) ) XLXI_23 (.C(XLXN_53), 
+                                     .D(DATA_IN[8]), 
+                                     .Q(DATA_OUT[8]));
+   BUF  XLXI_24 (.I(XLXN_53), 
+                .O(DAV_OUT));
+   BUF  XLXI_25 (.I(XLXN_37), 
+                .O(XLXN_53));
+   BUF  XLXI_26 (.I(DAV_IN), 
+                .O(XLXN_37));
+   BUF  XLXI_27 (.I(SEL_IN), 
+                .O(XLXN_40));
+   BUF  XLXI_28 (.I(XLXN_40), 
+                .O());
+endmodule

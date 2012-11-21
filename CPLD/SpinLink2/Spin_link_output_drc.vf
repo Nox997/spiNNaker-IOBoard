@@ -1,0 +1,732 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.1
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Spin_link_output_drc.vf
+// /___/   /\     Timestamp : 08/06/2012 16:04:02
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: C:\Xilinx\14.1\ISE_DS\ISE\bin\nt\unwrapped\sch2hdl.exe -intstyle ise -family xbr -verilog Spin_link_output_drc.vf -w C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Spin_link_output.sch
+//Design Name: Spin_link_output
+//Device: xbr
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module FDDC_MXILINX_Spin_link_output(C, 
+                                     CLR, 
+                                     D, 
+                                     Q);
+
+   parameter INIT = 1'b0;
+   
+    input C;
+    input CLR;
+    input D;
+   output Q;
+   
+   wire XLXN_5;
+   
+   GND  I_36_55 (.G(XLXN_5));
+   FDDCP  XLXI_1 (.C(C), 
+                 .CLR(CLR), 
+                 .D(D), 
+                 .PRE(XLXN_5), 
+                 .Q(Q));
+endmodule
+`timescale 1ns / 1ps
+
+module FDC_MXILINX_Spin_link_output(C, 
+                                    CLR, 
+                                    D, 
+                                    Q);
+
+   parameter INIT = 1'b0;
+   
+    input C;
+    input CLR;
+    input D;
+   output Q;
+   
+   wire XLXN_5;
+   
+   GND  I_36_55 (.G(XLXN_5));
+   FDCP  U0 (.C(C), 
+            .CLR(CLR), 
+            .D(D), 
+            .PRE(XLXN_5), 
+            .Q(Q));
+endmodule
+`timescale 1ns / 1ps
+
+module toggler_MUSER_Spin_link_output(CLK, 
+                                      CLR, 
+                                      Q);
+
+    input CLK;
+    input CLR;
+   output Q;
+   
+   wire XLXN_1;
+   wire Q_DUMMY;
+   
+   assign Q = Q_DUMMY;
+   (* HU_SET = "XLXI_1_0" *) 
+   FDC_MXILINX_Spin_link_output #( .INIT(1'b0) ) XLXI_1 (.C(CLK), 
+                                        .CLR(CLR), 
+                                        .D(XLXN_1), 
+                                        .Q(Q_DUMMY));
+   INV  XLXI_2 (.I(Q_DUMMY), 
+               .O(XLXN_1));
+endmodule
+`timescale 1ns / 1ps
+
+module LDC_MXILINX_Spin_link_output(CLR, 
+                                    D, 
+                                    G, 
+                                    Q);
+
+   parameter INIT = 1'b0;
+   
+    input CLR;
+    input D;
+    input G;
+   output Q;
+   
+   wire XLXN_6;
+   
+   LDCP  XLXI_6 (.CLR(CLR), 
+                .D(D), 
+                .G(G), 
+                .PRE(XLXN_6), 
+                .Q(Q));
+   GND  XLXI_8 (.G(XLXN_6));
+endmodule
+`timescale 1ns / 1ps
+
+module OR8_MXILINX_Spin_link_output(I0, 
+                                    I1, 
+                                    I2, 
+                                    I3, 
+                                    I4, 
+                                    I5, 
+                                    I6, 
+                                    I7, 
+                                    O);
+
+    input I0;
+    input I1;
+    input I2;
+    input I3;
+    input I4;
+    input I5;
+    input I6;
+    input I7;
+   output O;
+   
+   wire S0;
+   wire S1;
+   
+   OR2  I_36_94 (.I0(S0), 
+                .I1(S1), 
+                .O(O));
+   OR4  I_36_95 (.I0(I4), 
+                .I1(I5), 
+                .I2(I6), 
+                .I3(I7), 
+                .O(S1));
+   OR4  I_36_112 (.I0(I0), 
+                 .I1(I1), 
+                 .I2(I2), 
+                 .I3(I3), 
+                 .O(S0));
+endmodule
+`timescale 1ns / 1ps
+
+module OR9_MXILINX_Spin_link_output(I0, 
+                                    I1, 
+                                    I2, 
+                                    I3, 
+                                    I4, 
+                                    I5, 
+                                    I6, 
+                                    I7, 
+                                    I8, 
+                                    O);
+
+    input I0;
+    input I1;
+    input I2;
+    input I3;
+    input I4;
+    input I5;
+    input I6;
+    input I7;
+    input I8;
+   output O;
+   
+   wire S0;
+   wire S1;
+   
+   OR4  I_36_94 (.I0(I0), 
+                .I1(I1), 
+                .I2(I2), 
+                .I3(I3), 
+                .O(S0));
+   OR3  I_36_110 (.I0(S0), 
+                 .I1(S1), 
+                 .I2(I8), 
+                 .O(O));
+   OR4  I_36_119 (.I0(I4), 
+                 .I1(I5), 
+                 .I2(I6), 
+                 .I3(I7), 
+                 .O(S1));
+endmodule
+`timescale 1ns / 1ps
+
+module Symbol_encoder_MUSER_Spin_link_output(SYMBOL, 
+                                             NIBBLE);
+
+    input [16:0] SYMBOL;
+   output [6:0] NIBBLE;
+   
+   
+   OR5  XLXI_30 (.I0(SYMBOL[15]), 
+                .I1(SYMBOL[12]), 
+                .I2(SYMBOL[8]), 
+                .I3(SYMBOL[4]), 
+                .I4(SYMBOL[0]), 
+                .O(NIBBLE[0]));
+   OR5  XLXI_31 (.I0(SYMBOL[13]), 
+                .I1(SYMBOL[12]), 
+                .I2(SYMBOL[9]), 
+                .I3(SYMBOL[5]), 
+                .I4(SYMBOL[1]), 
+                .O(NIBBLE[1]));
+   OR5  XLXI_32 (.I0(SYMBOL[14]), 
+                .I1(SYMBOL[13]), 
+                .I2(SYMBOL[10]), 
+                .I3(SYMBOL[6]), 
+                .I4(SYMBOL[2]), 
+                .O(NIBBLE[2]));
+   OR5  XLXI_33 (.I0(SYMBOL[15]), 
+                .I1(SYMBOL[14]), 
+                .I2(SYMBOL[11]), 
+                .I3(SYMBOL[7]), 
+                .I4(SYMBOL[3]), 
+                .O(NIBBLE[3]));
+   OR5  XLXI_34 (.I0(SYMBOL[16]), 
+                .I1(SYMBOL[7]), 
+                .I2(SYMBOL[6]), 
+                .I3(SYMBOL[5]), 
+                .I4(SYMBOL[4]), 
+                .O(NIBBLE[5]));
+   OR5  XLXI_35 (.I0(SYMBOL[16]), 
+                .I1(SYMBOL[11]), 
+                .I2(SYMBOL[10]), 
+                .I3(SYMBOL[9]), 
+                .I4(SYMBOL[8]), 
+                .O(NIBBLE[6]));
+   OR4  XLXI_36 (.I0(SYMBOL[3]), 
+                .I1(SYMBOL[2]), 
+                .I2(SYMBOL[1]), 
+                .I3(SYMBOL[0]), 
+                .O(NIBBLE[4]));
+endmodule
+`timescale 1ns / 1ps
+
+module D4_16E_MXILINX_Spin_link_output(A0, 
+                                       A1, 
+                                       A2, 
+                                       A3, 
+                                       E, 
+                                       D0, 
+                                       D1, 
+                                       D2, 
+                                       D3, 
+                                       D4, 
+                                       D5, 
+                                       D6, 
+                                       D7, 
+                                       D8, 
+                                       D9, 
+                                       D10, 
+                                       D11, 
+                                       D12, 
+                                       D13, 
+                                       D14, 
+                                       D15);
+
+    input A0;
+    input A1;
+    input A2;
+    input A3;
+    input E;
+   output D0;
+   output D1;
+   output D2;
+   output D3;
+   output D4;
+   output D5;
+   output D6;
+   output D7;
+   output D8;
+   output D9;
+   output D10;
+   output D11;
+   output D12;
+   output D13;
+   output D14;
+   output D15;
+   
+   
+   AND5B3  I_36_53 (.I0(A0), 
+                   .I1(A1), 
+                   .I2(A2), 
+                   .I3(A3), 
+                   .I4(E), 
+                   .O(D8));
+   AND5B2  I_36_54 (.I0(A1), 
+                   .I1(A2), 
+                   .I2(E), 
+                   .I3(A3), 
+                   .I4(A0), 
+                   .O(D9));
+   AND5B2  I_36_55 (.I0(A0), 
+                   .I1(A2), 
+                   .I2(E), 
+                   .I3(A3), 
+                   .I4(A1), 
+                   .O(D10));
+   AND5B1  I_36_56 (.I0(A2), 
+                   .I1(A0), 
+                   .I2(A1), 
+                   .I3(A3), 
+                   .I4(E), 
+                   .O(D11));
+   AND5B2  I_36_57 (.I0(A0), 
+                   .I1(A1), 
+                   .I2(E), 
+                   .I3(A3), 
+                   .I4(A2), 
+                   .O(D12));
+   AND5B1  I_36_58 (.I0(A1), 
+                   .I1(A0), 
+                   .I2(A2), 
+                   .I3(A3), 
+                   .I4(E), 
+                   .O(D13));
+   AND5B1  I_36_59 (.I0(A0), 
+                   .I1(A1), 
+                   .I2(A2), 
+                   .I3(A3), 
+                   .I4(E), 
+                   .O(D14));
+   AND5  I_36_60 (.I0(A3), 
+                 .I1(A2), 
+                 .I2(A1), 
+                 .I3(A0), 
+                 .I4(E), 
+                 .O(D15));
+   AND5B2  I_36_61 (.I0(A3), 
+                   .I1(A0), 
+                   .I2(E), 
+                   .I3(A2), 
+                   .I4(A1), 
+                   .O(D6));
+   AND5B1  I_36_62 (.I0(A3), 
+                   .I1(A2), 
+                   .I2(A1), 
+                   .I3(A0), 
+                   .I4(E), 
+                   .O(D7));
+   AND5B2  I_36_63 (.I0(A3), 
+                   .I1(A1), 
+                   .I2(E), 
+                   .I3(A2), 
+                   .I4(A0), 
+                   .O(D5));
+   AND5B3  I_36_64 (.I0(A0), 
+                   .I1(A1), 
+                   .I2(A3), 
+                   .I3(A2), 
+                   .I4(E), 
+                   .O(D4));
+   AND5B2  I_36_65 (.I0(A2), 
+                   .I1(A3), 
+                   .I2(E), 
+                   .I3(A0), 
+                   .I4(A1), 
+                   .O(D3));
+   AND5B3  I_36_66 (.I0(A0), 
+                   .I1(A3), 
+                   .I2(A2), 
+                   .I3(A1), 
+                   .I4(E), 
+                   .O(D2));
+   AND5B3  I_36_67 (.I0(A1), 
+                   .I1(A2), 
+                   .I2(A3), 
+                   .I3(A0), 
+                   .I4(E), 
+                   .O(D1));
+   AND5B4  I_36_68 (.I0(A3), 
+                   .I1(A2), 
+                   .I2(A1), 
+                   .I3(A0), 
+                   .I4(E), 
+                   .O(D0));
+endmodule
+`timescale 1ns / 1ps
+
+module M2_1E_MXILINX_Spin_link_output(D0, 
+                                      D1, 
+                                      E, 
+                                      S0, 
+                                      O);
+
+    input D0;
+    input D1;
+    input E;
+    input S0;
+   output O;
+   
+   wire M0;
+   wire M1;
+   
+   AND3  I_36_30 (.I0(D1), 
+                 .I1(E), 
+                 .I2(S0), 
+                 .O(M1));
+   AND3B1  I_36_31 (.I0(S0), 
+                   .I1(E), 
+                   .I2(D0), 
+                   .O(M0));
+   OR2  I_36_38 (.I0(M1), 
+                .I1(M0), 
+                .O(O));
+endmodule
+`timescale 1ns / 1ps
+
+module FDD_MXILINX_Spin_link_output(C, 
+                                    D, 
+                                    Q);
+
+   parameter INIT = 1'b0;
+   
+    input C;
+    input D;
+   output Q;
+   
+   wire XLXN_4;
+   
+   GND  I_36_43 (.G(XLXN_4));
+   FDDCP  XLXI_1 (.C(C), 
+                 .CLR(XLXN_4), 
+                 .D(D), 
+                 .PRE(XLXN_4), 
+                 .Q(Q));
+endmodule
+`timescale 1ns / 1ps
+
+module FDD4_MXILINX_Spin_link_output(C, 
+                                     D0, 
+                                     D1, 
+                                     D2, 
+                                     D3, 
+                                     Q0, 
+                                     Q1, 
+                                     Q2, 
+                                     Q3);
+
+    input C;
+    input D0;
+    input D1;
+    input D2;
+    input D3;
+   output Q0;
+   output Q1;
+   output Q2;
+   output Q3;
+   
+   
+   (* HU_SET = "XLXI_1_1" *) 
+   FDD_MXILINX_Spin_link_output #( .INIT(1'b0) ) XLXI_1 (.C(C), 
+                                        .D(D0), 
+                                        .Q(Q0));
+   (* HU_SET = "XLXI_2_2" *) 
+   FDD_MXILINX_Spin_link_output #( .INIT(1'b0) ) XLXI_2 (.C(C), 
+                                        .D(D1), 
+                                        .Q(Q1));
+   (* HU_SET = "XLXI_4_3" *) 
+   FDD_MXILINX_Spin_link_output #( .INIT(1'b0) ) XLXI_4 (.C(C), 
+                                        .D(D2), 
+                                        .Q(Q2));
+   (* HU_SET = "XLXI_5_4" *) 
+   FDD_MXILINX_Spin_link_output #( .INIT(1'b0) ) XLXI_5 (.C(C), 
+                                        .D(D3), 
+                                        .Q(Q3));
+endmodule
+`timescale 1ns / 1ps
+
+module Spin_link_output(DATA_IN, 
+                        DATA_IN_AV, 
+                        SPIN_LINK_OUT_ACK, 
+                        DATA_IN_BSY, 
+                        DATA_OUT, 
+                        DATA_O_AV, 
+                        SPIN_LINK_OUT);
+
+    input [8:0] DATA_IN;
+    input DATA_IN_AV;
+    input SPIN_LINK_OUT_ACK;
+   output DATA_IN_BSY;
+   output [8:0] DATA_OUT;
+   output DATA_O_AV;
+   output [6:0] SPIN_LINK_OUT;
+   
+   wire XLXN_27;
+   wire XLXN_28;
+   wire XLXN_29;
+   wire XLXN_30;
+   wire XLXN_31;
+   wire XLXN_32;
+   wire XLXN_33;
+   wire XLXN_34;
+   wire XLXN_43;
+   wire [16:0] XLXN_55;
+   wire XLXN_56;
+   wire [6:0] XLXN_79;
+   wire XLXN_104;
+   wire XLXN_118;
+   wire XLXN_148;
+   wire XLXN_161;
+   wire XLXN_183;
+   wire XLXN_184;
+   wire XLXN_200;
+   wire XLXN_203;
+   wire XLXN_228;
+   wire XLXN_229;
+   wire XLXN_230;
+   wire XLXN_231;
+   wire XLXN_232;
+   wire XLXN_233;
+   wire XLXN_234;
+   wire XLXN_258;
+   wire XLXN_265;
+   wire XLXN_268;
+   wire XLXN_276;
+   wire XLXN_281;
+   wire DATA_IN_BSY_DUMMY;
+   wire DATA_O_AV_DUMMY;
+   wire [8:0] DATA_OUT_DUMMY;
+   
+   assign DATA_IN_BSY = DATA_IN_BSY_DUMMY;
+   assign DATA_OUT[8:0] = DATA_OUT_DUMMY[8:0];
+   assign DATA_O_AV = DATA_O_AV_DUMMY;
+   (* HU_SET = "XLXI_3_5" *) 
+   FDD4_MXILINX_Spin_link_output  XLXI_3 (.C(DATA_IN_AV), 
+                                         .D0(DATA_IN[0]), 
+                                         .D1(DATA_IN[1]), 
+                                         .D2(DATA_IN[2]), 
+                                         .D3(DATA_IN[3]), 
+                                         .Q0(XLXN_27), 
+                                         .Q1(XLXN_29), 
+                                         .Q2(XLXN_31), 
+                                         .Q3(XLXN_33));
+   (* HU_SET = "XLXI_4_6" *) 
+   FDD4_MXILINX_Spin_link_output  XLXI_4 (.C(DATA_IN_AV), 
+                                         .D0(DATA_IN[4]), 
+                                         .D1(DATA_IN[5]), 
+                                         .D2(DATA_IN[6]), 
+                                         .D3(DATA_IN[7]), 
+                                         .Q0(XLXN_28), 
+                                         .Q1(XLXN_30), 
+                                         .Q2(XLXN_32), 
+                                         .Q3(XLXN_34));
+   (* HU_SET = "XLXI_5_7" *) 
+   FDD_MXILINX_Spin_link_output #( .INIT(1'b0) ) XLXI_5 (.C(DATA_IN_AV), 
+                                        .D(DATA_IN[8]), 
+                                        .Q(XLXN_56));
+   (* HU_SET = "XLXI_6_8" *) 
+   M2_1E_MXILINX_Spin_link_output  XLXI_6 (.D0(XLXN_27), 
+                                          .D1(XLXN_28), 
+                                          .E(XLXN_43), 
+                                          .S0(XLXN_200), 
+                                          .O(DATA_OUT_DUMMY[0]));
+   (* HU_SET = "XLXI_7_9" *) 
+   M2_1E_MXILINX_Spin_link_output  XLXI_7 (.D0(XLXN_29), 
+                                          .D1(XLXN_30), 
+                                          .E(XLXN_43), 
+                                          .S0(XLXN_200), 
+                                          .O(DATA_OUT_DUMMY[1]));
+   (* HU_SET = "XLXI_8_10" *) 
+   M2_1E_MXILINX_Spin_link_output  XLXI_8 (.D0(XLXN_31), 
+                                          .D1(XLXN_32), 
+                                          .E(XLXN_43), 
+                                          .S0(XLXN_200), 
+                                          .O(DATA_OUT_DUMMY[2]));
+   (* HU_SET = "XLXI_9_11" *) 
+   M2_1E_MXILINX_Spin_link_output  XLXI_9 (.D0(XLXN_33), 
+                                          .D1(XLXN_34), 
+                                          .E(XLXN_43), 
+                                          .S0(XLXN_200), 
+                                          .O(DATA_OUT_DUMMY[3]));
+   INV  XLXI_10 (.I(XLXN_56), 
+                .O(XLXN_43));
+   (* HU_SET = "XLXI_11_12" *) 
+   D4_16E_MXILINX_Spin_link_output  XLXI_11 (.A0(DATA_OUT_DUMMY[0]), 
+                                            .A1(DATA_OUT_DUMMY[1]), 
+                                            .A2(DATA_OUT_DUMMY[2]), 
+                                            .A3(DATA_OUT_DUMMY[3]), 
+                                            .E(XLXN_43), 
+                                            .D0(XLXN_55[0]), 
+                                            .D1(XLXN_55[1]), 
+                                            .D2(XLXN_55[2]), 
+                                            .D3(XLXN_55[3]), 
+                                            .D4(XLXN_55[4]), 
+                                            .D5(XLXN_55[5]), 
+                                            .D6(XLXN_55[6]), 
+                                            .D7(XLXN_55[7]), 
+                                            .D8(XLXN_55[8]), 
+                                            .D9(XLXN_55[9]), 
+                                            .D10(XLXN_55[10]), 
+                                            .D11(XLXN_55[11]), 
+                                            .D12(XLXN_55[12]), 
+                                            .D13(XLXN_55[13]), 
+                                            .D14(XLXN_55[14]), 
+                                            .D15(XLXN_55[15]));
+   Symbol_encoder_MUSER_Spin_link_output  XLXI_12 (.SYMBOL(XLXN_55[16:0]), 
+                                                  .NIBBLE(XLXN_79[6:0]));
+   BUF  XLXI_13 (.I(XLXN_56), 
+                .O(XLXN_55[16]));
+   toggler_MUSER_Spin_link_output  XLXI_14 (.CLK(XLXN_229), 
+                                           .CLR(), 
+                                           .Q(SPIN_LINK_OUT[1]));
+   toggler_MUSER_Spin_link_output  XLXI_15 (.CLK(XLXN_228), 
+                                           .CLR(), 
+                                           .Q(SPIN_LINK_OUT[0]));
+   toggler_MUSER_Spin_link_output  XLXI_16 (.CLK(XLXN_230), 
+                                           .CLR(), 
+                                           .Q(SPIN_LINK_OUT[2]));
+   toggler_MUSER_Spin_link_output  XLXI_17 (.CLK(XLXN_231), 
+                                           .CLR(), 
+                                           .Q(SPIN_LINK_OUT[3]));
+   toggler_MUSER_Spin_link_output  XLXI_18 (.CLK(XLXN_232), 
+                                           .CLR(), 
+                                           .Q(SPIN_LINK_OUT[4]));
+   toggler_MUSER_Spin_link_output  XLXI_19 (.CLK(XLXN_233), 
+                                           .CLR(), 
+                                           .Q(SPIN_LINK_OUT[5]));
+   toggler_MUSER_Spin_link_output  XLXI_20 (.CLK(XLXN_234), 
+                                           .CLR(), 
+                                           .Q(SPIN_LINK_OUT[6]));
+   (* HU_SET = "XLXI_21_13" *) 
+   FDC_MXILINX_Spin_link_output #( .INIT(1'b0) ) XLXI_21 (.C(XLXN_203), 
+                                         .CLR(XLXN_203), 
+                                         .D(DATA_IN_AV), 
+                                         .Q(XLXN_104));
+   XOR2  XLXI_23 (.I0(XLXN_104), 
+                 .I1(DATA_IN_AV), 
+                 .O(DATA_IN_BSY_DUMMY));
+   (* HU_SET = "XLXI_24_15" *) 
+   FDC_MXILINX_Spin_link_output #( .INIT(1'b0) ) XLXI_24 (.C(DATA_O_AV_DUMMY), 
+                                         .CLR(), 
+                                         .D(SPIN_LINK_OUT_ACK), 
+                                         .Q(XLXN_118));
+   XOR2  XLXI_25 (.I0(XLXN_118), 
+                 .I1(SPIN_LINK_OUT_ACK), 
+                 .O(XLXN_265));
+   (* HU_SET = "XLXI_28_14" *) 
+   FDC_MXILINX_Spin_link_output #( .INIT(1'b0) ) XLXI_28 (.C(XLXN_265), 
+                                         .CLR(XLXN_56), 
+                                         .D(XLXN_148), 
+                                         .Q(XLXN_200));
+   INV  XLXI_29 (.I(XLXN_200), 
+                .O(XLXN_148));
+   AND2  XLXI_32 (.I0(XLXN_265), 
+                 .I1(XLXN_161), 
+                 .O(XLXN_203));
+   OR2  XLXI_33 (.I0(XLXN_56), 
+                .I1(XLXN_200), 
+                .O(XLXN_161));
+   (* HU_SET = "XLXI_37_16" *) 
+   OR9_MXILINX_Spin_link_output  XLXI_37 (.I0(XLXN_55[8]), 
+                                         .I1(XLXN_55[7]), 
+                                         .I2(XLXN_55[6]), 
+                                         .I3(XLXN_55[5]), 
+                                         .I4(XLXN_55[4]), 
+                                         .I5(XLXN_55[3]), 
+                                         .I6(XLXN_55[2]), 
+                                         .I7(XLXN_55[1]), 
+                                         .I8(XLXN_55[0]), 
+                                         .O(XLXN_184));
+   (* HU_SET = "XLXI_38_17" *) 
+   OR8_MXILINX_Spin_link_output  XLXI_38 (.I0(XLXN_55[16]), 
+                                         .I1(XLXN_55[15]), 
+                                         .I2(XLXN_55[14]), 
+                                         .I3(XLXN_55[13]), 
+                                         .I4(XLXN_55[12]), 
+                                         .I5(XLXN_55[11]), 
+                                         .I6(XLXN_55[10]), 
+                                         .I7(XLXN_55[9]), 
+                                         .O(XLXN_183));
+   OR2  XLXI_39 (.I0(XLXN_183), 
+                .I1(XLXN_184), 
+                .O(XLXN_258));
+   (* HU_SET = "XLXI_47_18" *) 
+   LDC_MXILINX_Spin_link_output #( .INIT(1'b0) ) XLXI_47 (.CLR(XLXN_265), 
+                                         .D(XLXN_79[0]), 
+                                         .G(XLXN_268), 
+                                         .Q(XLXN_228));
+   (* HU_SET = "XLXI_48_19" *) 
+   LDC_MXILINX_Spin_link_output #( .INIT(1'b0) ) XLXI_48 (.CLR(XLXN_265), 
+                                         .D(XLXN_79[1]), 
+                                         .G(XLXN_268), 
+                                         .Q(XLXN_229));
+   (* HU_SET = "XLXI_49_20" *) 
+   LDC_MXILINX_Spin_link_output #( .INIT(1'b0) ) XLXI_49 (.CLR(XLXN_265), 
+                                         .D(XLXN_79[2]), 
+                                         .G(XLXN_268), 
+                                         .Q(XLXN_230));
+   (* HU_SET = "XLXI_50_21" *) 
+   LDC_MXILINX_Spin_link_output #( .INIT(1'b0) ) XLXI_50 (.CLR(XLXN_265), 
+                                         .D(XLXN_79[3]), 
+                                         .G(XLXN_268), 
+                                         .Q(XLXN_231));
+   (* HU_SET = "XLXI_51_22" *) 
+   LDC_MXILINX_Spin_link_output #( .INIT(1'b0) ) XLXI_51 (.CLR(XLXN_265), 
+                                         .D(XLXN_79[4]), 
+                                         .G(XLXN_268), 
+                                         .Q(XLXN_232));
+   (* HU_SET = "XLXI_52_23" *) 
+   LDC_MXILINX_Spin_link_output #( .INIT(1'b0) ) XLXI_52 (.CLR(XLXN_265), 
+                                         .D(XLXN_79[5]), 
+                                         .G(XLXN_268), 
+                                         .Q(XLXN_233));
+   (* HU_SET = "XLXI_53_24" *) 
+   LDC_MXILINX_Spin_link_output #( .INIT(1'b0) ) XLXI_53 (.CLR(XLXN_265), 
+                                         .D(XLXN_79[6]), 
+                                         .G(XLXN_268), 
+                                         .Q(XLXN_234));
+   BUF  XLXI_56 (.I(XLXN_268), 
+                .O(XLXN_281));
+   BUF  XLXI_58 (.I(XLXN_281), 
+                .O(XLXN_276));
+   AND2  XLXI_60 (.I0(DATA_IN_BSY_DUMMY), 
+                 .I1(XLXN_258), 
+                 .O(XLXN_268));
+   (* HU_SET = "XLXI_63_25" *) 
+   FDDC_MXILINX_Spin_link_output #( .INIT(1'b0) ) XLXI_63 (.C(XLXN_276), 
+                                          .CLR(XLXN_265), 
+                                          .D(XLXN_281), 
+                                          .Q(DATA_O_AV_DUMMY));
+endmodule

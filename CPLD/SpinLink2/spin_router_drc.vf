@@ -1,0 +1,82 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.1
+//  \   \         Application : sch2hdl
+//  /   /         Filename : spin_router_drc.vf
+// /___/   /\     Timestamp : 08/04/2012 15:41:16
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: F:\Xilinx\14.1\ISE_DS\ISE\bin\nt\unwrapped\sch2hdl.exe -intstyle ise -family xbr -verilog spin_router_drc.vf -w F:/CPLD/SpinLink/spin_router.sch
+//Design Name: spin_router
+//Device: xbr
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module BUF4_MXILINX_spin_router(I0, 
+                                I1, 
+                                I2, 
+                                I3, 
+                                O0, 
+                                O1, 
+                                O2, 
+                                O3);
+
+    input I0;
+    input I1;
+    input I2;
+    input I3;
+   output O0;
+   output O1;
+   output O2;
+   output O3;
+   
+   
+   BUF  XLXI_1 (.I(I0), 
+               .O(O0));
+   BUF  XLXI_2 (.I(I1), 
+               .O(O1));
+   BUF  XLXI_3 (.I(I2), 
+               .O(O2));
+   BUF  XLXI_4 (.I(I3), 
+               .O(O3));
+endmodule
+`timescale 1ns / 1ps
+
+module spin_router(ACK_I, 
+                   SPL_IN, 
+                   ACK_O, 
+                   SPL_OUT);
+
+    input ACK_I;
+    input [6:0] SPL_IN;
+   output ACK_O;
+   output [6:0] SPL_OUT;
+   
+   
+   (* HU_SET = "XLXI_1_0" *) 
+   BUF4_MXILINX_spin_router  XLXI_1 (.I0(SPL_IN[0]), 
+                                    .I1(SPL_IN[1]), 
+                                    .I2(SPL_IN[2]), 
+                                    .I3(SPL_IN[3]), 
+                                    .O0(SPL_OUT[0]), 
+                                    .O1(SPL_OUT[1]), 
+                                    .O2(SPL_OUT[2]), 
+                                    .O3(SPL_OUT[3]));
+   (* HU_SET = "XLXI_2_1" *) 
+   BUF4_MXILINX_spin_router  XLXI_2 (.I0(SPL_IN[4]), 
+                                    .I1(SPL_IN[5]), 
+                                    .I2(SPL_IN[6]), 
+                                    .I3(ACK_I), 
+                                    .O0(SPL_OUT[4]), 
+                                    .O1(SPL_OUT[5]), 
+                                    .O2(SPL_OUT[6]), 
+                                    .O3(ACK_O));
+endmodule

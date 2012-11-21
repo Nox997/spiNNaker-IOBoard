@@ -1,0 +1,65 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.1
+//  \   \         Application : sch2hdl
+//  /   /         Filename : toggler.vf
+// /___/   /\     Timestamp : 08/08/2012 17:09:36
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family xbr -verilog C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/toggler.vf -w C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/toggler.sch
+//Design Name: toggler
+//Device: xbr
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module FDC_MXILINX_toggler(C, 
+                           CLR, 
+                           D, 
+                           Q);
+
+   parameter INIT = 1'b0;
+   
+    input C;
+    input CLR;
+    input D;
+   output Q;
+   
+   wire XLXN_5;
+   
+   GND  I_36_55 (.G(XLXN_5));
+   FDCP  U0 (.C(C), 
+            .CLR(CLR), 
+            .D(D), 
+            .PRE(XLXN_5), 
+            .Q(Q));
+endmodule
+`timescale 1ns / 1ps
+
+module toggler(CLK, 
+               CLR, 
+               Q);
+
+    input CLK;
+    input CLR;
+   output Q;
+   
+   wire XLXN_1;
+   wire Q_DUMMY;
+   
+   assign Q = Q_DUMMY;
+   (* HU_SET = "XLXI_1_8" *) 
+   FDC_MXILINX_toggler #( .INIT(1'b0) ) XLXI_1 (.C(CLK), 
+                               .CLR(CLR), 
+                               .D(XLXN_1), 
+                               .Q(Q_DUMMY));
+   INV  XLXI_2 (.I(Q_DUMMY), 
+               .O(XLXN_1));
+endmodule

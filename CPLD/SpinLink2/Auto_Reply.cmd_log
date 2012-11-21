@@ -1,0 +1,59 @@
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template F:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl D:/Dropbox/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 
+vhdtdtfi -lib work Auto_Reply.vhd -prj SpinLink -o Auto_Reply.spl -module Auto_Reply -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Auto_Reply.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Auto_Reply.sym 

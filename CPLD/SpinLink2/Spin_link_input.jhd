@@ -1,0 +1,3 @@
+MODULE Spin_link_input
+	SUBMODULE Auto_Reply
+		INSTANCE XLXI_83

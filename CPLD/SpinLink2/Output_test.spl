@@ -1,0 +1,5 @@
+[Inputs]
+DAV
+[Outputs]
+=SPLO[6:0]=
+[BiDir]

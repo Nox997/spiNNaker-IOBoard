@@ -1,0 +1,35 @@
+Release 14.1 - xst P.15xf (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink2/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Parameter xsthdpdir set to C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink2/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink2/Output3.vhd" in Library work.
+Entity <output3> compiled.
+ERROR:HDLParsers:164 - "C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink2/Output3.vhd" Line 173. parse error, unexpected IF, expecting PROCESS
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
+ 
+--> 
+
+Total memory usage is 167460 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

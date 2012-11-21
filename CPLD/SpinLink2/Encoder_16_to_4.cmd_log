@@ -1,0 +1,4 @@
+sch2sym -intstyle ise -family xbr -w -refsym Encoder_16_to_4 F:/CPLD/SpinLink/Encoder_16_to_4.sch F:/CPLD/SpinLink/Encoder_16_to_4.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Encoder_16_to_4 F:/CPLD/SpinLink/Encoder_16_to_4.sch F:/CPLD/SpinLink/Encoder_16_to_4.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Encoder_16_to_4 F:/CPLD/SpinLink/Encoder_16_to_4.sch F:/CPLD/SpinLink/Encoder_16_to_4.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Encoder_16_to_4 C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Encoder_16_to_4.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Encoder_16_to_4.sym 

@@ -1,0 +1,2 @@
+vhdtdtfi -lib work SpinLink_Input.vhd -prj SpinLink -o SpinLink_Input.spl -module SpinLink_Input -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w SpinLink_Input.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/SpinLink_Input.sym 

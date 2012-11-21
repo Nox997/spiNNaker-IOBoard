@@ -1,0 +1,29 @@
+Command line:
+   Auto_Reply_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50572
+
+Wed Aug 08 18:54:47 2012
+
+
+ Elaboration Time: 0.03125 sec
+
+ Current Memory Usage: 490.529 Meg
+
+ Total Signals          : 6
+ Total Nets             : 12
+ Total Signal Drivers   : 4
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 3
+ Total Traceable Variables  : 8
+ Total Scalar Nets and Variables : 372
+Total Line Count : 41
+
+ Total Simulation Time: 0.484375 sec
+
+ Current Memory Usage: 491.577 Meg
+
+Wed Aug 08 18:56:18 2012
+

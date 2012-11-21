@@ -1,0 +1,10 @@
+select figure at 2246 1698 8 -branches -sn=1
+select figure at 1686 1714 8 -branches -sn=1
+select figure at 1555 1028 8 -branches -sn=1
+select figure at 1683 2017 8 -branches -sn=1
+select figure at 1572 1714 8 -branches -sn=1
+select figure at 1572 1714 8 -branches -all -sn=1
+select figure at 1452 2483 8 -branches -sn=1
+select figure at 1207 1055 8 -branches -sn=1
+update symbols Auto_Reply
+select all in 1455 2352 1466 2366 -branches -enclosed -sn=1

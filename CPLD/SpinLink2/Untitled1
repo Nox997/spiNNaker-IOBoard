@@ -1,0 +1,18 @@
+		if( DACK = '1' or (BUFFERED_STAT = '1' and DAV_STATUS = '0') ) then
+			if(BUFFER_STATUS = '0') then
+				BUFFER_STATUS := '1';
+			elsif(BUFFER_STATUS = '1' and ACK_OUT = '0') then
+				ACK_OUT := '1';
+			elsif ACK_OUT = '1' then
+				DACK_BUFFER := '1';
+			end if;
+		elsif(DACK = '0') then
+			if(DACK_BUFFER = '1') then
+				ACK_OUT := '0';
+			elsif(BUFFER_STATUS = '1' and ACK_OUT = '0') then
+				BUFFER_STATUS := '0';
+			elsif(BUFFER_STATUS = '0') then
+				DACK_BUFFER := '0';
+				DAV_STATUS  := '0';
+			end if;
+		end if;

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="Cpld" num="0" delta="new" >Clock &apos;<arg fmt="%s" index="1">DATA_IN_AV</arg>&apos; is used in an OFFSET timespec, this clock should be explicitly declared as a global clock input (BUFG) in your design in order for the OFFSET timespec to be properly analyzed. This software may attempt to place this signal on a pin that can drive a BUFG if it does not already have a pin assigned, however if the LOC constraint is not specified by the user then the OFFSET timespec will not be applied. OFFSET constraints on clocks that do not drive a BUFG will be ignored. In this case a FROM:TO constraint should be used instead.
+</msg>
+
+<msg type="warning" file="Cpld" num="0" delta="new" >Clock &apos;<arg fmt="%s" index="1">DATA_IN_AV</arg>&apos; is used in an OFFSET timespec, this clock should be explicitly declared as a global clock input (BUFG) in your design in order for the OFFSET timespec to be properly analyzed. This software may attempt to place this signal on a pin that can drive a BUFG if it does not already have a pin assigned, however if the LOC constraint is not specified by the user then the OFFSET timespec will not be applied. OFFSET constraints on clocks that do not drive a BUFG will be ignored. In this case a FROM:TO constraint should be used instead.
+</msg>
+
+<msg type="warning" file="Cpld" num="0" delta="new" >Clock &apos;<arg fmt="%s" index="1">DATA_IN_AV</arg>&apos; is used in an OFFSET timespec, this clock should be explicitly declared as a global clock input (BUFG) in your design in order for the OFFSET timespec to be properly analyzed. This software may attempt to place this signal on a pin that can drive a BUFG if it does not already have a pin assigned, however if the LOC constraint is not specified by the user then the OFFSET timespec will not be applied. OFFSET constraints on clocks that do not drive a BUFG will be ignored. In this case a FROM:TO constraint should be used instead.
+</msg>
+
+<msg type="warning" file="Cpld" num="0" delta="new" >Clock &apos;<arg fmt="%s" index="1">DATA_IN_AV</arg>&apos; is used in an OFFSET timespec, this clock should be explicitly declared as a global clock input (BUFG) in your design in order for the OFFSET timespec to be properly analyzed. This software may attempt to place this signal on a pin that can drive a BUFG if it does not already have a pin assigned, however if the LOC constraint is not specified by the user then the OFFSET timespec will not be applied. OFFSET constraints on clocks that do not drive a BUFG will be ignored. In this case a FROM:TO constraint should be used instead.
+</msg>
+
+<msg type="warning" file="Cpld" num="0" delta="new" >Clock &apos;<arg fmt="%s" index="1">DATA_IN_AV</arg>&apos; is used in an OFFSET timespec, this clock should be explicitly declared as a global clock input (BUFG) in your design in order for the OFFSET timespec to be properly analyzed. This software may attempt to place this signal on a pin that can drive a BUFG if it does not already have a pin assigned, however if the LOC constraint is not specified by the user then the OFFSET timespec will not be applied. OFFSET constraints on clocks that do not drive a BUFG will be ignored. In this case a FROM:TO constraint should be used instead.
+</msg>
+
+<msg type="warning" file="Cpld" num="0" delta="new" >Clock &apos;<arg fmt="%s" index="1">DATA_IN_AV</arg>&apos; is used in an OFFSET timespec, this clock should be explicitly declared as a global clock input (BUFG) in your design in order for the OFFSET timespec to be properly analyzed. This software may attempt to place this signal on a pin that can drive a BUFG if it does not already have a pin assigned, however if the LOC constraint is not specified by the user then the OFFSET timespec will not be applied. OFFSET constraints on clocks that do not drive a BUFG will be ignored. In this case a FROM:TO constraint should be used instead.
+</msg>
+
+<msg type="warning" file="Cpld" num="0" delta="new" >Clock &apos;<arg fmt="%s" index="1">DATA_IN_AV</arg>&apos; is used in an OFFSET timespec, this clock should be explicitly declared as a global clock input (BUFG) in your design in order for the OFFSET timespec to be properly analyzed. This software may attempt to place this signal on a pin that can drive a BUFG if it does not already have a pin assigned, however if the LOC constraint is not specified by the user then the OFFSET timespec will not be applied. OFFSET constraints on clocks that do not drive a BUFG will be ignored. In this case a FROM:TO constraint should be used instead.
+</msg>
+
+<msg type="warning" file="Cpld" num="0" delta="new" >Clock &apos;<arg fmt="%s" index="1">DATA_IN_AV</arg>&apos; is used in an OFFSET timespec, this clock should be explicitly declared as a global clock input (BUFG) in your design in order for the OFFSET timespec to be properly analyzed. This software may attempt to place this signal on a pin that can drive a BUFG if it does not already have a pin assigned, however if the LOC constraint is not specified by the user then the OFFSET timespec will not be applied. OFFSET constraints on clocks that do not drive a BUFG will be ignored. In this case a FROM:TO constraint should be used instead.
+</msg>
+
+<msg type="warning" file="Cpld" num="0" delta="new" >Clock &apos;<arg fmt="%s" index="1">DATA_IN_AV</arg>&apos; is used in an OFFSET timespec, this clock should be explicitly declared as a global clock input (BUFG) in your design in order for the OFFSET timespec to be properly analyzed. This software may attempt to place this signal on a pin that can drive a BUFG if it does not already have a pin assigned, however if the LOC constraint is not specified by the user then the OFFSET timespec will not be applied. OFFSET constraints on clocks that do not drive a BUFG will be ignored. In this case a FROM:TO constraint should be used instead.
+</msg>
+
+<msg type="warning" file="Cpld" num="0" delta="new" >Clock &apos;<arg fmt="%s" index="1">DATA_IN_AV</arg>&apos; is used in an OFFSET timespec, this clock should be explicitly declared as a global clock input (BUFG) in your design in order for the OFFSET timespec to be properly analyzed. This software may attempt to place this signal on a pin that can drive a BUFG if it does not already have a pin assigned, however if the LOC constraint is not specified by the user then the OFFSET timespec will not be applied. OFFSET constraints on clocks that do not drive a BUFG will be ignored. In this case a FROM:TO constraint should be used instead.
+</msg>
+
+<msg type="warning" file="Cpld" num="0" delta="new" >Combinatorial feedback is detected on the clock path at signal &apos;XLXI_20/DATA_BUFFER&lt;3&gt;.COMB&apos;. Timing analysis of paths involving this node may be inaccurate or incomplete.
+</msg>
+
+</messages>
+

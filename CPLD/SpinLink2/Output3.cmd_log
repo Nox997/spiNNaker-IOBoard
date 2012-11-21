@@ -1,0 +1,4 @@
+vhdtdtfi -lib work Output3.vhd -prj SpinLink -o Output3.spl -module Output3 -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Output3.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output3.sym 
+vhdtdtfi -lib work Output3.vhd -prj SpinLink -o Output3.spl -module Output3 -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Output3.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output3.sym 

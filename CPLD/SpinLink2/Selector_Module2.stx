@@ -1,0 +1,36 @@
+Release 14.1 - xst P.15xf (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to D:/Dropbox/Dropbox/D-Thesis/Cpld/SpinLink/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.36 secs
+ 
+--> Parameter xsthdpdir set to D:/Dropbox/Dropbox/D-Thesis/Cpld/SpinLink/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.37 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+WARNING:HDLParsers:3607 - Unit work/Selector_Module2 is now defined in a different file.  It was defined in "C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Selector_Module2.vhd", and is now defined in "D:/Dropbox/Dropbox/D-Thesis/Cpld/SpinLink/Selector_Module2.vhd".
+WARNING:HDLParsers:3607 - Unit work/Selector_Module2/Behavioral is now defined in a different file.  It was defined in "C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Selector_Module2.vhd", and is now defined in "D:/Dropbox/Dropbox/D-Thesis/Cpld/SpinLink/Selector_Module2.vhd".
+Compiling vhdl file "D:/Dropbox/Dropbox/D-Thesis/Cpld/SpinLink/Selector_Module2.vhd" in Library work.
+Architecture behavioral of Entity selector_module2 is up to date.
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.60 secs
+ 
+--> 
+
+Total memory usage is 162816 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

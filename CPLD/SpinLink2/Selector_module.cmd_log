@@ -1,0 +1,2 @@
+sch2sym -intstyle ise -family xbr -w -refsym Selector_module F:/CPLD/SpinLink/Selector_module.sch F:/CPLD/SpinLink/Selector_module.sym 
+sch2sym -intstyle ise -family xbr -w -refsym Selector_module C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Selector_module.sch C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Selector_module.sym 

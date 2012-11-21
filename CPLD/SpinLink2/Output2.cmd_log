@@ -1,0 +1,2 @@
+vhdtdtfi -lib work Output2.vhd -prj SpinLink -o Output2.spl -module Output2 -template C:/Xilinx/14.1/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family xbr -w Output2.spl C:/Users/jt/Dropbox/D-Thesis/Cpld/SpinLink/Output2.sym 
