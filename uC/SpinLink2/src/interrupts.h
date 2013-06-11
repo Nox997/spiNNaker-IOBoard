@@ -39,10 +39,6 @@ NVIC_InitTypeDef	nvic_spl;
 EXTI_InitTypeDef	exti_spl;
 
 
-extern volatile uint32_t spinPacketHeader;
-extern volatile uint32_t spinPacketAddress;
-extern volatile uint32_t spinPacketPayload;
-extern volatile uint32_t spinPacketAvailableFlag;
 
 
 

@@ -8,23 +8,11 @@
 
 #include "interrupts.h"
 
-volatile uint32_t spinPacketHeader;
-volatile uint32_t spinPacketAddress;
-volatile uint32_t spinPacketPayload;
 volatile uint32_t spinPacketAvailableFlag = 0;
-
+volatile uint32_t eDVSAvailableFlag = 0;
+volatile uint32_t eDVSUSARTData = 0;
 
 extern volatile uint32_t numCorrectPackages;
-
-
-
-//Buffer Variables for eDVS data:
-extern volatile uint32_t bufferEDVS1[100];
-extern volatile uint32_t eDVS1_currentPacket;
-extern volatile uint32_t eDVS1_topPacket;
-extern volatile uint32_t bufferEDVS2[100];
-extern volatile uint32_t eDVS2_currentPacket;
-extern volatile uint32_t eDVS2_topPacket;
 
 
 /*
@@ -145,11 +133,12 @@ void USB_IRQhandler(void) // Actually USART6_IRQHandler()
 
 void EDVS_IRQhandler(void) // Actually USART1_IRQHandler()
 {
+	eDVSAvailableFlag = 1;
 //	static int32_t firstByteReceived = -1;
 //	static uint32_t yData = 0;
 //	static uint32_t xData = 0;
 //
-//
+//	firstByteReceived = !(USART_ReceiveData(USAR_EDVS) >> 7);
 //	if (firstByteReceived == 0) {
 //		yData = USART_ReceiveData(USART_EDVS);
 //		if (yData & 0x80 ){ //first bit of ydata has to be zero, so throw away this packet
@@ -235,64 +224,64 @@ void SPL_DAV_IRQHandler(void)
 																	// header
 	SPIN_MCU_DATA_IN_ACK->ODR |=  SPLI_ACK;
 	if(SPL_IEOP) goto package_corrupt;
-	spinPacketHeader = ((uint32_t)SPL_IDR);
+	inputPackage.header = ((uint32_t)SPL_IDR);
 	SPIN_MCU_DATA_IN_ACK->ODR &= ~SPLI_ACK;
 	timeout = TIMEOUT; while ((SPL_IAV==0) && (timeout--)) {};
 
 																	// address byte 0
 	SPIN_MCU_DATA_IN_ACK->ODR |=  SPLI_ACK;
 	if(SPL_IEOP) goto package_corrupt;
-	spinPacketAddress = ((uint32_t)SPL_IDR);
+	inputPackage.key = ((uint32_t)SPL_IDR);
 	SPIN_MCU_DATA_IN_ACK->ODR &= ~SPLI_ACK;
 	timeout = TIMEOUT; while ((SPL_IAV==0) && (timeout--)) {};
 
 																	// address byte 1
 	SPIN_MCU_DATA_IN_ACK->ODR |=  SPLI_ACK;
 	if(SPL_IEOP) goto package_corrupt;
-	spinPacketAddress |= ((uint32_t)SPL_IDR) << 8;
+	inputPackage.key |= ((uint32_t)SPL_IDR) << 8;
 	SPIN_MCU_DATA_IN_ACK->ODR &= ~SPLI_ACK;
 	timeout = TIMEOUT; while ((SPL_IAV==0) && (timeout--)) {};
 
 																	// address byte 2
 	SPIN_MCU_DATA_IN_ACK->ODR |=  SPLI_ACK;
 	if(SPL_IEOP) goto package_corrupt;
-	spinPacketAddress |= ((uint32_t)SPL_IDR) << 16;
+	inputPackage.key |= ((uint32_t)SPL_IDR) << 16;
 	SPIN_MCU_DATA_IN_ACK->ODR &= ~SPLI_ACK;
 	timeout = TIMEOUT; while ((SPL_IAV==0) && (timeout--)) {};
 
 																	// address byte 3
 	SPIN_MCU_DATA_IN_ACK->ODR |=  SPLI_ACK;
 	if(SPL_IEOP) goto package_corrupt;
-	spinPacketAddress |= ((uint32_t)SPL_IDR) << 24;
+	inputPackage.key |= ((uint32_t)SPL_IDR) << 24;
 	SPIN_MCU_DATA_IN_ACK->ODR &= ~SPLI_ACK;
 	timeout = TIMEOUT; while ((SPL_IAV==0) && (timeout--)) {};
 
 																	// EOP  or  payload byte 0
 	SPIN_MCU_DATA_IN_ACK->ODR |=  SPLI_ACK;
-	if(SPL_IEOP){	spinPacketPayload = 0;
+	if(SPL_IEOP){	inputPackage.payload = 0;
 	 	 	 	 	goto package_good;	}
-	spinPacketPayload = ((uint32_t)SPL_IDR);
+	inputPackage.payload = ((uint32_t)SPL_IDR);
 	SPIN_MCU_DATA_IN_ACK->ODR &= ~SPLI_ACK;
 	timeout = TIMEOUT; while ((SPL_IAV==0) && (timeout--)) {};
 
 																	// payload byte 1
 	SPIN_MCU_DATA_IN_ACK->ODR |=  SPLI_ACK;
 	if(SPL_IEOP) goto package_corrupt;
-	spinPacketPayload |= ((uint32_t)SPL_IDR) << 8;
+	inputPackage.payload |= ((uint32_t)SPL_IDR) << 8;
 	SPIN_MCU_DATA_IN_ACK->ODR &= ~SPLI_ACK;
 	timeout = TIMEOUT; while ((SPL_IAV==0) && (timeout--)) {};
 
 																	// payload byte 2
 	SPIN_MCU_DATA_IN_ACK->ODR |=  SPLI_ACK;
 	if(SPL_IEOP) goto package_corrupt;
-	spinPacketPayload |= ((uint32_t)SPL_IDR) << 16;
+	inputPackage.payload |= ((uint32_t)SPL_IDR) << 16;
 	SPIN_MCU_DATA_IN_ACK->ODR &= ~SPLI_ACK;
 	timeout = TIMEOUT; while ((SPL_IAV==0) && (timeout--)) {};
 
 																	// payload byte 3
 	SPIN_MCU_DATA_IN_ACK->ODR |=  SPLI_ACK;
 	if(SPL_IEOP) goto package_corrupt;
-	spinPacketPayload |= ((uint32_t)SPL_IDR) << 24;
+	inputPackage.payload |= ((uint32_t)SPL_IDR) << 24;
 	SPIN_MCU_DATA_IN_ACK->ODR &= ~SPLI_ACK;
 	timeout = TIMEOUT; while ((SPL_IAV==0) && (timeout--)) {};
 

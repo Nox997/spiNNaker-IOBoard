@@ -33,7 +33,7 @@ src/main.d: ../src/main.c \
  D:\Dropbox\programming\spiNNaker-IOBoard\uC\StdPeriphLib_v100_STM32F4xx\inc/stm32f4xx_wwdg.h \
  D:\Dropbox\programming\spiNNaker-IOBoard\uC\StdPeriphLib_v100_STM32F4xx\inc/misc.h \
  ../src/leds.h ../src/usart.h ../src/spin_link.h ../src/omnibot.h \
- ../src/omnibot_rate_coding_helper.h ../src/timer.h
+ ../src/timer.h
 
 D:\Dropbox\programming\spiNNaker-IOBoard\uC\CMSISv2p10_STM32F4xx\inc/stm32f4xx.h:
 
@@ -108,7 +108,5 @@ D:\Dropbox\programming\spiNNaker-IOBoard\uC\StdPeriphLib_v100_STM32F4xx\inc/misc
 ../src/spin_link.h:
 
 ../src/omnibot.h:
-
-../src/omnibot_rate_coding_helper.h:
 
 ../src/timer.h:

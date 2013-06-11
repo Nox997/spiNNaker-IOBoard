@@ -9,7 +9,6 @@ C_SRCS += \
 ../src/leds.c \
 ../src/main.c \
 ../src/omnibot.c \
-../src/omnibot_rate_coding_helper.c \
 ../src/spin_link.c \
 ../src/timer.c \
 ../src/usart.c 
@@ -20,7 +19,6 @@ OBJS += \
 ./src/leds.o \
 ./src/main.o \
 ./src/omnibot.o \
-./src/omnibot_rate_coding_helper.o \
 ./src/spin_link.o \
 ./src/timer.o \
 ./src/usart.o 
@@ -31,7 +29,6 @@ C_DEPS += \
 ./src/leds.d \
 ./src/main.d \
 ./src/omnibot.d \
-./src/omnibot_rate_coding_helper.d \
 ./src/spin_link.d \
 ./src/timer.d \
 ./src/usart.d 

@@ -17,9 +17,12 @@
  */
 
 //Baud Rates for individual devices:
-#define USART_EDVS_BAUD			4000000
-#define USART_OMNIBOT_BAUD		4000000
-#define USART_DEBUG_BAUD		2000000
+#define USART1_BAUD				4000000
+#define USART3_BAUD				4000000
+#define UART4_BAUD				4000000
+#define UART5_BAUD				4000000
+#define USART6_BAUD				4000000
+
 
 // Circular Buffer for EDVS Data:
 #define EDVS_BUF_SIZE 		4096
@@ -37,15 +40,19 @@ void usart_init(void);
 int32_t usart_sendDataFromBuffers(void);
 int32_t usart_sendDataFromBuffersBlocking(void);
 int32_t usart1_sendDataFromBufferBlocking(void);
+int32_t usart1_sendDataFromBuffer(void);
 int32_t usart3_sendDataFromBufferBlocking(void);
+int32_t uart4_sendDataFromBufferBlocking(void);
 int32_t uart5_sendDataFromBufferBlocking(void);
 int32_t usart6_sendDataFromBufferBlocking(void);
 int32_t usart1_sendString(char*);
 int32_t usart3_sendString(char*);
+int32_t uart4_sendString(char*);
 int32_t uart5_sendString(char*);
 int32_t usart6_sendString(char*);
 int32_t usart1_sendChar(char);
 int32_t usart3_sendChar(char);
+int32_t uart4_sendChar(char);
 int32_t uart5_sendChar(char);
 int32_t usart6_sendChar(char);
 

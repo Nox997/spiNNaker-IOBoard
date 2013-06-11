@@ -2,8 +2,8 @@
  * GENERATED FILE - DO NOT EDIT
  * (C) Code Red Technologies Ltd, 2008-2013
  * Generated linker script file for STM32F405RG
- * Created from generic_c.ld (vRed Suite v5.0 (12 [Build 1119] [2012-11-22] ))
- * By Red Suite v5.0.12 [Build 1119] [2012-11-22]  on Thu Jan 31 17:49:16 CET 2013
+ * Created from generic_c.ld (vRed Suite v5.1 (0 [Build 2048] [2013-02-05] ))
+ * By Red Suite v5.1.0 [Build 2048] [2013-02-05]  on Tue Jun 11 14:01:20 CEST 2013
  */
 
 
@@ -133,6 +133,30 @@ SECTIONS
 		. = ALIGN(4) ;
 		_ebss = .;
 		PROVIDE(end = .);
+	} > Ram112
+		
+	
+	.noinit_RAM2 (NOLOAD) : ALIGN(4)
+	{
+		*(.noinit.$RAM2*)
+		*(.noinit.$PeriphRam16*)
+	   . = ALIGN(4) ;
+	} > PeriphRam16 
+	
+	.noinit_RAM3 (NOLOAD) : ALIGN(4)
+	{
+		*(.noinit.$RAM3*)
+		*(.noinit.$Ram64*)
+	   . = ALIGN(4) ;
+	} > Ram64 
+	
+	/* DEFAULT NOINIT SECTION */
+	.noinit (NOLOAD): ALIGN(4)
+	{
+		_noinit = .;
+		*(.noinit*) 
+	 	. = ALIGN(4) ;
+		_end_noinit = .;
 	} > Ram112
 	
 	PROVIDE(_pvHeapStart = .);

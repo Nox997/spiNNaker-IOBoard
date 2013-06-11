@@ -18,12 +18,6 @@
 #define DEL_LOWER_16 0xFFFF0000
 #define DEL_UPPER_16 0x0000FFFF
 
-
-//Defines for Motor Commands
-#define X_DECAY 0.9f
-#define Y_DECAY 0.9f
-#define T_DECAY 0.9f
-
 // ------------------------------------------------------------ //
 // 						MGMT DEFINITIONS						//
 // ------------------------------------------------------------ //
@@ -80,8 +74,8 @@
 
 //SENSORS:
 
-#define		RATE_CODING_ACTUATORS_ENABLE				0x40			//Payload == 1 enables rate coding for actuators, payload==0 disables rate coding
-#define		RATE_CODING_SENSORS_ENABLE					0x41			//Payload == 1 enables rate coding for sensors, payload==0 disables rate coding
+//#define		RATE_CODING_ACTUATORS_ENABLE				0x40			//Payload == 1 enables rate coding for actuators, payload==0 disables rate coding
+//#define		RATE_CODING_SENSORS_ENABLE					0x41			//Payload == 1 enables rate coding for sensors, payload==0 disables rate coding
 #define 	OMNIBOT_XY									0x42			//Payload indicates the X and Y address of the Omnibot Sensors in the upper 16bit (X(8bit) Y(8bit) DATA(16bit)). The lower 16bit will be ignored
 #define 	EDVS1_XY									0x43 			//Payload indicates the X and Y address of the first EDVS sensor in the upper 16bit (X(8bit) Y(8bit) DATA(16bit)). The lower 16bit will be ignored
 #define 	EDVS2_XY									0x44			//Payload indicates the X and Y address of the second EDVS sensor in the upper 16bit (X(8bit) Y(8bit) DATA(16bit)). The lower 16bit will be ignored
@@ -138,7 +132,7 @@
 // ------------------------------------------------------------ //
 
 #define MOTOR_COMMAND_CYCLE 100
-#define MOTOR_INIT_COMMAND_CYCLE 10000
+
 #define TIMEOUT_MS 5000
 
 
@@ -178,8 +172,6 @@ typedef struct {
 //Functions
 uint8_t omnibot_sensor_data_handler(char* buffer, uint32_t buff_length);
 uint8_t omnibot_init();
-int32_t decay_speeds();
-int32_t send_motor_command_rate_coding();
 int32_t send_motor_command_value_coding();
 int32_t omnibot_command_cycle();
 void value_coding(spin_link_pkg_t *);
@@ -188,11 +180,8 @@ int32_t manage_neurons(uint32_t key, uint32_t payload);
 //Global Variables
 extern int32_t timeout_var;
 extern uint32_t MGMT_ARRAY[0x200];
-extern int32_t x_accumulator;
 extern int32_t x_payload_speed;
-extern int32_t y_accumulator;
 extern int32_t y_payload_speed;
-extern int32_t t_accumulator;
 extern int32_t t_payload_speed;
 extern uint32_t omniAvailFlag;
 extern omnisensors_t robotSensorData;

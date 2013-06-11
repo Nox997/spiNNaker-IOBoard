@@ -22,15 +22,7 @@
 // Global Stuff
 	uint8_t	PACKET_AV = 0;	//Packet available global!
 
-//eDVS data buffers:
-volatile uint32_t bufferEDVS1[100];
-volatile uint32_t eDVS1_currentPacket;
-volatile uint32_t eDVS1_topPacket;
-volatile uint32_t bufferEDVS2[100];
-volatile uint32_t eDVS2_currentPacket;
-volatile uint32_t eDVS2_topPacket;
-
-
+extern volatile uint32_t eDVSAvailableFlag;
 
 void shortDelay() {
 	int i, j;
@@ -47,12 +39,8 @@ int main(void) {
 	eDVSpacket.header = 0x2;
 	eDVSpacket.payload = 0x0;
 
-	eDVS1_currentPacket = 0;
-	eDVS1_topPacket 	= 0;
-	eDVS2_currentPacket = 0;
-	eDVS2_topPacket 	= 0;
-
-
+	uint32_t yData = 0;
+	uint32_t xData = 0;
 
 	//Debug Packet:
 	spin_link_pkg_t debugPacket;
@@ -66,42 +54,42 @@ int main(void) {
 
 	uint32_t missed_request_counter = 0;
 
-	char str_buffer[80] = "\nSpinLink Interface4\n";
-	char reset_str[] = "\nR\n";
+//	char str_buffer[80] = "\nSpinLink Interface4\n";
+//	char reset_str[] = "\nR\n";
 
-	spin_link_pkg_t spinOutputBuffer[NUM_SENSORS_VALUE_CODING];
-	spin_link_pkg_t *currentPacket = &spinOutputBuffer[0];
+//	spin_link_pkg_t spinOutputBuffer[NUM_SENSORS_VALUE_CODING];
+//	spin_link_pkg_t *currentPacket = &spinOutputBuffer[0];
 
-	RCC_ClocksTypeDef sys_clocks;
+//	RCC_ClocksTypeDef sys_clocks;
 
 	// Initialization functions
 //	SystemInit();
-	led_init();				// Initializes led init
+//	led_init();				// Initializes led init
+//
+//	led0_on(); shortDelay();
+//	led0_off(); shortDelay();
+//	led0_on(); shortDelay();
+//	led0_off(); shortDelay();
 
-	led0_on(); shortDelay();
-	led0_off(); shortDelay();
-	led0_on(); shortDelay();
-	led0_off(); shortDelay();
-
-	usart_init_ports();		// Initializes USART ports
-	usart_init_nvic();
-	usart_dma_init();
+//	usart_init_ports();		// Initializes USART ports
+//	usart_init_nvic();
+//	usart_dma_init();
 
 	spin_link_init();		// Initializing SpinLink ports
-	spin_link_buffer_init();
-	spin_link_init_nvic();  // Initializing SpinLink interrupt mode
+//	spin_link_buffer_init();
+//	spin_link_init_nvic();  // Initializing SpinLink interrupt mode
 
 	//Initialize Robot Data handler function:
-	omnibot_init();
+//	omnibot_init();
 	//Initialize Rate Coding for Robot Data to spiNNaker:
-	initialize_rate_coding();
-	//Initialize eDVS cams:
-	edvs_dma_transmission("!E+\r",4);
+//	initialize_rate_coding();
+//	//Initialize eDVS cams:
+//	edvs_dma_transmission("!E+\r",4);
 
 
-	RCC_GetClocksFreq(&sys_clocks);
+//	RCC_GetClocksFreq(&sys_clocks);
 
-	usart_dma_transmission(str_buffer, strlen(str_buffer));
+//	usart_dma_transmission(str_buffer, strlen(str_buffer));
 //	while(DMA_GetCmdStatus(DMA1_Stream3) == ENABLE );
 
 //	while (1) {
@@ -111,17 +99,17 @@ int main(void) {
 
 
 	// Resetting Robot and eDVS
-	robot_dma_transmission(reset_str, strlen(reset_str));
+//	robot_dma_transmission(reset_str, strlen(reset_str));
 	//while(DMA_GetCmdStatus(DMA1_Stream3) == ENABLE );
 
-	edvs_dma_transmission(reset_str, strlen(reset_str));
+//	edvs_dma_transmission(reset_str, strlen(reset_str));
 	//while(DMA_GetCmdStatus(DMA1_Stream7) == ENABLE );
 
 	// Reset eDVS system
 	//Initialize Timer:
-	ms_tick_init();
-	ms_tick_start();
-	ms_tick_set(0);
+//	ms_tick_init();
+//	ms_tick_start();
+//	ms_tick_set(0);
 
 
 	//CD: REMOVE THIS LATER!
@@ -133,163 +121,172 @@ int main(void) {
 //	spin_link_packet_send(&spin_link_packet2,0);
 
 	while(1) {
-		if(SPL_IAV)	{					// Emergency cycler
-			missed_request_counter++;
-			if (missed_request_counter == 20) {
-				led0_on();
-				strcpy(str_buffer, "CPLD req error\n");
-				usart_dma_transmission(str_buffer, strlen(str_buffer));
-				while(SPL_IAV){
-					SPIN_MCU_DATA_IN_ACK->ODR ^= SPLI_ACK;
-				}
-				SPIN_MCU_DATA_IN_ACK->ODR &= ~SPLI_ACK;
-				led0_off();
-			}
-		} else {
-			missed_request_counter = 0;
-		}
-
-		//CD: New MC Packet Available, handle it:
-		if (spinPacketAvailableFlag) {
-			// do something with the package
-			header = spinPacketHeader;						// copy data so that interrupt can "refill" variables
-			key = spinPacketAddress;
-			payload = spinPacketPayload;
-			spinPacketAvailableFlag = 0;					// as of here if a new interrupt signals data available we will find it
-
-			//Check if package is an MC packet:
-		    if ((header & SPL_PCKG_TYPE) == MC_PACKAGE) {
-				//CD: Check this (payload!)
-				if (!(header & SPL_PAYLOAD)) { //NO PAYLOAD! -- RATE ENCODING!
-					//Reset Timeout for Motor Commands:
-					timeout_var = TIMEOUT_MS;
-					//CD: Motor command rate encoding
-					if (key == MGMT_ARRAY[MOTION_FORWARD]) {
-						x_accumulator++;
-						//Reset Timeout for Motor Commands:
-						timeout_var = TIMEOUT_MS;
-					}
-					else if (key == MGMT_ARRAY[MOTION_BACK]) {
-						x_accumulator--;
-						//Reset Timeout for Motor Commands:
-						timeout_var = TIMEOUT_MS;
-					}
-					else if (key == MGMT_ARRAY[MOTION_LEFT]) {
-						y_accumulator++;
-						//Reset Timeout for Motor Commands:
-						timeout_var = TIMEOUT_MS;
-					}
-					else if (key == MGMT_ARRAY[MOTION_RIGHT]) {
-						y_accumulator--;
-						//Reset Timeout for Motor Commands:
-						timeout_var = TIMEOUT_MS;
-					}
-					else if (key == MGMT_ARRAY[MOTION_CLOCKWISE]) {
-						t_accumulator++;
-						//Reset Timeout for Motor Commands:
-						timeout_var = TIMEOUT_MS;
-					}
-					else if (key == MGMT_ARRAY[MOTION_C_CLKWISE]) {
-						t_accumulator--;
-						//Reset Timeout for Motor Commands:
-						timeout_var = TIMEOUT_MS;
-					}
-				}
-				else if(!(key & MGMT_BIT)) {	//PAYLOAD, BUT NO MGMT PACKET!
-					//Reset Timeout for Motor Commands:
-					//CD: THINK! THIS IS NON-OPTIMAL
-
-
-					//CD: Motor command value encoding...
-					if (key == MGMT_ARRAY[MOTION_FORWARD]) {
-						x_payload_speed = payload;
-						//Reset Timeout for Motor Commands:
-						timeout_var = TIMEOUT_MS;
-					}
-					else if (key == MGMT_ARRAY[MOTION_BACK]) {
-						x_payload_speed = -payload;
-						//Reset Timeout for Motor Commands:
-						timeout_var = TIMEOUT_MS;
-					}
-					else if (key == MGMT_ARRAY[MOTION_LEFT]) {
-						y_payload_speed = payload;
-						//Reset Timeout for Motor Commands:
-						timeout_var = TIMEOUT_MS;
-					}
-					else if (key == MGMT_ARRAY[MOTION_RIGHT]) {
-						y_payload_speed = -payload;
-						//Reset Timeout for Motor Commands:
-						timeout_var = TIMEOUT_MS;
-					}
-					else if (key == MGMT_ARRAY[MOTION_CLOCKWISE]) {
-						t_payload_speed = payload;
-						//Reset Timeout for Motor Commands:
-						timeout_var = TIMEOUT_MS;
-					}
-					else if (key == MGMT_ARRAY[MOTION_C_CLKWISE]) {
-						t_payload_speed = -payload;
-						//Reset Timeout for Motor Commands:
-						timeout_var = TIMEOUT_MS;
-					}
-				}
-				else { //PAYLOAD + MGMT_BIT ARE SET, MANAGE NEURON KEYS:
-					manage_neurons(key, payload);
-				}
-			}
-		}
-
-		//If eDVS Data is available, send a packet:
-//		if (eDVS1_currentPacket != eDVS1_topPacket) {
-//			//send an eDVS packet!
-//			eDVSpacket.key = (MGMT_ARRAY[EDVS1_XY] & DEL_LOWER_16) | (bufferEDVS1[eDVS1_currentPacket] & DEL_UPPER_16);
-//			spin_link_packet_send(&eDVSpacket,0);
-//			eDVS1_currentPacket = (eDVS1_currentPacket + 1) % 100;
+//		if(SPL_IAV)	{					// Emergency cycler
+//			missed_request_counter++;
+//			if (missed_request_counter == 20) {
+//				led0_on();
+//				strcpy(str_buffer, "CPLD req error\n");
+//				usart_dma_transmission(str_buffer, strlen(str_buffer));
+//				while(SPL_IAV){
+//					SPIN_MCU_DATA_IN_ACK->ODR ^= SPLI_ACK;
+//				}
+//				SPIN_MCU_DATA_IN_ACK->ODR &= ~SPLI_ACK;
+//				led0_off();
+//			}
+//		} else {
+//			missed_request_counter = 0;
 //		}
 
-		//If sensor output packets are available, send one of them...
-		if (currentPacket >= &spinOutputBuffer[0]) {
-			while(currentPacket > &spinOutputBuffer[NUM_SENSORS_VALUE_CODING]) {
-				currentPacket--;
-			}
-			if(!MGMT_ARRAY[RATE_CODING_SENSORS_ENABLE]) {
-				//Value Coding, i.e. with payload
-				currentPacket->key |= 0xE00;
-				spin_link_packet_send(currentPacket,1);
-				currentPacket--;
-			}
-		}
-		else {
-			currentPacket = NULL;
-		}
-		
-		//CD: Timer gets executed every 0.5ms (i.e. ms/2 timer, not ms timer!)
-		if (ms_tick > 0){
-			ms_tick_set(0);
-
-			//Motor Timeout
-			timeout_var--;
-			//Check for Timeout to set Motor commands to 0:
-			if (timeout_var <= 0) {
-				x_payload_speed = 0;
-				y_payload_speed = 0;
-				t_payload_speed = 0;
-				timeout_var = -1;
-			}
-			//Motor Timeout END
-
-			//Send commands to Robot, decay speeds etc.
-			omnibot_command_cycle();
-
-			if(MGMT_ARRAY[RATE_CODING_SENSORS_ENABLE]) {
-				//Rate Encode sensor data
-				rate_coding();
-			}
-			else{
-				currentPacket = value_coding(currentPacket,spinOutputBuffer);
-			}
-
+		spin_link_packet_send(&debugPacket,0);
+		debugPacket.key += 1;
+//		//CD: New MC Packet Available, handle it:
+//		if (spinPacketAvailableFlag) {
+//			// do something with the package
+//			header = spinPacketHeader;						// copy data so that interrupt can "refill" variables
+//			key = spinPacketAddress;
+//			payload = spinPacketPayload;
+//			spinPacketAvailableFlag = 0;					// as of here if a new interrupt signals data available we will find it
 //
-		}//CD: END
+//			//Check if package is an MC packet:
+//		    if ((header & SPL_PCKG_TYPE) == MC_PACKAGE) {
+//				//CD: Check this (payload!)
+//				if (!(header & SPL_PAYLOAD)) { //NO PAYLOAD! -- RATE ENCODING!
+//					//Reset Timeout for Motor Commands:
+//					timeout_var = TIMEOUT_MS;
+//					//CD: Motor command rate encoding
+//					if (key == MGMT_ARRAY[MOTION_FORWARD]) {
+//						x_accumulator++;
+//						//Reset Timeout for Motor Commands:
+//						timeout_var = TIMEOUT_MS;
+//					}
+//					else if (key == MGMT_ARRAY[MOTION_BACK]) {
+//						x_accumulator--;
+//						//Reset Timeout for Motor Commands:
+//						timeout_var = TIMEOUT_MS;
+//					}
+//					else if (key == MGMT_ARRAY[MOTION_LEFT]) {
+//						y_accumulator++;
+//						//Reset Timeout for Motor Commands:
+//						timeout_var = TIMEOUT_MS;
+//					}
+//					else if (key == MGMT_ARRAY[MOTION_RIGHT]) {
+//						y_accumulator--;
+//						//Reset Timeout for Motor Commands:
+//						timeout_var = TIMEOUT_MS;
+//					}
+//					else if (key == MGMT_ARRAY[MOTION_CLOCKWISE]) {
+//						t_accumulator++;
+//						//Reset Timeout for Motor Commands:
+//						timeout_var = TIMEOUT_MS;
+//					}
+//					else if (key == MGMT_ARRAY[MOTION_C_CLKWISE]) {
+//						t_accumulator--;
+//						//Reset Timeout for Motor Commands:
+//						timeout_var = TIMEOUT_MS;
+//					}
+//				}
+//				else if(!(key & MGMT_BIT)) {	//PAYLOAD, BUT NO MGMT PACKET!
+//					//Reset Timeout for Motor Commands:
+//					//CD: THINK! THIS IS NON-OPTIMAL
+//
+//
+//					//CD: Motor command value encoding...
+//					if (key == MGMT_ARRAY[MOTION_FORWARD]) {
+//						x_payload_speed = payload;
+//						//Reset Timeout for Motor Commands:
+//						timeout_var = TIMEOUT_MS;
+//					}
+//					else if (key == MGMT_ARRAY[MOTION_BACK]) {
+//						x_payload_speed = -payload;
+//						//Reset Timeout for Motor Commands:
+//						timeout_var = TIMEOUT_MS;
+//					}
+//					else if (key == MGMT_ARRAY[MOTION_LEFT]) {
+//						y_payload_speed = payload;
+//						//Reset Timeout for Motor Commands:
+//						timeout_var = TIMEOUT_MS;
+//					}
+//					else if (key == MGMT_ARRAY[MOTION_RIGHT]) {
+//						y_payload_speed = -payload;
+//						//Reset Timeout for Motor Commands:
+//						timeout_var = TIMEOUT_MS;
+//					}
+//					else if (key == MGMT_ARRAY[MOTION_CLOCKWISE]) {
+//						t_payload_speed = payload;
+//						//Reset Timeout for Motor Commands:
+//						timeout_var = TIMEOUT_MS;
+//					}
+//					else if (key == MGMT_ARRAY[MOTION_C_CLKWISE]) {
+//						t_payload_speed = -payload;
+//						//Reset Timeout for Motor Commands:
+//						timeout_var = TIMEOUT_MS;
+//					}
+//				}
+//				else { //PAYLOAD + MGMT_BIT ARE SET, MANAGE NEURON KEYS:
+//					manage_neurons(key, payload);
+//				}
+//			}
+//		}
+//
+//		//If eDVS Data is available, send a packet:
+//		if (eDVSAvailableFlag == 1) {
+//			xData = USART_ReceiveData(USART_EDVS);
+//			eDVSAvailableFlag = 0;
+//
+//			//NOT CORRECT YET!
+//			if (xData >> 7 == 0) {
+//				yData = xData;
+//			}
+//			//NOT CORRECT YET!
+//
+//			eDVSpacket.key = (MGMT_ARRAY[EDVS1_XY] & DEL_LOWER_16) | (((yData << 8) | xData) & DEL_UPPER_16);
+//			spin_link_packet_send(&eDVSpacket,0);
+//		}
+//
+//		//If sensor output packets are available, send one of them...
+//		if (currentPacket >= &spinOutputBuffer[0]) {
+//			while(currentPacket > &spinOutputBuffer[NUM_SENSORS_VALUE_CODING]) {
+//				currentPacket--;
+//			}
+//			if(!MGMT_ARRAY[RATE_CODING_SENSORS_ENABLE]) {
+//				//Value Coding, i.e. with payload
+//				currentPacket->key |= 0xE00;
+//				spin_link_packet_send(currentPacket,1);
+//				currentPacket--;
+//			}
+//		}
+//		else {
+//			currentPacket = NULL;
+//		}
+//
+//		//CD: Timer gets executed every 0.5ms (i.e. ms/2 timer, not ms timer!)
+//		if (ms_tick > 0){
+//			ms_tick_set(0);
+//
+//			//Motor Timeout
+//			timeout_var--;
+//			//Check for Timeout to set Motor commands to 0:
+//			if (timeout_var <= 0) {
+//				x_payload_speed = 0;
+//				y_payload_speed = 0;
+//				t_payload_speed = 0;
+//				timeout_var = -1;
+//			}
+//			//Motor Timeout END
+//
+//			//Send commands to Robot, decay speeds etc.
+//			omnibot_command_cycle();
+//
+//			if(MGMT_ARRAY[RATE_CODING_SENSORS_ENABLE]) {
+//				//Rate Encode sensor data
+//				rate_coding();
+//			}
+//			else{
+//				currentPacket = value_coding(currentPacket,spinOutputBuffer);
+//			}
+//
+////
+//		}//CD: END
 
 	}	// END of main() loop
 	return 0 ;

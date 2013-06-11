@@ -13,13 +13,10 @@
 #endif
 
 // TODO: insert other include files here
-#include <string.h>
-#include <stdlib.h>
 #include "leds.h"
 #include "usart.h"
 #include "spin_link.h"
 #include "omnibot.h"
-#include "omnibot_rate_coding_helper.h"
 #include "timer.h"
 
 // TODO: insert other definitions and declarations here
@@ -32,6 +29,11 @@ void sleep_some_time(uint32_t counter) {
 		asm volatile ("nop");
 	}
 }
+
+static const uint8_t HexLU[16] = {
+		'0', '1', '2', '3', '4', '5', '6', '7', '8','9','A', 'B','C','D','E','F'
+};
+
 
 int main(void) {
 
@@ -59,17 +61,6 @@ int main(void) {
 	// Initialize SpiNNaker Interface:
 	spin_link_init();
 
-	// Initialize Robot:
-//	omnibot_init();
-//	sleep_some_time(8000000);
-//	led_toggle();
-
-	// Initialize EDVS1 & 2:
-//	usart1_sendString("!E0\r!E+\rE+\r");
-//	usart1_sendDataFromBufferBlocking();
-//	usart6_sendString("!E0\r!E+\rE+\r");
-//	usart6_sendDataFromBufferBlocking();
-
 	// Initialize ms timer:
 	ms_tick_init();
 
@@ -87,7 +78,25 @@ int main(void) {
 	led_toggle();
 	sleep_some_time(8000000);
 	led_off();
+	led_toggle();
+	sleep_some_time(8000000);
+	led_toggle();
+	sleep_some_time(8000000);
+	led_toggle();
+	sleep_some_time(8000000);
+	led_toggle();
+	sleep_some_time(8000000);
+	led_toggle();
+	sleep_some_time(8000000);
+	led_off();
 
+
+	// Initialize Robot:
+	omnibot_init();
+
+	// Initialize EDVS1 & 2:
+//	usart1_sendString("\r\r!E0\rE+\r");
+//	usart6_sendString("\r\r!E0\rE+\r");
 
 	// USART RX POINTERS //
 	int32_t USART1_BTs = 0;
@@ -104,13 +113,12 @@ int main(void) {
 	int32_t USART3_LWRITE_POS = 0;
 
 	// Robot Data Handler Stuff...
-	char inputChar = 0;
 	char omniSensorArray[250];
 	uint32_t startOfSensorString = 0;
 
 	// SpiNNaker packets and Flag Variable
 	spin_link_pkg_t outputPackage;
-	outputPackage.key = 0x0;
+	outputPackage.key = 0x1234;
 	outputPackage.header = 0x2;
 	outputPackage.payload = 0;
 
@@ -122,9 +130,7 @@ int main(void) {
 	uint32_t spinAvailFlag = 0;
 	int32_t timeout = 0;
 
-
-	uart5_sendString("\nMain Loop:\n");
-
+	uint32_t parityRetina = 0;
 	// Start ms timer:
 	ms_tick_start();
 	while(1) {
@@ -143,6 +149,14 @@ int main(void) {
 		USART1_LWRITE_POS = EDVS_BUF_SIZE - (DMA2_Stream2->NDTR & 0x0000FFFF);
 		USART1_BTs = (USART1_LWRITE_POS + EDVS_BUF_SIZE - USART1_READ_POS) & (EDVS_BUF_SIZE - 1);
 
+		// RTS Flag: (TESTING!)
+		if (USART1_BTs > 2048) { //
+			GPIOA->BSRRL = GPIO_Pin_12;
+			led_toggle();
+		}
+		else {
+			GPIOA->BSRRH = GPIO_Pin_12;
+		}
 
 		// Calculate USART3_BTs:
 		USART3_LWRITE_POS = ROBOT_BUF_SIZE - (DMA1_Stream1->NDTR & 0x0000FFFF);
@@ -153,7 +167,7 @@ int main(void) {
 		USART6_LWRITE_POS = EDVS_BUF_SIZE - (DMA2_Stream1->NDTR & 0x0000FFFF);
 		USART6_BTs = (USART6_LWRITE_POS + EDVS_BUF_SIZE - USART6_READ_POS) & (EDVS_BUF_SIZE - 1);
 
-
+		// TODO: Implement "manual" RTS/CTS here as well:
 
 
 		///////////////////////////////////////////
@@ -240,7 +254,6 @@ int main(void) {
 				}
 
 			package_corrupt:
-					// UART debug output: show one C
 				uart5_sendString("\nBAD SPIN PACKAGE!\n");
 				SPIN_MCU_DATA_IN_ACK->ODR &= ~SPLI_ACK;
 				goto end;
@@ -248,6 +261,7 @@ int main(void) {
 			package_good:
 				SPIN_MCU_DATA_IN_ACK->ODR &= ~SPLI_ACK;
 				spinAvailFlag = 1;
+				led_on();
 
 			end:
 			;
@@ -263,45 +277,55 @@ int main(void) {
 			//Check if package is an MC packet:
 			if ((inputPackage.header & SPL_PCKG_TYPE) == MC_PACKAGE) {
 				//CD: Check this (payload!)
+
+				inputPackage.key = inputPackage.key & DEL_UPPER_16;
+
+
 				if (!(inputPackage.header & SPL_PAYLOAD)) { //NO PAYLOAD! -- RATE ENCODING!
+					// As there is no Rate Coding any more, this should *not* happen!
 					//Reset Timeout for Motor Commands:
-					timeout_var = TIMEOUT_MS;
-					//CD: Motor command rate encoding
-					if (inputPackage.key == MGMT_ARRAY[MOTION_FORWARD]) {
-						x_accumulator++;
-						//Reset Timeout for Motor Commands:
-						timeout_var = TIMEOUT_MS;
-					}
-					else if (inputPackage.key == MGMT_ARRAY[MOTION_BACK]) {
-						x_accumulator--;
-						//Reset Timeout for Motor Commands:
-						timeout_var = TIMEOUT_MS;
-					}
-					else if (inputPackage.key == MGMT_ARRAY[MOTION_LEFT]) {
-						y_accumulator++;
-						//Reset Timeout for Motor Commands:
-						timeout_var = TIMEOUT_MS;
-					}
-					else if (inputPackage.key == MGMT_ARRAY[MOTION_RIGHT]) {
-						y_accumulator--;
-						//Reset Timeout for Motor Commands:
-						timeout_var = TIMEOUT_MS;
-					}
-					else if (inputPackage.key == MGMT_ARRAY[MOTION_CLOCKWISE]) {
-						t_accumulator++;
-						//Reset Timeout for Motor Commands:
-						timeout_var = TIMEOUT_MS;
-					}
-					else if (inputPackage.key == MGMT_ARRAY[MOTION_C_CLKWISE]) {
-						t_accumulator--;
-						//Reset Timeout for Motor Commands:
-						timeout_var = TIMEOUT_MS;
-					}
+//					timeout_var = TIMEOUT_MS;
+//					//CD: Motor command rate encoding
+//					if (inputPackage.key == MGMT_ARRAY[MOTION_FORWARD]) {
+//						x_accumulator++;
+//						//Reset Timeout for Motor Commands:
+//						timeout_var = TIMEOUT_MS;
+//					}
+//					else if (inputPackage.key == MGMT_ARRAY[MOTION_BACK]) {
+//						x_accumulator--;
+//						//Reset Timeout for Motor Commands:
+//						timeout_var = TIMEOUT_MS;
+//					}
+//					else if (inputPackage.key == MGMT_ARRAY[MOTION_LEFT]) {
+//						y_accumulator++;
+//						//Reset Timeout for Motor Commands:
+//						timeout_var = TIMEOUT_MS;
+//					}
+//					else if (inputPackage.key == MGMT_ARRAY[MOTION_RIGHT]) {
+//						y_accumulator--;
+//						//Reset Timeout for Motor Commands:
+//						timeout_var = TIMEOUT_MS;
+//					}
+//					else if (inputPackage.key == MGMT_ARRAY[MOTION_CLOCKWISE]) {
+//						t_accumulator++;
+//						//Reset Timeout for Motor Commands:
+//						timeout_var = TIMEOUT_MS;
+//					}
+//					else if (inputPackage.key == MGMT_ARRAY[MOTION_C_CLKWISE]) {
+//						t_accumulator--;
+//						//Reset Timeout for Motor Commands:
+//						timeout_var = TIMEOUT_MS;
+//					}
+//
+//					// SIMPLE NEURON ARRAY TEST!
+//					else if (inputPackage.key < (0x120+0x80) && inputPackage.key >= 0x120) {
+//						uart5_sendChar(0x80 | (inputPackage.key - 0x120));
+//					}
+
 				}
 				else if(!(inputPackage.key & MGMT_BIT)) {	//PAYLOAD, BUT NO MGMT PACKET!
 					//Reset Timeout for Motor Commands:
 					//CD: THINK! THIS IS NON-OPTIMAL
-
 
 					//CD: Motor command value encoding...
 					if (inputPackage.key == MGMT_ARRAY[MOTION_FORWARD]) {
@@ -325,12 +349,12 @@ int main(void) {
 						timeout_var = TIMEOUT_MS;
 					}
 					else if (inputPackage.key == MGMT_ARRAY[MOTION_CLOCKWISE]) {
-						t_payload_speed = inputPackage.payload;
+						t_payload_speed = -inputPackage.payload;
 						//Reset Timeout for Motor Commands:
 						timeout_var = TIMEOUT_MS;
 					}
 					else if (inputPackage.key == MGMT_ARRAY[MOTION_C_CLKWISE]) {
-						t_payload_speed = -inputPackage.payload;
+						t_payload_speed = inputPackage.payload;
 						//Reset Timeout for Motor Commands:
 						timeout_var = TIMEOUT_MS;
 					}
@@ -356,25 +380,29 @@ int main(void) {
 				// --> Decrease EDVS1_BTs by 2
 				// Increase READ_POS by 1 incl. Wrap Around
 			if (USART1_RX_BUFFER[USART1_READ_POS] & 0x80) {
-				// This byte is cannot a FIRST byte
+				// This byte cannot be a FIRST byte
 				// Skip to next byte:
-				USART1_READ_POS++;
+				++USART1_READ_POS;
 				USART1_READ_POS &= (EDVS_BUF_SIZE - 1);
-				uart5_sendString("\nEDVS1 Data Hickup!\n");
 			}
 			else {
 				// If we are here, this *could* be a correnct y byte!
 				// So, we are now assembling a spinnaker packet
 
-				// TODO: Assembling  spinnaker package:
-				outputPackage.key = 0x0;
-				outputPackage.key = USART1_RX_BUFFER[USART1_READ_POS] << 8;
-				USART1_READ_POS++;
+				// Assembling  spinnaker package:
+				outputPackage.key = (127 - (USART1_RX_BUFFER[USART1_READ_POS] & 0x7F));
+
+				++USART1_READ_POS;
 				USART1_READ_POS &= (EDVS_BUF_SIZE - 1);
-				outputPackage.key |= USART1_RX_BUFFER[USART1_READ_POS];
-				spin_link_packet_send(&outputPackage,0);
+				parityRetina = USART1_RX_BUFFER[USART1_READ_POS] >> 7;
+				outputPackage.key |= (parityRetina << 7);
+				outputPackage.key |= (127 - (USART1_RX_BUFFER[USART1_READ_POS] & 0x7F)) << 8;
+				outputPackage.key |= MGMT_ARRAY[EDVS1_XY];
+
+		spin_link_packet_send(&outputPackage,0);
+
 				// Assembling done!
-				USART1_READ_POS++;
+				++USART1_READ_POS;
 				USART1_READ_POS &= (EDVS_BUF_SIZE - 1);
 			}
 		}
@@ -385,8 +413,7 @@ int main(void) {
 		/////////////////////////////////////////////
 
 		if (USART3_BTs > 0) {
-			inputChar = USART3_RX_BUFFER[USART3_READ_POS];
-			if (inputChar == '\n') {
+			if (USART3_RX_BUFFER[USART3_READ_POS] == '\n') {
 				// Process String...
 				int i = 0;
 				while (startOfSensorString != USART3_READ_POS) {
@@ -401,7 +428,6 @@ int main(void) {
 			USART3_READ_POS &= (ROBOT_BUF_SIZE - 1);
 		}
 
-
 		////////////////////////////////////////////
 		////   USART6 RX DATA HANDLING - EDVS2  ////
 		////////////////////////////////////////////
@@ -414,24 +440,30 @@ int main(void) {
 			if (USART6_RX_BUFFER[USART6_READ_POS] & 0x80) {
 				// This byte is cannot be a FIRST byte
 				// Skip to next byte:
-				USART6_READ_POS++;
+				++USART6_READ_POS;
 				USART6_READ_POS &= (EDVS_BUF_SIZE - 1);
-				uart5_sendString("\nEDVS1 Data Hickup!\n");
+				uart5_sendString("\nEDVS2 Data Hickup!\n");
 			}
 			else {
 				// If we are here, this *could* be a correnct y byte!
 				// So, we are now assembling a spinnaker packet
 
-				// Assembling spinnaker package:
-				outputPackage.key = USART6_RX_BUFFER[USART6_READ_POS] << 8;
-				USART6_READ_POS++;
+				// Assembling  spinnaker package:
+				outputPackage.key = ( ((127 - (USART6_RX_BUFFER[USART6_READ_POS]) & 0x7F)));
+
+				++USART6_READ_POS;
 				USART6_READ_POS &= (EDVS_BUF_SIZE - 1);
-				outputPackage.key |= USART6_RX_BUFFER[USART6_READ_POS];
-				//Set the 16th bit to make clear that this is Retina #2
-				outputPackage.key |= 0x10000;
+				parityRetina = USART6_RX_BUFFER[USART6_READ_POS] >> 7;
+				outputPackage.key |= parityRetina << 7;
+				outputPackage.key |= (127 - (USART6_RX_BUFFER[USART6_READ_POS] & 0x7F)) << 8;
+				outputPackage.key |= MGMT_ARRAY[EDVS2_XY];
+
+
 				spin_link_packet_send(&outputPackage,0);
+
+
 				// Assembling done!
-				USART6_READ_POS++;
+				++USART6_READ_POS;
 				USART6_READ_POS &= (EDVS_BUF_SIZE - 1);
 			}
 		}
@@ -447,36 +479,28 @@ int main(void) {
 		//////////////////////////////////////////////////////////////////////////////////////////////////
 
 		//CD: Timer gets executed every 0.5ms (i.e. ms/2 timer, not ms timer!)
-		if (TIM5->CNT > 1000){
+		if (TIM5->CNT > 0){
 			TIM5->CNT = 0;
-			led_toggle();
-			uart5_sendString("tick...     ");
-//			uart5_sendString("Tick...\n");
-//
-//			//Motor Timeout
-//			timeout_var--;
-//			//Check for Timeout to set Motor commands to 0:
-//			if (timeout_var <= 0) {
-//				x_payload_speed = 0;
-//				y_payload_speed = 0;
-//				t_payload_speed = 0;
-//				timeout_var = -1;
-//			}
-//			//Motor Timeout END
-//
-//			//Send commands to Robot, decay speeds etc.
-//			omnibot_command_cycle();
-//
-//			if(MGMT_ARRAY[RATE_CODING_SENSORS_ENABLE]) {
-//				//Rate Encode sensor data
-//				rate_coding();
-//			}
-//			else{
-//				value_coding(&outputPackage);
-//			}
+			//Motor Timeout
+			timeout_var--;
+
+			//Check for Timeout to set Motor commands to 0:
+			if (timeout_var <= 0) {
+				x_payload_speed = 0;
+				y_payload_speed = 0;
+				t_payload_speed = 0;
+				timeout_var = -1;
+			}
+			//Motor Timeout END
+
+			//Send commands to Robot, decay speeds etc.
+			omnibot_command_cycle();
+
+			// Send new values if available:
+			value_coding(&outputPackage);
 		}
 		// Send Data to USART if available & USARTs are free!
 		usart_sendDataFromBuffers();
 	}
-	return 0 ;
+	return 0;
 }

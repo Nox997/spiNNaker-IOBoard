@@ -31,7 +31,8 @@ src/usart.d: ../src/usart.c ../src/usart.h \
  D:\Dropbox\programming\spiNNaker-IOBoard\uC\StdPeriphLib_v100_STM32F4xx\inc/stm32f4xx_tim.h \
  D:\Dropbox\programming\spiNNaker-IOBoard\uC\StdPeriphLib_v100_STM32F4xx\inc/stm32f4xx_usart.h \
  D:\Dropbox\programming\spiNNaker-IOBoard\uC\StdPeriphLib_v100_STM32F4xx\inc/stm32f4xx_wwdg.h \
- D:\Dropbox\programming\spiNNaker-IOBoard\uC\StdPeriphLib_v100_STM32F4xx\inc/misc.h
+ D:\Dropbox\programming\spiNNaker-IOBoard\uC\StdPeriphLib_v100_STM32F4xx\inc/misc.h \
+ ../src/leds.h
 
 ../src/usart.h:
 
@@ -100,3 +101,5 @@ D:\Dropbox\programming\spiNNaker-IOBoard\uC\StdPeriphLib_v100_STM32F4xx\inc/stm3
 D:\Dropbox\programming\spiNNaker-IOBoard\uC\StdPeriphLib_v100_STM32F4xx\inc/stm32f4xx_wwdg.h:
 
 D:\Dropbox\programming\spiNNaker-IOBoard\uC\StdPeriphLib_v100_STM32F4xx\inc/misc.h:
+
+../src/leds.h:

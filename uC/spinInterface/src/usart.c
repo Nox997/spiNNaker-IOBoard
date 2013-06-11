@@ -11,6 +11,7 @@
 #include "stm32f4xx_usart.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_dma.h"
+#include "leds.h"
 
 
 // Output Buffers for USART Transmission:
@@ -21,6 +22,10 @@ uint32_t USART1_TX_WRITE = 0;
 uint8_t USART3_TX_BUFFER[USART_OUTPUT_BUF_SIZE];
 uint32_t USART3_TX_READ = 0;
 uint32_t USART3_TX_WRITE = 0;
+
+uint8_t UART4_TX_BUFFER[USART_OUTPUT_BUF_SIZE];
+uint32_t UART4_TX_READ = 0;
+uint32_t UART4_TX_WRITE = 0;
 
 uint8_t UART5_TX_BUFFER[USART_OUTPUT_BUF_SIZE];
 uint32_t UART5_TX_READ = 0;
@@ -52,6 +57,16 @@ int32_t usart1_sendDataFromBufferBlocking(void) {
 	return 0;
 }
 
+int32_t usart1_sendDataFromBuffer(void) {
+	if (USART1_TX_READ != USART1_TX_WRITE) {
+		if ((USART1->SR & 0x80) != 0) {
+			USART1->DR = USART1_TX_BUFFER[USART1_TX_READ++];
+			USART1_TX_READ &= (USART_OUTPUT_BUF_SIZE - 1);
+		}
+	}
+	return 0;
+}
+
 int32_t usart3_sendDataFromBufferBlocking(void) {
 	while (USART3_TX_READ != USART3_TX_WRITE) {
 		if ((USART3->SR & 0x80) != 0) {
@@ -62,11 +77,29 @@ int32_t usart3_sendDataFromBufferBlocking(void) {
 	return 0;
 }
 
+int32_t uart4_sendDataFromBufferBlocking(void) {
+	while (UART4_TX_READ != UART4_TX_WRITE) {
+		if ((UART4->SR & 0x80) != 0) {
+			// Check CTS signal:
+			if ((GPIOB->IDR & GPIO_Pin_4) == 0) {
+				// We can send Data!
+				UART4->DR 	= UART4_TX_BUFFER[UART4_TX_READ++];
+				UART4_TX_READ &= (USART_OUTPUT_BUF_SIZE - 1);
+			}
+		}
+	}
+	return 0;
+}
+
 int32_t uart5_sendDataFromBufferBlocking(void) {
 	while (UART5_TX_READ != UART5_TX_WRITE) {
 		if ((UART5->SR & 0x80) != 0) {
-			UART5->DR = UART5_TX_BUFFER[UART5_TX_READ++];
-			UART5_TX_READ &= (USART_OUTPUT_BUF_SIZE - 1);
+			// Check CTS signal:
+			if ((GPIOB->IDR & GPIO_Pin_7) == 0) {
+				// We can send Data!
+				UART5->DR 	= UART5_TX_BUFFER[UART5_TX_READ++];
+				UART5_TX_READ &= (USART_OUTPUT_BUF_SIZE - 1);
+			}
 		}
 	}
 	return 0;
@@ -97,10 +130,38 @@ int32_t usart_sendDataFromBuffersBlocking(void) {
 		}
 	}
 
+	while (UART4_TX_READ != UART4_TX_WRITE) {
+		if ((UART4->SR & 0x80) != 0) {
+			// For Testing!
+			// Check CTS signal:
+			// CD : EDIT THIS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			if ((GPIOB->IDR & GPIO_Pin_4) != 0) {
+				// DO NOT SEND DATA!!!
+			}
+			else {
+				UART4->DR 	= UART4_TX_BUFFER[UART4_TX_READ++];
+				UART4_TX_READ &= (USART_OUTPUT_BUF_SIZE - 1);
+			}
+			//CTS TESTING END
+//			UART4->DR 	= UART4_TX_BUFFER[UART4_TX_READ++];
+//			UART4_TX_READ &= (USART_OUTPUT_BUF_SIZE - 1);
+		}
+	}
+
 	while (UART5_TX_READ != UART5_TX_WRITE) {
 		if ((UART5->SR & 0x80) != 0) {
-			UART5->DR = UART5_TX_BUFFER[UART5_TX_READ++];
-			UART5_TX_READ &= (USART_OUTPUT_BUF_SIZE - 1);
+			// For Testing!
+			// Check CTS signal:
+			if ((GPIOB->IDR & GPIO_Pin_7) != 0) {
+				// DO NOT SEND DATA!!!
+			}
+			else {
+				UART5->DR 	= UART5_TX_BUFFER[UART5_TX_READ++];
+				UART5_TX_READ &= (USART_OUTPUT_BUF_SIZE - 1);
+			}
+			//CTS TESTING END
+//			UART5->DR 	= UART5_TX_BUFFER[UART5_TX_READ++];
+//			UART5_TX_READ &= (USART_OUTPUT_BUF_SIZE - 1);
 		}
 	}
 
@@ -130,10 +191,31 @@ int32_t usart_sendDataFromBuffers(void){
 		}
 	}
 
+	if (UART4_TX_READ != UART4_TX_WRITE) {
+		if ((UART4->SR & 0x80) != 0) {
+			// For Testing!
+			// Check CTS signal:
+			if ((GPIOB->IDR & GPIO_Pin_4) == 0) {
+				UART4->DR 	= UART4_TX_BUFFER[UART4_TX_READ++];
+				UART4_TX_READ &= (USART_OUTPUT_BUF_SIZE - 1);
+			}
+			//CTS TESTING END
+//			UART4->DR 	= UART4_TX_BUFFER[UART4_TX_READ++];
+//			UART4_TX_READ &= (USART_OUTPUT_BUF_SIZE - 1);
+		}
+	}
+
 	if (UART5_TX_READ != UART5_TX_WRITE) {
 		if ((UART5->SR & 0x80) != 0) {
-			UART5->DR 	= UART5_TX_BUFFER[UART5_TX_READ++];
-			UART5_TX_READ &= (USART_OUTPUT_BUF_SIZE - 1);
+			// For Testing!
+			// Check CTS signal:
+			if ((GPIOB->IDR & GPIO_Pin_7) == 0) {
+				UART5->DR 	= UART5_TX_BUFFER[UART5_TX_READ++];
+				UART5_TX_READ &= (USART_OUTPUT_BUF_SIZE - 1);
+			}
+			//CTS TESTING END
+//			UART5->DR 	= UART5_TX_BUFFER[UART5_TX_READ++];
+//			UART5_TX_READ &= (USART_OUTPUT_BUF_SIZE - 1);
 		}
 	}
 	if (USART6_TX_READ != USART6_TX_WRITE) {
@@ -167,6 +249,16 @@ int32_t usart3_sendString(char* data) {
 	return 0;
 }
 
+int32_t uart4_sendString(char* data) {
+	// This function is assuming a ZERO-terminated string!
+	while (*data != '\0') {
+
+		UART4_TX_BUFFER[UART4_TX_WRITE++] = *(data++);
+		UART4_TX_WRITE &= (USART_OUTPUT_BUF_SIZE - 1);
+	}
+	return 0;
+}
+
 int32_t uart5_sendString(char* data) {
 	// This function is assuming a ZERO-terminated string!
 	while (*data != '\0') {
@@ -195,6 +287,12 @@ int32_t usart1_sendChar(char data) {
 int32_t usart3_sendChar(char data) {
 	USART3_TX_BUFFER[USART3_TX_WRITE++] = data;
 	USART3_TX_WRITE &= (USART_OUTPUT_BUF_SIZE - 1);
+	return 0;
+}
+
+int32_t uart4_sendChar(char data) {
+	UART4_TX_BUFFER[UART4_TX_WRITE++] = data;
+	UART4_TX_WRITE &= (USART_OUTPUT_BUF_SIZE - 1);
 	return 0;
 }
 
@@ -240,43 +338,96 @@ void usart_init(void) {
 	//		GPIOA: USART1, GPIOB: USART3, GPIOC: Mainly USART6, UART5, GPIOD: UART5
 	//////////////////////////////////////////////////////////////////////
 
-	GPIOA_CONFIG.GPIO_Pin					= (GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_12);
-	GPIOA_CONFIG.GPIO_Mode					= GPIO_Mode_AF;
-	GPIOA_CONFIG.GPIO_OType					= GPIO_OType_PP;
-	GPIOA_CONFIG.GPIO_PuPd					= GPIO_PuPd_UP;
-	GPIOA_CONFIG.GPIO_Speed					= GPIO_Speed_100MHz;
-
-	GPIOB_CONFIG.GPIO_Pin					= (GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_13 | GPIO_Pin_14);
-	GPIOB_CONFIG.GPIO_Mode					= GPIO_Mode_AF;
-	GPIOB_CONFIG.GPIO_OType					= GPIO_OType_PP;
-	GPIOB_CONFIG.GPIO_PuPd					= GPIO_PuPd_UP;
-	GPIOB_CONFIG.GPIO_Speed					= GPIO_Speed_100MHz;
-
-	GPIOC_CONFIG.GPIO_Pin					= (GPIO_Pin_6 | GPIO_Pin_7 | GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_12);
-	GPIOC_CONFIG.GPIO_Mode					= GPIO_Mode_AF;
-	GPIOC_CONFIG.GPIO_OType					= GPIO_OType_PP;
-	GPIOC_CONFIG.GPIO_PuPd					= GPIO_PuPd_UP;
-	GPIOC_CONFIG.GPIO_Speed					= GPIO_Speed_100MHz;
-
-	GPIOD_CONFIG.GPIO_Pin 					= (GPIO_Pin_2);
-	GPIOD_CONFIG.GPIO_Mode					= GPIO_Mode_AF;
-	GPIOD_CONFIG.GPIO_OType					= GPIO_OType_PP;
-	GPIOD_CONFIG.GPIO_PuPd					= GPIO_PuPd_UP;
-	GPIOD_CONFIG.GPIO_Speed					= GPIO_Speed_100MHz;
-
-
 	// Enable GPIO Clocks:
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA,  ENABLE);
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB,  ENABLE);
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC,  ENABLE);
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD,  ENABLE);
 
+	// USART1 GPIO Config
+	GPIO_StructInit(&GPIOA_CONFIG);
+	GPIOA_CONFIG.GPIO_Pin					= (GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11); // | GPIO_Pin_12
+	GPIOA_CONFIG.GPIO_Mode					= GPIO_Mode_AF;
+	GPIOA_CONFIG.GPIO_OType					= GPIO_OType_PP;
+	GPIOA_CONFIG.GPIO_PuPd					= GPIO_PuPd_UP;
+	GPIOA_CONFIG.GPIO_Speed					= GPIO_Speed_100MHz;
+	GPIO_Init(GPIOA, &GPIOA_CONFIG);
+
+	// USART3 GPIO config:
+	GPIO_StructInit(&GPIOB_CONFIG);
+	GPIOB_CONFIG.GPIO_Pin					= (GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_13 | GPIO_Pin_14);
+	GPIOB_CONFIG.GPIO_Mode					= GPIO_Mode_AF;
+	GPIOB_CONFIG.GPIO_OType					= GPIO_OType_PP;
+	GPIOB_CONFIG.GPIO_PuPd					= GPIO_PuPd_UP;
+	GPIOB_CONFIG.GPIO_Speed					= GPIO_Speed_100MHz;
+	GPIO_Init(GPIOB, &GPIOB_CONFIG);
+
+	// USART6 & UART5 & UART4 GPIO_CONFIG
+	GPIO_StructInit(&GPIOC_CONFIG);
+	GPIOC_CONFIG.GPIO_Pin					= (GPIO_Pin_6 | GPIO_Pin_7 | GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 |GPIO_Pin_12);
+	GPIOC_CONFIG.GPIO_Mode					= GPIO_Mode_AF;
+	GPIOC_CONFIG.GPIO_OType					= GPIO_OType_PP;
+	GPIOC_CONFIG.GPIO_PuPd					= GPIO_PuPd_UP;
+	GPIOC_CONFIG.GPIO_Speed					= GPIO_Speed_100MHz;
+	GPIO_Init(GPIOC, &GPIOC_CONFIG);
+
+	// UART5 CPIO Config
+	GPIO_StructInit(&GPIOD_CONFIG);
+	GPIOD_CONFIG.GPIO_Pin 					= (GPIO_Pin_2);
+	GPIOD_CONFIG.GPIO_Mode					= GPIO_Mode_AF;
+	GPIOD_CONFIG.GPIO_OType					= GPIO_OType_PP;
+	GPIOD_CONFIG.GPIO_PuPd					= GPIO_PuPd_UP;
+	GPIOD_CONFIG.GPIO_Speed					= GPIO_Speed_100MHz;
+	GPIO_Init(GPIOD, &GPIOD_CONFIG);
+
+
+	// Manual RTS for USART1 config:
+	GPIO_StructInit(&GPIOA_CONFIG);
+	GPIOA_CONFIG.GPIO_Pin					= (GPIO_Pin_12);
+	GPIOA_CONFIG.GPIO_Mode					= GPIO_Mode_OUT;
+	GPIOA_CONFIG.GPIO_OType					= GPIO_OType_PP;
+	GPIOA_CONFIG.GPIO_PuPd					= GPIO_PuPd_UP;
+	GPIOA_CONFIG.GPIO_Speed					= GPIO_Speed_100MHz;
+	GPIO_Init(GPIOA, &GPIOA_CONFIG);
+
+	// Manual checking CTS for UART4 config:
+	GPIO_StructInit(&GPIOB_CONFIG);
+	GPIOB_CONFIG.GPIO_Pin					= (GPIO_Pin_4);
+	GPIOB_CONFIG.GPIO_Mode					= GPIO_Mode_IN;
+	GPIOB_CONFIG.GPIO_PuPd					= GPIO_PuPd_UP; // Logical ONE means we are *NOT* allowed to send, which should be the default.
+	GPIO_Init(GPIOB, &GPIOB_CONFIG);
+
+	// Manual RTS for UART4 config:
+	GPIO_StructInit(&GPIOB_CONFIG);
+	GPIOB_CONFIG.GPIO_Pin					= (GPIO_Pin_5);
+	GPIOB_CONFIG.GPIO_Mode					= GPIO_Mode_OUT;
+	GPIOB_CONFIG.GPIO_OType					= GPIO_OType_PP;
+	GPIOB_CONFIG.GPIO_PuPd					= GPIO_PuPd_UP;
+	GPIOB_CONFIG.GPIO_Speed					= GPIO_Speed_100MHz;
+	GPIO_Init(GPIOB, &GPIOB_CONFIG);
+
+	// Manual checking CTS for UART5 config:
+	GPIO_StructInit(&GPIOB_CONFIG);
+	GPIOB_CONFIG.GPIO_Pin					= (GPIO_Pin_7);
+	GPIOB_CONFIG.GPIO_Mode					= GPIO_Mode_IN;
+	GPIOB_CONFIG.GPIO_PuPd					= GPIO_PuPd_UP; // Logical ONE means we are *NOT* allowed to send, which should be the default.
+	GPIO_Init(GPIOB, &GPIOB_CONFIG);
+
+	// Manual RTS for UART5 config:
+	GPIO_StructInit(&GPIOB_CONFIG);
+	GPIOB_CONFIG.GPIO_Pin					= (GPIO_Pin_6);
+	GPIOB_CONFIG.GPIO_Mode					= GPIO_Mode_OUT;
+	GPIOB_CONFIG.GPIO_OType					= GPIO_OType_PP;
+	GPIOB_CONFIG.GPIO_PuPd					= GPIO_PuPd_UP;
+	GPIOB_CONFIG.GPIO_Speed					= GPIO_Speed_100MHz;
+	GPIO_Init(GPIOB, &GPIOB_CONFIG);
 
 	//Connect Pins to alternative functions:
 	GPIO_PinAFConfig(GPIOA, GPIO_PinSource9,	GPIO_AF_USART1);
 	GPIO_PinAFConfig(GPIOA, GPIO_PinSource10,	GPIO_AF_USART1);
 	GPIO_PinAFConfig(GPIOA, GPIO_PinSource11,	GPIO_AF_USART1);
-	GPIO_PinAFConfig(GPIOA, GPIO_PinSource12,	GPIO_AF_USART1);
+//	GPIO_PinAFConfig(GPIOA, GPIO_PinSource12,	GPIO_AF_USART1);
+
 
 	GPIO_PinAFConfig(GPIOB, GPIO_PinSource10,	GPIO_AF_USART3);
 	GPIO_PinAFConfig(GPIOB, GPIO_PinSource11,	GPIO_AF_USART3);
@@ -288,14 +439,11 @@ void usart_init(void) {
 	GPIO_PinAFConfig(GPIOC, GPIO_PinSource8,	GPIO_AF_USART6);
 	GPIO_PinAFConfig(GPIOC, GPIO_PinSource9,	GPIO_AF_USART6);
 
+	GPIO_PinAFConfig(GPIOC, GPIO_PinSource10,	GPIO_AF_UART4);
+	GPIO_PinAFConfig(GPIOC, GPIO_PinSource11,	GPIO_AF_UART4);
+
 	GPIO_PinAFConfig(GPIOC, GPIO_PinSource12,	GPIO_AF_UART5);
 	GPIO_PinAFConfig(GPIOD, GPIO_PinSource2, 	GPIO_AF_UART5);
-
-	// Initialize GPIO ports:
-	GPIO_Init(GPIOA, &GPIOA_CONFIG);
-	GPIO_Init(GPIOB, &GPIOB_CONFIG);
-	GPIO_Init(GPIOC, &GPIOC_CONFIG);
-	GPIO_Init(GPIOD, &GPIOD_CONFIG);
 
 	//////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////
@@ -308,12 +456,12 @@ void usart_init(void) {
 	//////////////////////////////////////////////////////////////////////
 
 	// Set up USART port parameters
-	USART_CONFIG.USART_BaudRate 			= USART_EDVS_BAUD;
+	USART_CONFIG.USART_BaudRate 			= USART1_BAUD;
 	USART_CONFIG.USART_WordLength 			= USART_WordLength_8b;
 	USART_CONFIG.USART_StopBits 			= USART_StopBits_1;
 	USART_CONFIG.USART_Parity 				= USART_Parity_No;
 	USART_CONFIG.USART_Mode 				= USART_Mode_Rx | USART_Mode_Tx;
-	USART_CONFIG.USART_HardwareFlowControl 	= USART_HardwareFlowControl_RTS_CTS;
+	USART_CONFIG.USART_HardwareFlowControl 	= USART_HardwareFlowControl_CTS;
 
 
 	// Enable Clock for this port (Step 1):
@@ -339,7 +487,7 @@ void usart_init(void) {
 
 
 	// Set up USART port parameters
-	USART_CONFIG.USART_BaudRate 			= USART_OMNIBOT_BAUD;
+	USART_CONFIG.USART_BaudRate 			= USART3_BAUD;
 	USART_CONFIG.USART_WordLength 			= USART_WordLength_8b;
 	USART_CONFIG.USART_StopBits 			= USART_StopBits_1;
 	USART_CONFIG.USART_Parity 				= USART_Parity_No;
@@ -362,13 +510,45 @@ void usart_init(void) {
 	//////////////////////////////////////////////////////////////////////
 
 	//////////////////////////////////////////////////////////////////////
+	//		Initialize UART4
+	//		This is a debug output
+	//////////////////////////////////////////////////////////////////////
+
+
+	// Set up USART port parameters
+	USART_CONFIG.USART_BaudRate 			= UART4_BAUD;
+	USART_CONFIG.USART_WordLength 			= USART_WordLength_8b;
+	USART_CONFIG.USART_StopBits 			= USART_StopBits_1;
+	USART_CONFIG.USART_Parity 				= USART_Parity_No;
+	USART_CONFIG.USART_Mode 				= USART_Mode_Tx;
+	USART_CONFIG.USART_HardwareFlowControl 	= USART_HardwareFlowControl_None;
+
+	// Enable Clock for this port:
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_UART4, ENABLE);
+
+	// Enable lower oversampling
+	USART_OverSampling8Cmd(UART4, ENABLE);
+
+	// Initialize the USART:
+	USART_Init(UART4, &USART_CONFIG);
+
+	// Enable the USART: do I have to switch this with the interrupt enabling? Ask Ginni!
+	USART_Cmd(UART4, ENABLE);
+
+	// For now, set RTS to "allowed to send" always:
+	GPIO_ResetBits(GPIOB,GPIO_Pin_5);
+
+	//////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////
+
+	//////////////////////////////////////////////////////////////////////
 	//		Initialize UART5
 	//		This is a debug output
 	//////////////////////////////////////////////////////////////////////
 
 
 	// Set up USART port parameters
-	USART_CONFIG.USART_BaudRate 			= USART_DEBUG_BAUD;
+	USART_CONFIG.USART_BaudRate 			= UART5_BAUD;
 	USART_CONFIG.USART_WordLength 			= USART_WordLength_8b;
 	USART_CONFIG.USART_StopBits 			= USART_StopBits_1;
 	USART_CONFIG.USART_Parity 				= USART_Parity_No;
@@ -387,6 +567,8 @@ void usart_init(void) {
 	// Enable the USART: do I have to switch this with the interrupt enabling? Ask Ginni!
 	USART_Cmd(UART5, ENABLE);
 
+	// For now, set RTS to "allowed to send" always:
+	GPIO_ResetBits(GPIOB,GPIO_Pin_6);
 
 	//////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////
@@ -399,7 +581,7 @@ void usart_init(void) {
 
 
 	// Set up USART port parameters
-	USART_CONFIG.USART_BaudRate 			= USART_EDVS_BAUD;
+	USART_CONFIG.USART_BaudRate 			= USART6_BAUD;
 	USART_CONFIG.USART_WordLength 			= USART_WordLength_8b;
 	USART_CONFIG.USART_StopBits 			= USART_StopBits_1;
 	USART_CONFIG.USART_Parity 				= USART_Parity_No;
@@ -437,7 +619,7 @@ void usart_init(void) {
 	DMA_CONFIG.DMA_Channel = DMA_Channel_4;
 	DMA_CONFIG.DMA_DIR = DMA_DIR_PeripheralToMemory; // Receive
 	DMA_CONFIG.DMA_Memory0BaseAddr = (uint32_t) USART1_RX_BUFFER;
-	DMA_CONFIG.DMA_BufferSize = 4096;
+	DMA_CONFIG.DMA_BufferSize = EDVS_BUF_SIZE;
 	DMA_CONFIG.DMA_PeripheralBaseAddr = (uint32_t) &(USART1->DR);
 	DMA_CONFIG.DMA_DIR = DMA_DIR_PeripheralToMemory;
 	DMA_CONFIG.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
